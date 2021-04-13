@@ -1,0 +1,262 @@
+* Calibre Connectivity Interface Layout netlist
+* Calibre VERSION: v2018.2_24.18    Fri Jun 1 14:24:04 PDT 2018
+* Type: SPICE
+* Hierarchy: AGF
+* Empty cells: YES
+* Trivial pins: YES
+* Device pin locations: NO
+* String Properties: YES
+* Primitive device subckts: YES
+* HSPICE capacitors/resistors: NO
+* HSPICE user devices: NO
+* Comment Properties: NO
+* Net name type: NONE
+* Instance name type: LAYOUT 
+* Cell name type: LAYOUT 
+* Device location: VERTEX
+* Filter devices: (all)
+* Device lowercase: NO
+* Device templates: YES
+* Separated properties: NO
+* Calibre pushdown separate-properties (back-annotation) data
+***************************************
+*
+* These lvs-actionable properties, indexed by DEVICE element(model) will be kept in the netlist:
+*
+* KEEP_PROP_BEGIN
+* KEEP_PROP D(ndio) A
+* KEEP_PROP D(ndio_15) A
+* KEEP_PROP D(ndio_15od18) A
+* KEEP_PROP D(ndio_18) A
+* KEEP_PROP D(ndio_18ll) A
+* KEEP_PROP D(ndio_18ud12) A
+* KEEP_PROP D(ndio_18ud15) A
+* KEEP_PROP D(ndio_25) A
+* KEEP_PROP D(ndio_25ll) A
+* KEEP_PROP D(ndio_25od33) A
+* KEEP_PROP D(ndio_25ud18) A
+* KEEP_PROP D(ndio_33) A
+* KEEP_PROP D(ndio_avt) A
+* KEEP_PROP D(ndio_ehvt) A
+* KEEP_PROP D(ndio_elvt) A
+* KEEP_PROP D(ndio_esd) A
+* KEEP_PROP D(ndio_hg) A
+* KEEP_PROP D(ndio_hguhvt) A
+* KEEP_PROP D(ndio_hvt) A
+* KEEP_PROP D(ndio_io_lvt) A
+* KEEP_PROP D(ndio_ll) A
+* KEEP_PROP D(ndio_lvt) A
+* KEEP_PROP D(ndio_lvt18ud12) A
+* KEEP_PROP D(ndio_mlvt) A
+* KEEP_PROP D(ndio_na) A
+* KEEP_PROP D(ndio_na15) A
+* KEEP_PROP D(ndio_na18) A
+* KEEP_PROP D(ndio_na18ud15) A
+* KEEP_PROP D(ndio_na25) A
+* KEEP_PROP D(ndio_na25od33) A
+* KEEP_PROP D(ndio_na33) A
+* KEEP_PROP D(ndio_uhvt) A
+* KEEP_PROP D(ndio_ulvt) A
+* KEEP_PROP D(ndio_zvt) A
+* KEEP_PROP D(nwdio) A
+* KEEP_PROP D(pdio) A
+* KEEP_PROP D(pdio_15) A
+* KEEP_PROP D(pdio_15od18) A
+* KEEP_PROP D(pdio_18) A
+* KEEP_PROP D(pdio_18ll) A
+* KEEP_PROP D(pdio_18ud12) A
+* KEEP_PROP D(pdio_18ud15) A
+* KEEP_PROP D(pdio_25) A
+* KEEP_PROP D(pdio_25ll) A
+* KEEP_PROP D(pdio_25od33) A
+* KEEP_PROP D(pdio_25ud18) A
+* KEEP_PROP D(pdio_33) A
+* KEEP_PROP D(pdio_ehvt) A
+* KEEP_PROP D(pdio_elvt) A
+* KEEP_PROP D(pdio_hg) A
+* KEEP_PROP D(pdio_hguhvt) A
+* KEEP_PROP D(pdio_hvt) A
+* KEEP_PROP D(pdio_ll) A
+* KEEP_PROP D(pdio_lvt) A
+* KEEP_PROP D(pdio_mlvt) A
+* KEEP_PROP D(pdio_uhvt) A
+* KEEP_PROP D(pdio_ulvt) A
+* KEEP_PROP cfmom nr s w lr stm spm dmflag
+* KEEP_PROP cfmom_2t nr s w lr stm spm
+* KEEP_PROP cfmom_mx nr s w lr stm spm dmflag multi
+* KEEP_PROP cfmom_mx_4t nr s w lr stm spm multi
+* KEEP_PROP cfmom_wo nr s w lr stm spm shield dmflag
+* KEEP_PROP cfmom_wo_mx nr s w lr stm spm shield dmflag multi
+* KEEP_PROP cfmom_wo_rf nr s w lr stm spm shield dmflag
+* KEEP_PROP cmoscap_rf lr wr br gr
+* KEEP_PROP cmoscap_rf18 lr wr br gr
+* KEEP_PROP cmoscap_rf18_nw lr wr br gr
+* KEEP_PROP cmoscap_rf25 lr wr br gr
+* KEEP_PROP cmoscap_rf25_nw lr wr br gr
+* KEEP_PROP cmoscap_rf_nw lr wr br gr
+* KEEP_PROP dmoscap_rf wr lr br gr
+* KEEP_PROP dmoscap_rf18 wr lr br gr
+* KEEP_PROP dmoscap_rf18_nw wr lr br gr
+* KEEP_PROP dmoscap_rf25 wr lr br gr
+* KEEP_PROP dmoscap_rf25_nw wr lr br gr
+* KEEP_PROP dmoscap_rf_nw wr lr br gr
+* KEEP_PROP mimcap_sin lt wt
+* KEEP_PROP moscap_rf lr wr br gr
+* KEEP_PROP moscap_rf15_nw lr wr br gr
+* KEEP_PROP moscap_rf18 lr wr br gr
+* KEEP_PROP moscap_rf18_nw lr wr br gr
+* KEEP_PROP moscap_rf25 lr wr br gr
+* KEEP_PROP moscap_rf25_nw lr wr br gr
+* KEEP_PROP moscap_rf_nw lr wr br gr
+* KEEP_PROP ndio_gated_mac wg dw nr
+* KEEP_PROP ndio_hia_mac w l nf
+* KEEP_PROP ndio_hia_rf aw al fn
+* KEEP_PROP nmos_rf_18_5t wr lr nr
+* KEEP_PROP nmos_rf_18_6t wr lr nr
+* KEEP_PROP nmos_rf_18_nw wr lr nr
+* KEEP_PROP nmos_rf_18ud15_5t wr lr nr
+* KEEP_PROP nmos_rf_18ud15_6t wr lr nr
+* KEEP_PROP nmos_rf_18ud15_nw wr lr nr
+* KEEP_PROP nmos_rf_25_5t wr lr nr
+* KEEP_PROP nmos_rf_25_6t wr lr nr
+* KEEP_PROP nmos_rf_25_nw wr lr nr
+* KEEP_PROP nmos_rf_25od33_5t wr lr nr
+* KEEP_PROP nmos_rf_25od33_6t wr lr nr
+* KEEP_PROP nmos_rf_25od33_nw wr lr nr
+* KEEP_PROP nmos_rf_25ud18_5t wr lr nr
+* KEEP_PROP nmos_rf_25ud18_6t wr lr nr
+* KEEP_PROP nmos_rf_25ud18_nw wr lr nr
+* KEEP_PROP nmos_rf_5t wr lr nr
+* KEEP_PROP nmos_rf_6t wr lr nr
+* KEEP_PROP nmos_rf_hvt_5t wr lr nr
+* KEEP_PROP nmos_rf_hvt_6t wr lr nr
+* KEEP_PROP nmos_rf_hvt_nw wr lr nr
+* KEEP_PROP nmos_rf_lvt_5t wr lr nr
+* KEEP_PROP nmos_rf_lvt_6t wr lr nr
+* KEEP_PROP nmos_rf_lvt_nw wr lr nr
+* KEEP_PROP nmos_rf_nw wr lr nr
+* KEEP_PROP nmos_rf_ulvt_5t wr lr nr
+* KEEP_PROP nmos_rf_ulvt_6t wr lr nr
+* KEEP_PROP nmos_rf_ulvt_nw wr lr nr
+* KEEP_PROP nmoscap wr lr
+* KEEP_PROP nmoscap_15 wr lr
+* KEEP_PROP nmoscap_18 wr lr
+* KEEP_PROP nmoscap_25 wr lr
+* KEEP_PROP nmoscap_33 wr lr
+* KEEP_PROP nmoscap_edc wr lr
+* KEEP_PROP pcmoscap_rf lr wr br gr
+* KEEP_PROP pcmoscap_rf18 lr wr br gr
+* KEEP_PROP pcmoscap_rf25 lr wr br gr
+* KEEP_PROP pdio_gated_mac wg dw nr
+* KEEP_PROP pdio_gated_mac_3t wg dw nr
+* KEEP_PROP pdio_hia_mac w l nf
+* KEEP_PROP pdio_hia_rf aw al fn
+* KEEP_PROP pmos_rf_18_5t wr lr nr
+* KEEP_PROP pmos_rf_18_nw wr lr nr
+* KEEP_PROP pmos_rf_18_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_18ud15_5t wr lr nr
+* KEEP_PROP pmos_rf_18ud15_nw wr lr nr
+* KEEP_PROP pmos_rf_18ud15_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_25_5t wr lr nr
+* KEEP_PROP pmos_rf_25_nw wr lr nr
+* KEEP_PROP pmos_rf_25_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_25od33_5t wr lr nr
+* KEEP_PROP pmos_rf_25od33_nw wr lr nr
+* KEEP_PROP pmos_rf_25od33_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_25ud18_5t wr lr nr
+* KEEP_PROP pmos_rf_25ud18_nw wr lr nr
+* KEEP_PROP pmos_rf_25ud18_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_5t wr lr nr
+* KEEP_PROP pmos_rf_hvt_5t wr lr nr
+* KEEP_PROP pmos_rf_hvt_nw wr lr nr
+* KEEP_PROP pmos_rf_hvt_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_lvt_5t wr lr nr
+* KEEP_PROP pmos_rf_lvt_nw wr lr nr
+* KEEP_PROP pmos_rf_lvt_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_nw wr lr nr
+* KEEP_PROP pmos_rf_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_ulvt_5t wr lr nr
+* KEEP_PROP pmos_rf_ulvt_nw wr lr nr
+* KEEP_PROP pmos_rf_ulvt_nw_5t wr lr nr
+* KEEP_PROP pmoscap wr lr
+* KEEP_PROP pmoscap_18 wr lr
+* KEEP_PROP pmoscap_25 wr lr
+* KEEP_PROP pmoscap_rf lr wr br gr
+* KEEP_PROP pmoscap_rf18 lr wr br gr
+* KEEP_PROP probe1 a pj
+* KEEP_PROP probe2 a pj
+* KEEP_PROP probe3 a pj
+* KEEP_PROP probe4 a pj
+* KEEP_PROP probe5 a pj
+* KEEP_PROP probe6 a pj
+* KEEP_PROP probe7 a pj
+* KEEP_PROP rm1w w l
+* KEEP_PROP rm2w w l
+* KEEP_PROP rm3w w l
+* KEEP_PROP rm4w w l
+* KEEP_PROP rm5w w l
+* KEEP_PROP rm6w w l
+* KEEP_PROP rm7w w l
+* KEEP_PROP rm8w w l
+* KEEP_PROP rm9w w l
+* KEEP_PROP rmap w l
+* KEEP_PROP rnmg w l
+* KEEP_PROP rnmg_m wr lr
+* KEEP_PROP rnodl w l
+* KEEP_PROP rnodl_m wr lr
+* KEEP_PROP rnods w l
+* KEEP_PROP rnods_m wr lr
+* KEEP_PROP rnodwo w l
+* KEEP_PROP rnodwo_m wr lr
+* KEEP_PROP rnwod w l
+* KEEP_PROP rnwod_m wr lr
+* KEEP_PROP rnwsti w l
+* KEEP_PROP rnwsti_m wr lr
+* KEEP_PROP rpmg w l
+* KEEP_PROP rpmg_m wr lr
+* KEEP_PROP rpodl w l
+* KEEP_PROP rpodl_m wr lr
+* KEEP_PROP rpods w l
+* KEEP_PROP rpods_m wr lr
+* KEEP_PROP rpodwo w l
+* KEEP_PROP rpodwo_m wr lr
+* KEEP_PROP rupolym w l
+* KEEP_PROP rupolym_m wr lr
+* KEEP_PROP rupolym_rf w l
+* KEEP_PROP spiral_std_mu_a28_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_std_mu_z lay w spacing nr rad gdis
+* KEEP_PROP spiral_std_mu_z_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_ct_mu_a28_a28_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_ct_mu_z_a lay w spacing nr rad gdis ctapw
+* KEEP_PROP spiral_sym_ct_mu_z_a28_dm lay w spacing nr rad gdis ctapw
+* KEEP_PROP spiral_sym_mu_a28_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_mu_z lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_mu_z_dm lay w spacing nr rad gdis
+* KEEP_PROP_END
+*
+.SUBCKT CU1F
+* nothing transcripted
+.ENDS
+***************************************
+.SUBCKT ICV_2
+X0/X1/X0 $PIN_XY=2225,16350,3100,13100 $X=2100 $Y=2100 $D=656
+X1/X0/X0 $PIN_XY=4325,16350,5200,13100 $X=4200 $Y=2100 $D=656
+.ENDS
+***************************************
+.SUBCKT ARRAY_CMP_T1
+X2/X0/X0 $PIN_XY=0,16350,125,16350 $X=0 $Y=2100 $D=656
+X2/X1/X0 $PIN_XY=2100,16350,2225,16350 $X=2100 $Y=2100 $D=656
+X4/X0/X0/X0 $PIN_XY=5425,16350,6300,13100 $X=5300 $Y=2100 $D=656
+X4/X1/X1/X0 $PIN_XY=11725,16350,12600,13100 $X=11600 $Y=2100 $D=656
+X5/X0/X0/X0 $PIN_XY=13825,16350,14700,13100 $X=13700 $Y=2100 $D=656
+X5/X1/X1/X0 $PIN_XY=20125,16350,21000,13100 $X=20000 $Y=2100 $D=656
+X6/X0/X0/X0 $PIN_XY=22225,16350,23100,13100 $X=22100 $Y=2100 $D=656
+X6/X1/X1/X0 $PIN_XY=28525,16350,29400,13100 $X=28400 $Y=2100 $D=656
+X7/X0/X0/X0 $PIN_XY=30625,16350,31500,13100 $X=30500 $Y=2100 $D=656
+X7/X1/X1/X0 $PIN_XY=36925,16350,37800,13100 $X=36800 $Y=2100 $D=656
+X3/X0/X0 $PIN_XY=39025,16350,39900,13100 $X=38900 $Y=2100 $D=656
+X3/X1/X0 $PIN_XY=41125,16350,42000,13100 $X=41000 $Y=2100 $D=656
+X0/X0 $PIN_XY=43225,16350,44100,13100 $X=43100 $Y=2100 $D=656
+X1/X0 $PIN_XY=46300,16350,46425,16350 $X=46300 $Y=2100 $D=656
+.ENDS
+***************************************

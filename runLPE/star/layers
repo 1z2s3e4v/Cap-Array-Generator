@@ -1,0 +1,357 @@
+SD 26
+GRD SUBSTRATE G 0 0 0 n 0 -1 0 0 0 0 0 0 0 -1
+GRD FOX_C D 0 0 1 b 0 -1 0 0 0.157 3.9 0 0 0 0
+GRD POD C 1 1 2 b 1 0.0444444 0 0.157 0.249 0 0.036 0.027 0 -1
+GRD FOX_B D 0 0 3 b 0 -1 0 0.157 0.185 3.9 0 0 0 0
+GRD NOD C 2 1 4 b 1 0.0540541 0 0.185 0.249 0 0.036 0.027 0 -1
+GRD FOX_A D 0 0 5 b 0 -1 0 0.185 0.25 3.9 0 0 0 0
+GRD p_fpoly C 3 2 6 b 3 0.0202382 0 0.25 0.293 0 0.027 0.072 0 -1
+GRD n_fpoly C 4 2 7 b 3 0.0216472 0 0.25 0.293 0 0.027 0.072 0 -1
+GRD GOX D 0 0 8 b 0 -1 0 0.25 0.2514 4.06 0 0 0 0
+GRD p_gpoly C 5 2 9 b 2 0.0202382 0 0.2514 0.2944 0 0.027 0.072 0 -1
+GRD n_gpoly C 6 2 10 b 2 0.0216472 0 0.2514 0.2944 0 0.027 0.072 0 -1
+GRD SPACER D 0 0 11 b 0 -1 0 0.2514 0.2514 6.2 0 0 0 0
+GRD LINER D 0 0 12 b 0 -1 0 0.2514 0.2654 5.8 0 0 0 0
+GRD ILD_C D 0 0 13 b 0 -1 0 0.25 0.307 4.06 0 0 0 0
+GRD ILD_B D 0 0 14 b 0 -1 0 0.307 0.375 4.06 0 0 0 0
+GRD M1 C 7 4 15 b 0 2.21675 0 0.375 0.465 0 0.045 0.045 0 -1
+GRD ILD_A D 0 0 16 b 0 -1 0 0.375 0.4 4.06 0 0 0 0
+GRD IMD1a D 0 0 17 b 0 -1 0 0.4 0.418 4.3 0 0 0 0
+GRD IMD1b_SWD D 0 0 18 b 0 -1 0 0.418 0.418 3.1 0 0 0 0
+GRD IMD1b D 0 0 19 b 0 -1 0 0.418 0.465 2.63 0 0 0 0
+GRD IMD1c D 0 0 20 b 0 -1 0 0.465 0.49 5.5 0 0 0 0
+GRD IMD1d D 0 0 21 b 0 -1 0 0.49 0.513 4.3 0 0 0 0
+GRD IMD2a D 0 0 22 b 0 -1 0 0.513 0.55 2.63 0 0 0 0
+GRD M2 C 8 5 23 b 0 2.25564 0 0.55 0.64 0 0.045 0.045 0 -1
+GRD IMD2a_BWD D 0 0 24 b 0 -1 0 0.55 0.55 3.1 0 0 0 0
+GRD IMD2b_SWD D 0 0 25 b 0 -1 0 0.55 0.55 3.1 0 0 0 0
+GRD IMD2b D 0 0 26 b 0 -1 0 0.55 0.64 2.63 0 0 0 0
+GRD IMD2c D 0 0 27 b 0 -1 0 0.64 0.665 5.5 0 0 0 0
+GRD IMD2d D 0 0 28 b 0 -1 0 0.665 0.688 4.3 0 0 0 0
+GRD IMD3a D 0 0 29 b 0 -1 0 0.688 0.725 2.63 0 0 0 0
+GRD M3 C 9 6 30 b 0 2.25564 0 0.725 0.815 0 0.045 0.045 0 -1
+GRD IMD3a_BWD D 0 0 31 b 0 -1 0 0.725 0.725 3.1 0 0 0 0
+GRD IMD3b_SWD D 0 0 32 b 0 -1 0 0.725 0.725 3.1 0 0 0 0
+GRD IMD3b D 0 0 33 b 0 -1 0 0.725 0.815 2.63 0 0 0 0
+GRD IMD3c D 0 0 34 b 0 -1 0 0.815 0.84 5.5 0 0 0 0
+GRD IMD3d D 0 0 35 b 0 -1 0 0.84 0.863 4.3 0 0 0 0
+GRD IMD4a D 0 0 36 b 0 -1 0 0.863 0.9 2.63 0 0 0 0
+GRD M4 C 10 7 37 b 0 2.25564 0 0.9 0.99 0 0.045 0.045 0 -1
+GRD IMD4a_BWD D 0 0 38 b 0 -1 0 0.9 0.9 3.1 0 0 0 0
+GRD IMD4b_SWD D 0 0 39 b 0 -1 0 0.9 0.9 3.1 0 0 0 0
+GRD IMD4b D 0 0 40 b 0 -1 0 0.9 0.99 2.63 0 0 0 0
+GRD IMD4c D 0 0 41 b 0 -1 0 0.99 1.015 5.5 0 0 0 0
+GRD IMD4d D 0 0 42 b 0 -1 0 1.015 1.038 4.3 0 0 0 0
+GRD IMD5a D 0 0 43 b 0 -1 0 1.038 1.075 2.63 0 0 0 0
+GRD M5 C 11 8 44 b 0 2.25564 0 1.075 1.165 0 0.045 0.045 0 -1
+GRD IMD5a_BWD D 0 0 45 b 0 -1 0 1.075 1.075 3.1 0 0 0 0
+GRD IMD5b_SWD D 0 0 46 b 0 -1 0 1.075 1.075 3.1 0 0 0 0
+GRD IMD5b D 0 0 47 b 0 -1 0 1.075 1.165 2.63 0 0 0 0
+GRD IMD5c D 0 0 48 b 0 -1 0 1.165 1.19 5.5 0 0 0 0
+GRD IMD5d D 0 0 49 b 0 -1 0 1.19 1.213 4.3 0 0 0 0
+GRD IMD6a D 0 0 50 b 0 -1 0 1.213 1.25 2.63 0 0 0 0
+GRD M6 C 12 9 51 b 0 2.25564 0 1.25 1.34 0 0.045 0.045 0 -1
+GRD IMD6a_BWD D 0 0 52 b 0 -1 0 1.25 1.25 3.1 0 0 0 0
+GRD IMD6b_SWD D 0 0 53 b 0 -1 0 1.25 1.25 3.1 0 0 0 0
+GRD IMD6b D 0 0 54 b 0 -1 0 1.25 1.34 2.63 0 0 0 0
+GRD IMD6c D 0 0 55 b 0 -1 0 1.34 1.365 5.5 0 0 0 0
+GRD IMD6d D 0 0 56 b 0 -1 0 1.365 1.388 4.3 0 0 0 0
+GRD IMD7a D 0 0 57 b 0 -1 0 1.388 1.425 2.63 0 0 0 0
+GRD M7 C 13 10 58 b 0 2.25564 0 1.425 1.515 0 0.045 0.045 0 -1
+GRD IMD7a_BWD D 0 0 59 b 0 -1 0 1.425 1.425 3.1 0 0 0 0
+GRD IMD7b_SWD D 0 0 60 b 0 -1 0 1.425 1.425 3.1 0 0 0 0
+GRD IMD7b D 0 0 61 b 0 -1 0 1.425 1.515 2.63 0 0 0 0
+GRD IMD7c D 0 0 62 b 0 -1 0 1.515 1.57 5.3 0 0 0 0
+GRD IMD8a D 0 0 63 b 0 -1 0 1.57 2.11 4.2 0 0 0 0
+GRD M8 C 14 11 64 b 0 42.2886 0 2.11 2.96 0 0.36 0.36 0 -1
+GRD IMD8a_A D 0 0 65 b 0 -1 0 2.11 2.16 4.2 0 0 0 0
+GRD IMD8b D 0 0 66 b 0 -1 0 2.16 2.21 7.1 0 0 0 0
+GRD IMD8c D 0 0 67 b 0 -1 0 2.21 2.96 4.2 0 0 0 0
+GRD IMD8d D 0 0 68 b 0 -1 0 2.96 3.015 5.3 0 0 0 0
+GRD IMD9a D 0 0 69 b 0 -1 0 3.015 3.555 4.2 0 0 0 0
+GRD M9 C 15 12 70 b 0 42.2886 0 3.555 4.405 0 0.36 0.36 0 -1
+GRD IMD9a_A D 0 0 71 b 0 -1 0 3.555 3.605 4.2 0 0 0 0
+GRD IMD9b D 0 0 72 b 0 -1 0 3.605 3.655 7.1 0 0 0 0
+GRD IMD9c D 0 0 73 b 0 -1 0 3.655 4.405 4.2 0 0 0 0
+GRD PASS1 D 0 0 74 b 0 -1 0 4.405 4.48 7.1 0 0 0 0
+GRD PASS2 D 0 0 75 b 0 -1 0 4.48 5.18 4.2 0 0 0 0
+GRD AP C 16 13 76 b 0 96.5517 0 5.18 7.98 0 1.8 1.8 0 -1
+GRD PASS3a D 0 0 77 b 0 -1 0 5.18 7.98 4.2 0 0 0 0
+GRD PASS3b D 0 0 78 b 0 -1 0 7.98 9.18 4.2 0 0 0 0
+GRD PASS4 D 0 0 79 b 0 -1 0 9.18 9.88 7.1 0 0 0 0
+GRD n_polyCont V 4 2 0 b 0 7.71605 0 0.293 0.375 0 0 0 0 0
+GRD p_polyCont V 3 2 0 b 0 7.71605 0 0.293 0.375 0 0 0 0 0
+GRD n_odCont V 2 1 0 b 0 9.64506 0 0.249 0.375 0 0 0 0 0
+GRD p_odCont V 1 1 0 b 0 8.57339 0 0.249 0.375 0 0 0 0 0
+GRD n_weltap V 0 0 0 f 0 100000 0 0 0.185 0 0 0 0 0
+GRD p_weltap V 0 0 0 f 0 100000 0 0 0.157 0 0 0 0 0
+GRD RV V 15 12 0 b 0 -1 0 4.405 5.18 0 0 0 0 0
+GRD VIA8 V 14 11 0 b 0 35.2814 0 2.96 3.555 0 0 0 0 0
+GRD VIA7 V 13 10 0 b 0 35.2814 0 1.515 2.11 0 0 0 0 0
+GRD VIA6 V 12 9 0 b 0 -1 0 1.34 1.425 0 0 0 0 0
+GRD VIA5 V 11 8 0 b 0 -1 0 1.165 1.25 0 0 0 0 0
+GRD VIA4 V 10 7 0 b 0 -1 0 0.99 1.075 0 0 0 0 0
+GRD VIA3 V 9 6 0 b 0 -1 0 0.815 0.9 0 0 0 0 0
+GRD VIA2 V 8 5 0 b 0 -1 0 0.64 0.725 0 0 0 0 0
+GRD VIA1 V 7 4 0 b 0 -1 0 0.465 0.55 0 0 0 0 0
+
+DB n_poly CDc 1 1 1 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB p_poly CDc 2 2 2 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB n_poly3 CDc 3 3 3 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB p_poly3 CDc 4 4 4 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB n_poly_rf CDc 5 5 5 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB p_poly_rf CDc 6 6 6 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB metal_interface C 7 7 7 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB vargt CDcRI 8 8 8 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB vargt_25 CDcRI 9 9 9 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB vargt_p CDcRI 10 10 10 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB vargt_25_p CDcRI 11 11 11 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB vargt_edc CDcRI 12 12 12 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB vargt_15 CDcRI 13 13 13 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB vargt_33 CDcRI 14 14 14 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB vargt_18 CDcRI 15 15 15 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB vargt_18_p CDcRI 16 16 16 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB M1 CDc 17 17 17 0.451111 0 0 0 0 F 0 0 0 M1
+DB M2 CDc 18 18 18 0.443333 0 0 0 0 F 0 0 0 M2
+DB M3 CDc 19 19 19 0.443333 0 0 0 0 F 0 0 0 M3
+DB M4 CDc 20 20 20 0.443333 0 0 0 0 F 0 0 0 M4
+DB M5 CDc 21 21 21 0.443333 0 0 0 0 F 0 0 0 M5
+DB M6 CDc 22 22 22 0.443333 0 0 0 0 F 0 0 0 M6
+DB M7 CDc 23 23 23 0.443333 0 0 0 0 F 0 0 0 M7
+DB M8 CDc 24 24 24 0.0236471 0 0 0 0 F 0 0 0 M8
+DB M9 CDc 25 25 25 0.0236471 0 0 0 0 F 0 0 0 M9
+DB AP CDc 26 26 26 0.0103571 0 0 0 0 F 0 0 0 AP
+DB indm10c CDc 27 27 27 0.0103571 0 0 0 0 F 0 0 0 AP
+DB indm9p CDc 28 28 28 0.0236471 0 0 0 0 F 0 0 0 M9
+DB indm9m CDc 29 29 29 0.0236471 0 0 0 0 F 0 0 0 M9
+DB mom3p1 CDc 30 30 30 0.443333 0 0 0 0 F 0 0 0 M3
+DB mom3p2 CDc 31 31 31 0.443333 0 0 0 0 F 0 0 0 M3
+DB mom3m1 CDc 32 32 32 0.443333 0 0 0 0 F 0 0 0 M3
+DB mom3m2 CDc 33 33 33 0.443333 0 0 0 0 F 0 0 0 M3
+DB mom4p1 CDc 34 34 34 0.443333 0 0 0 0 F 0 0 0 M4
+DB mom4p2 CDc 35 35 35 0.443333 0 0 0 0 F 0 0 0 M4
+DB mom4m1 CDc 36 36 36 0.443333 0 0 0 0 F 0 0 0 M4
+DB mom4m2 CDc 37 37 37 0.443333 0 0 0 0 F 0 0 0 M4
+DB mom5p1 CDc 38 38 38 0.443333 0 0 0 0 F 0 0 0 M5
+DB mom5p2 CDc 39 39 39 0.443333 0 0 0 0 F 0 0 0 M5
+DB mom5m1 CDc 40 40 40 0.443333 0 0 0 0 F 0 0 0 M5
+DB mom5m2 CDc 41 41 41 0.443333 0 0 0 0 F 0 0 0 M5
+DB mom6p1 CDc 42 42 42 0.443333 0 0 0 0 F 0 0 0 M6
+DB mom6p2 CDc 43 43 43 0.443333 0 0 0 0 F 0 0 0 M6
+DB mom6m1 CDc 44 44 44 0.443333 0 0 0 0 F 0 0 0 M6
+DB mom6m2 CDc 45 45 45 0.443333 0 0 0 0 F 0 0 0 M6
+DB mom7p1 CDc 46 46 46 0.443333 0 0 0 0 F 0 0 0 M7
+DB mom7p2 CDc 47 47 47 0.443333 0 0 0 0 F 0 0 0 M7
+DB mom7m1 CDc 48 48 48 0.443333 0 0 0 0 F 0 0 0 M7
+DB mom7m2 CDc 49 49 49 0.443333 0 0 0 0 F 0 0 0 M7
+DB mom8p1 CDc 50 50 50 0.0236471 0 0 0 0 F 0 0 0 M8
+DB mom8p2 CDc 51 51 51 0.0236471 0 0 0 0 F 0 0 0 M8
+DB mom8m1 CDc 52 52 52 0.0236471 0 0 0 0 F 0 0 0 M8
+DB mom8m2 CDc 53 53 53 0.0236471 0 0 0 0 F 0 0 0 M8
+DB PROBEM1_T CDc 54 54 54 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM1_B C 55 55 55 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM2_T CDc 56 56 56 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM2_B C 57 57 57 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM3_T CDc 58 58 58 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM3_B C 59 59 59 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM4_T CDc 60 60 60 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM4_B C 61 61 61 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM5_T CDc 62 62 62 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM5_B C 63 63 63 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM6_T CDc 64 64 64 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM6_B C 65 65 65 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM7_T CDc 66 66 66 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB PROBEM7_B C 67 67 67 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB tndiff CDcsdmI 68 68 68 18.5 0 0 0 0 F 0 0 0 NOD
+DB tndiff_woR CDcI 69 69 69 1e-07 0 0 0 0 F 0 0 0 NOD
+DB s_tndiff_udm CDcdm 70 70 70 18.5 0 0 0 0 F 0 0 0 NOD
+DB d_tndiff_udm CDcdm 71 71 71 18.5 0 0 0 0 F 0 0 0 NOD
+DB s_tndiff_hv CDcdm 72 72 72 18.5 0 0 0 0 F 0 0 0 NOD
+DB d_tndiff_hv CDcdm 73 73 73 1e-07 0 0 0 0 F 0 0 0 NOD
+DB ngate_mac CDcgm 74 74 74 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nlgate_mac CDcgmR 75 75 75 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_25_mac CDcgmR 76 76 76 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_25na_mac CDcgmR 77 77 77 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nhvgate_mac CDcgm 78 78 78 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hvspd CDcgmR 79 79 79 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_svt_sp_mac CDcgm 80 80 80 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nilvtgate_mac CDcgm 81 81 81 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_15_mac CDcgmR 82 82 82 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_15od18_mac CDcgmR 83 83 83 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_15na_mac CDcgmR 84 84 84 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_18_mac CDcgmR 85 85 85 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nuvgate_mac CDcgm 86 86 86 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nchvgate_mac CDcgm 87 87 87 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_lvt18ud12_mac CDcgmR 88 88 88 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hv18_mac CDcgmR 89 89 89 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nelvgate_mac CDcgm 90 90 90 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nlvgate_mac CDcgm 91 91 91 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hia_mac CDcgm 92 92 92 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hia25_mac CDcgmR 93 93 93 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hia15_mac CDcgmR 94 94 94 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_udm_mac CDcgmR 95 95 95 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_udm18_mac CDcgmR 96 96 96 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_udm18ud15_mac CDcgmR 97 97 97 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hvspg CDcgmR 98 98 98 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nzvgate_mac CDcgmR 99 99 99 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hia18_mac CDcgmR 100 100 100 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_18ud12_mac CDcgmR 101 101 101 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_18ud15_mac CDcgmR 102 102 102 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_18na_mac CDcgmR 103 103 103 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_18naud15_mac CDcgmR 104 104 104 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_33na_mac CDcgmR 105 105 105 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_33_mac CDcgmR 106 106 106 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_25naud_mac CDcgmR 107 107 107 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_25naod_mac CDcgmR 108 108 108 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_io_lvt_mac CDcgmR 109 109 109 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_25od_mac CDcgmR 110 110 110 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_25ud_mac CDcgmR 111 111 111 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hg_mac CDcgm 112 112 112 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_edc_mac CDcgmR 113 113 113 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nuhvgate_hg_mac CDcgm 114 114 114 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB navtgate_mac CDcgm 115 115 115 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nuhvgate_mac CDcgm 116 116 116 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB nehvgate_mac CDcgm 117 117 117 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB tpdiff CDcsdmI 118 118 118 22.5 0 0 0 0 F 0 0 0 POD
+DB tpdiff_woR CDcI 119 119 119 1e-07 0 0 0 0 F 0 0 0 POD
+DB s_tpdiff_udm CDcdm 120 120 120 22.5 0 0 0 0 F 0 0 0 POD
+DB d_tpdiff_udm CDcdm 121 121 121 22.5 0 0 0 0 F 0 0 0 POD
+DB s_tpdiff_hv CDcdm 122 122 122 22.5 0 0 0 0 F 0 0 0 POD
+DB d_tpdiff_hv CDcdm 123 123 123 1e-07 0 0 0 0 F 0 0 0 POD
+DB phvgate_mac CDcgm 124 124 124 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_hvs CDcgmR 125 125 125 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pilvtgate_mac CDcgm 126 126 126 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_svt_sp_mac CDcgm 127 127 127 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_33_mac CDcgmR 128 128 128 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_18_mac CDcgmR 129 129 129 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_18ud12_mac CDcgmR 130 130 130 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_18ud15_mac CDcgmR 131 131 131 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB puvgate_mac CDcgm 132 132 132 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_mac CDcgm 133 133 133 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB plvgate_mac CDcgm 134 134 134 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_25_mac CDcgmR 135 135 135 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_25od_mac CDcgmR 136 136 136 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_25ud_mac CDcgmR 137 137 137 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_hg_mac CDcgm 138 138 138 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB alvtpgate_mac CDcgm 139 139 139 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pelvgate_mac CDcgm 140 140 140 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB puhvgate_hg_mac CDcgm 141 141 141 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB puhvgate_mac CDcgm 142 142 142 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pehvgate_mac CDcgm 143 143 143 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB ngate_spd CDcgmR 144 144 144 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_spg CDcgmR 145 145 145 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_siopg CDcgmR 146 146 146 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_siopd CDcgmR 147 147 147 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB pgate_sio CDcgmR 148 148 148 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB ngate_stgopg CDcgmR 149 149 149 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_stgopd CDcgmR 150 150 150 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB pgate_stgo CDcgmR 151 151 151 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB ngate_rpsr CDcgmR 152 152 152 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_sdppd CDcgmR 153 153 153 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_sdppg CDcgmR 154 154 154 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB pgate_udm_mac CDcgmR 155 155 155 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_udm18_mac CDcgmR 156 156 156 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_udm18ud15_mac CDcgmR 157 157 157 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_hv18_mac CDcgmR 158 158 158 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB ngate_qrpsr CDcgmR 159 159 159 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_rom CDcgmR 160 160 160 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pg_lpsr CDcgmR 161 161 161 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pd_lpsr CDcgmR 162 162 162 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_lprpsr CDcgmR 163 163 163 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_lpqrpsr CDcgmR 164 164 164 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pg_llsr CDcgmR 165 165 165 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pd_llsr CDcgmR 166 166 166 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_llrpsr CDcgmR 167 167 167 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pg_lldpsr CDcgmR 168 168 168 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pd_lldpsr CDcgmR 169 169 169 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pg_lpdpsr CDcgmR 170 170 170 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pd_lpdpsr CDcgmR 171 171 171 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hvtrpsr CDcgmR 172 172 172 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_svtrpsr CDcgmR 173 173 173 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hvtllrpsr CDcgmR 174 174 174 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_svtllrpsr CDcgmR 175 175 175 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hlsvtqrpsr CDcgmR 176 176 176 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_hltrpsr CDcgmR 177 177 177 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pd_hltsr CDcgmR 178 178 178 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pg_hltsr CDcgmR 179 179 179 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB pgate_pu_hltsr CDcgmR 180 180 180 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_pu_lpsr CDcgmR 181 181 181 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_pu_llsr CDcgmR 182 182 182 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_pu_lldpsr CDcgmR 183 183 183 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_pu_lpdpsr CDcgmR 184 184 184 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_s_2psr CDcgmR 185 185 185 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB ngate_pg_ullsr CDcgmR 186 186 186 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pd_ullsr CDcgmR 187 187 187 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_ullrpsr CDcgmR 188 188 188 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pg_ulldpsr CDcgmR 189 189 189 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_pd_ulldpsr CDcgmR 190 190 190 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB pgate_pu_ullsr CDcgmR 191 191 191 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_pu_ulldpsr CDcgmR 192 192 192 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_s CDcgmR 193 193 193 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB ngate_lvtrpsr CDcgmR 194 194 194 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB ngate_rpdsr CDcgmR 195 195 195 46.1953 0 0 0 0 F 0 0 0 n_gpoly
+DB pgate_sdp CDcgmR 196 196 196 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_15_mac CDcgmR 197 197 197 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB pgate_15od18_mac CDcgmR 198 198 198 49.4116 0 0 0 0 F 0 0 0 p_gpoly
+DB psub CDcsbmI 199 199 199 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB nxwell CDcsbmI 200 200 200 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB nw_pgdio CDc 201 201 201 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB coll1 CDcs 202 202 202 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB cnbase1 CDcs 203 203 203 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB ncoll1 CDcs 204 204 204 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB cpbase1 CDcs 205 205 205 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB cemit1 CDcs 206 206 206 22.5 0 0 0 0 F 0 0 0 POD
+DB cnemit1 CDcs 207 207 207 18.5 0 0 0 0 F 0 0 0 NOD
+DB tiod C 208 208 208 18.5 0 0 0 0 F 0 0 0 NOD
+DB tndiff_RC C 209 209 209 18.5 0 0 0 0 F 0 0 0 NOD
+DB tpdiff_RC C 210 210 210 22.5 0 0 0 0 F 0 0 0 POD
+DB tndiff_dmy C 211 211 211 18.5 0 0 0 0 F 0 0 0 NOD
+DB tpdiff_dmy C 212 212 212 22.5 0 0 0 0 F 0 0 0 POD
+DB nxwell_npn C 213 213 213 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB inbase1 C 214 214 214 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB iemit1 C 215 215 215 22.5 0 0 0 0 F 0 0 0 POD
+DB ipbase1 C 216 216 216 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB inemit1 C 217 217 217 18.5 0 0 0 0 F 0 0 0 NOD
+DB DNW CDc 218 218 218 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB psub_term C 219 219 219 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB s_tpdiff CDc 220 220 220 22.5 0 0 0 0 F 0 0 0 POD
+DB d_tndiff CDc 221 221 221 18.5 0 0 0 0 F 0 0 0 NOD
+DB s_tndiff CDc 222 222 222 18.5 0 0 0 0 F 0 0 0 NOD
+DB d_tpdiff CDc 223 223 223 22.5 0 0 0 0 F 0 0 0 POD
+DB dnwc C 224 224 224 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB rfdmy56 CDc 225 225 225 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB rfdmy56_via C 226 226 226 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB RFDMY_HIA_bulk CDc 227 227 227 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB RFDMY_HIA_psub C 228 228 228 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB hia_rf_via C 229 229 229 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB ydio_t CDcsd 230 230 230 18.5 0 0 0 0 F 0 0 0 NOD
+DB n_polyCont V 231 17 249 0.1296 0 0 0 0 F 0 0 0 n_polyCont
+DB p_polyCont V 232 17 250 0.1296 0 0 0 0 F 0 0 0 p_polyCont
+DB n_odCont V 233 17 251 0.10368 0 0 0 0 F 0 0 0 n_odCont
+DB p_odCont V 234 17 253 0.11664 0 0 0 0 F 0 0 0 p_odCont
+DB VIA1 V 235 18 17 -1 0 0 0 0 F 0 0 0 VIA1
+DB VIA2 V 236 19 18 -1 0 0 0 0 F 0 0 0 VIA2
+DB VIA3 V 237 20 19 -1 0 0 0 0 F 0 0 0 VIA3
+DB VIA4 V 238 21 20 -1 0 0 0 0 F 0 0 0 VIA4
+DB VIA5 V 239 22 21 -1 0 0 0 0 F 0 0 0 VIA5
+DB VIA6 V 240 23 22 -1 0 0 0 0 F 0 0 0 VIA6
+DB VIA7 V 241 24 23 0.0283435 0 0 0 0 F 0 0 0 VIA7
+DB VIA8 V 242 25 24 0.0283435 0 0 0 0 F 0 0 0 VIA8
+DB RV V 243 26 25 -1 0 0 0 0 F 0 0 0 RV
+DB nplug V 244 255 256 1e-05 0 0 0 0 F 0 0 0 n_weltap
+DB pplug V 245 257 258 1e-05 0 0 0 0 F 0 0 0 p_weltap
+DB nplug_dmy V 246 211 200 1e-05 0 0 0 0 F 0 0 0 n_weltap
+DB pplug_dmy V 247 212 199 1e-05 0 0 0 0 F 0 0 0 p_weltap
+DB hia_rf_pplug V 248 257 227 1e-05 0 0 0 0 F 0 0 0 p_weltap
+DB n_poly:n_poly_rf r 249 249 249 46.1953 0 0 0 0 F 0 0 0 n_fpoly
+DB p_poly:p_poly_rf r 250 250 250 49.4116 0 0 0 0 F 0 0 0 p_fpoly
+DB d_tndiff:d_tndiff_hv:d_tndiff_udm:s_tndiff:s_tndiff_hv:s_tndiff_udm:tndiff:ydio_t:tndiff_RC:tndiff_woR r 251 251 251 18.5 0 0 0 0 F 0 0 0 NOD
+DB plvl_2:n_gpoly:n_odCont r 252 252 252 -1 0 0 0 0 F 0 0 0 n_gpoly
+DB d_tpdiff:d_tpdiff_hv:d_tpdiff_udm:s_tpdiff:s_tpdiff_hv:s_tpdiff_udm:tpdiff:tpdiff_RC:tpdiff_woR r 253 253 253 22.5 0 0 0 0 F 0 0 0 POD
+DB plvl_2:n_gpoly:p_odCont r 254 254 254 -1 0 0 0 0 F 0 0 0 n_gpoly
+DB tndiff:s_tndiff_udm:d_tndiff_udm:s_tndiff_hv:d_tndiff_hv:tndiff_RC:tndiff_woR r 255 255 255 18.5 0 0 0 0 F 0 0 0 NOD
+DB cnbase1:inbase1:nxwell_npn:nxwell r 256 256 256 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+DB tpdiff:s_tpdiff_udm:d_tpdiff_udm:s_tpdiff_hv:d_tpdiff_hv:tpdiff_RC:tpdiff_woR r 257 257 257 22.5 0 0 0 0 F 0 0 0 POD
+DB cpbase1:ipbase1:psub_term:psub:coll1 r 258 258 258 -1 0 0 0 0 F 0 0 0 SUBSTRATE
+
+

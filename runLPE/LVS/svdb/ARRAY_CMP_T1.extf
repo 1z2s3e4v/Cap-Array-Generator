@@ -1,0 +1,12 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1618055494 1618055501
+lvs_ExtOutFile RUNDIR /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE
+lvs_ExtOutFile RULES_FILE DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoErcSummary {35 2 23 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST ./LVS/svdb/ARRAY_CMP_T1.sp
+lvs_ExtOutFile EXTRACTION_REPORT ./LVS/lvs.rep.ext
+lvs_ExtOutFile ERC_DATABASE ./LVS/calibre_erc.db
+lvs_ExtOutFile ERC_SUMMARY ./LVS/calibre_erc.sum

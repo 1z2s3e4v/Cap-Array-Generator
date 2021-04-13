@@ -1,0 +1,65 @@
+Total_Cpara=1.73e-14, Total_Error_Cpara=4.72e-15(27.2%),
+Mismatch=22% (SL3A,SL2B), avg_mismatch=6.38%
+Target Cap. Ratio: 4 : 4 : 2 : 2 : 1 : 1
+Real Cap. Ratio: 3.44 : 3.77 : 2.04 : 2.21 : 1.03 : 1.04
+---------------------------------------------------------------------------
+SL3A(4): total=4.4e-15
+  SL2A: total=6.01e-17, Mismatch=4.63%, error_proportion=1.36%
+    C8_54: 5.75e-17
+    C8_55: 2.54e-18
+  SL3B: total=9.43e-17, Mismatch=2.17%, error_proportion=1.96%
+    C7_11: 7.78e-19
+    C7_12: 5.15e-19
+    C7_14: 4.39e-17
+    C7_18: 4.13e-17
+    C7_19: 3.39e-18
+    C7_24: 4.01e-18
+    C7_9: 3.3e-19
+SL3B(4): total=4.82e-15
+  SL2A: total=9.73e-17, Mismatch=2.06%, error_proportion=2.02%
+    C8_60: 7.89e-17
+    C8_64: 1.84e-17
+  SL2B: total=1.18e-16, Mismatch=4.26%, error_proportion=2.45%
+    C5_37: 7.69e-17
+    C5_39: 2.07e-17
+    C5_41: 2.07e-17
+  SL3A: total=9.43e-17, Mismatch=2.17%, error_proportion=1.96%
+    C7_11: 7.78e-19
+    C7_12: 5.15e-19
+    C7_14: 4.39e-17
+    C7_18: 4.13e-17
+    C7_19: 3.39e-18
+    C7_24: 4.01e-18
+    C7_9: 3.3e-19
+SL2A(2): total=2.61e-15
+  SL1A: total=6.37e-17, Mismatch=0.576%, error_proportion=2.44%
+    C9_100: 6.37e-17
+  SL2B: total=2.87e-17, Mismatch=3.76%, error_proportion=1.02%
+    C8_61: 2.87e-17
+  SL3A: total=6.01e-17, Mismatch=4.63%, error_proportion=1.36%
+    C8_54: 5.75e-17
+    C8_55: 2.54e-18
+  SL3B: total=9.73e-17, Mismatch=2.06%, error_proportion=2.02%
+    C8_60: 7.89e-17
+    C8_64: 1.84e-17
+SL2B(2): total=2.82e-15
+  SL1A: total=5.18e-18, Mismatch=3.23%, error_proportion=0.184%
+    C9_104: 5.18e-18
+  SL1B: total=5.95e-17, Mismatch=2.63%, error_proportion=2.11%
+    C6_89: 2.03e-17
+    C6_92: 3.91e-17
+  SL2A: total=2.87e-17, Mismatch=3.76%, error_proportion=1.02%
+    C8_61: 2.87e-17
+  SL3B: total=1.18e-16, Mismatch=4.26%, error_proportion=2.45%
+    C5_37: 7.69e-17
+    C5_39: 2.07e-17
+    C5_41: 2.07e-17
+SL1A(1): total=1.32e-15
+  SL2A: total=6.37e-17, Mismatch=0.576%, error_proportion=2.44%
+    C9_100: 6.37e-17
+  SL2B: total=5.18e-18, Mismatch=3.23%, error_proportion=0.184%
+    C9_104: 5.18e-18
+SL1B(1): total=1.34e-15
+  SL2B: total=5.95e-17, Mismatch=2.63%, error_proportion=2.11%
+    C6_89: 2.03e-17
+    C6_92: 3.91e-17

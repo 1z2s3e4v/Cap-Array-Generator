@@ -1,0 +1,15 @@
+Total_Cpara=1.44e-14, Total_Error_Cpara=2.55e-15(17.7%),
+Mismatch=26.5% (SL3A,SL1B), avg_mismatch=9.53%
+Target Cap. Ratio: 4 : 4 : 2 : 2 : 1 : 1
+Real Cap. Ratio: 3.45 : 3.55 : 1.91 : 1.98 : 1.13 : 1.17
+---------------------------------------------------------------------------
+SL3A(4): total=3.77e-15
+SL3B(4): total=3.89e-15
+SL2A(2): total=2.1e-15
+  SL2B: total=7.64e-17, Mismatch=1.57%, error_proportion=3.53%
+    C8_21: 7.64e-17
+SL2B(2): total=2.16e-15
+  SL2A: total=7.64e-17, Mismatch=1.57%, error_proportion=3.53%
+    C8_21: 7.64e-17
+SL1A(1): total=1.24e-15
+SL1B(1): total=1.28e-15

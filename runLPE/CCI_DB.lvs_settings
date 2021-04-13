@@ -1,0 +1,2169 @@
+# SVDB: Calibre Version v2018.2_24.18    Fri Jun 1 14:24:04 PDT 2018
+# SVDB: LVS Settings Report (lsrf) (File format 1)
+# SVDB: Layout Primary ARRAY_CMP_T1
+# SVDB: Rules -0 DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o 
+# SVDB: GDSII -0 /user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/gds/ARRAY_CMP_T1_PI_test_matching.gds Sat Apr 10 19:41:50 2021
+# SVDB: SNL -0 /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp 
+# SVDB: 
+# SVDB: 
+# SVDB: 
+# SVDB: 
+# SVDB: End of header.
+HIERARCHY_SEPARATOR "/"
+LVS_POWER_NAME VDD09A AHVDD AHVDDB AHVDDG AHVDDR AHVDDWELL AVDD AVDDB AVDDBG AVDDG AVDDR AVDWELL DHVDD DVDD HVDDWELL TACVDD TAVD33 TAVD33PST TAVDD TAVDDPST TVDD VD33 VDD VDD5V VDDESD VDDG VDDM VDDPST VDDSA VDWELL
+LVS_GROUND_NAME VSS09A AGND AHVSS AHVSSB AHVSSG AHVSSR AHVSSUB AVSS AVSSB AVSSBG AVSSG AVSSR AVSSUB DHVSS DVSS GND HVSSUB TACVSS TAVSS TAVSSPST TVSS VS33 VSS VSSESD VSSG VSSM VSSPST VSSUB
+SOURCE_PATH /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp
+SOURCE_SYSTEM SPICE
+UNIT_LENGTH 1e-06
+PRECISION 10000
+LVS_COMPARE_CASE NAMES TYPES 
+LAYOUT_CASE YES
+SOURCE_CASE YES
+LVS_SPICE_REPLICATE_DEVICES YES
+LVS_DB_LAYER 
+LVS_DB_CONNECTIVITY_LAYER 
+LVS_DOWNCASE_DEVICE NO
+# LAYER TYPES: 
+OD DEV_AUX
+metal_interface CONNECT
+nxwell DEV_PIN
+nxwell SCONNECT
+ngate_mac DEV_PIN
+ngate_mac CONNECT
+psub DEV_PIN
+psub SCONNECT
+pgate_mac DEV_PIN
+pgate_mac CONNECT
+ngate_hg_mac DEV_PIN
+ngate_hg_mac CONNECT
+pgate_hg_mac DEV_PIN
+pgate_hg_mac CONNECT
+nlvgate_mac DEV_PIN
+nlvgate_mac CONNECT
+DNW DEV_PIN
+DNW SCONNECT
+nlgate_mac DEV_SEED
+nlgate_mac DEV_PIN
+nlgate_mac CONNECT
+ngate_hia_mac DEV_PIN
+ngate_hia_mac CONNECT
+ngate_hia25_mac DEV_SEED
+ngate_hia25_mac DEV_PIN
+ngate_hia25_mac CONNECT
+ngate_25ud_mac DEV_SEED
+ngate_25ud_mac DEV_PIN
+ngate_25ud_mac CONNECT
+ngate_25od_mac DEV_SEED
+ngate_25od_mac DEV_PIN
+ngate_25od_mac CONNECT
+ngate_25_mac DEV_SEED
+ngate_25_mac DEV_PIN
+ngate_25_mac CONNECT
+ngate_25na_mac DEV_SEED
+ngate_25na_mac DEV_PIN
+ngate_25na_mac CONNECT
+nhvgate_mac DEV_PIN
+nhvgate_mac CONNECT
+nuvgate_mac DEV_PIN
+nuvgate_mac CONNECT
+pgate_svt_sp_mac DEV_PIN
+pgate_svt_sp_mac CONNECT
+ngate_svt_sp_mac DEV_PIN
+ngate_svt_sp_mac CONNECT
+nilvtgate_mac DEV_PIN
+nilvtgate_mac CONNECT
+ngate_hia18_mac DEV_SEED
+ngate_hia18_mac DEV_PIN
+ngate_hia18_mac CONNECT
+ngate_15_mac DEV_SEED
+ngate_15_mac DEV_PIN
+ngate_15_mac CONNECT
+ngate_15od18_mac DEV_SEED
+ngate_15od18_mac DEV_PIN
+ngate_15od18_mac CONNECT
+ngate_15na_mac DEV_SEED
+ngate_15na_mac DEV_PIN
+ngate_15na_mac CONNECT
+ngate_33_mac DEV_SEED
+ngate_33_mac DEV_PIN
+ngate_33_mac CONNECT
+ngate_25naud_mac DEV_SEED
+ngate_25naud_mac DEV_PIN
+ngate_25naud_mac CONNECT
+ngate_25naod_mac DEV_SEED
+ngate_25naod_mac DEV_PIN
+ngate_25naod_mac CONNECT
+ngate_18naud15_mac DEV_SEED
+ngate_18naud15_mac DEV_PIN
+ngate_18naud15_mac CONNECT
+ngate_33na_mac DEV_SEED
+ngate_33na_mac DEV_PIN
+ngate_33na_mac CONNECT
+ngate_io_lvt_mac DEV_SEED
+ngate_io_lvt_mac DEV_PIN
+ngate_io_lvt_mac CONNECT
+nelvgate_mac DEV_PIN
+nelvgate_mac CONNECT
+nzvgate_mac DEV_SEED
+nzvgate_mac DEV_PIN
+nzvgate_mac CONNECT
+ngate_18_mac DEV_SEED
+ngate_18_mac DEV_PIN
+ngate_18_mac CONNECT
+ngate_18ud12_mac DEV_SEED
+ngate_18ud12_mac DEV_PIN
+ngate_18ud12_mac CONNECT
+ngate_18ud15_mac DEV_SEED
+ngate_18ud15_mac DEV_PIN
+ngate_18ud15_mac CONNECT
+ngate_18na_mac DEV_SEED
+ngate_18na_mac DEV_PIN
+ngate_18na_mac CONNECT
+nuhvgate_hg_mac DEV_PIN
+nuhvgate_hg_mac CONNECT
+puhvgate_hg_mac DEV_PIN
+puhvgate_hg_mac CONNECT
+ngate_qrpsr DEV_SEED
+ngate_qrpsr DEV_PIN
+ngate_qrpsr CONNECT
+ngate_spg DEV_SEED
+ngate_spg DEV_PIN
+ngate_spg CONNECT
+ngate_spd DEV_SEED
+ngate_spd DEV_PIN
+ngate_spd CONNECT
+ngate_sdppg DEV_SEED
+ngate_sdppg DEV_PIN
+ngate_sdppg CONNECT
+ngate_sdppd DEV_SEED
+ngate_sdppd DEV_PIN
+ngate_sdppd CONNECT
+ngate_rpsr DEV_SEED
+ngate_rpsr DEV_PIN
+ngate_rpsr CONNECT
+ngate_lvtrpsr DEV_SEED
+ngate_lvtrpsr DEV_PIN
+ngate_lvtrpsr CONNECT
+ngate_hvspg DEV_SEED
+ngate_hvspg DEV_PIN
+ngate_hvspg CONNECT
+ngate_hvspd DEV_SEED
+ngate_hvspd DEV_PIN
+ngate_hvspd CONNECT
+ngate_rpdsr DEV_SEED
+ngate_rpdsr DEV_PIN
+ngate_rpdsr CONNECT
+ngate_siopg DEV_SEED
+ngate_siopg DEV_PIN
+ngate_siopg CONNECT
+ngate_siopd DEV_SEED
+ngate_siopd DEV_PIN
+ngate_siopd CONNECT
+pgate_sio DEV_SEED
+pgate_sio DEV_PIN
+pgate_sio CONNECT
+ngate_stgopg DEV_SEED
+ngate_stgopg DEV_PIN
+ngate_stgopg CONNECT
+ngate_stgopd DEV_SEED
+ngate_stgopd DEV_PIN
+ngate_stgopd CONNECT
+pgate_stgo DEV_SEED
+pgate_stgo DEV_PIN
+pgate_stgo CONNECT
+ngate_rom DEV_SEED
+ngate_rom DEV_PIN
+ngate_rom CONNECT
+ngate_pg_lpsr DEV_SEED
+ngate_pg_lpsr DEV_PIN
+ngate_pg_lpsr CONNECT
+ngate_pd_lpsr DEV_SEED
+ngate_pd_lpsr DEV_PIN
+ngate_pd_lpsr CONNECT
+ngate_lprpsr DEV_SEED
+ngate_lprpsr DEV_PIN
+ngate_lprpsr CONNECT
+ngate_lpqrpsr DEV_SEED
+ngate_lpqrpsr DEV_PIN
+ngate_lpqrpsr CONNECT
+ngate_hlsvtqrpsr DEV_SEED
+ngate_hlsvtqrpsr DEV_PIN
+ngate_hlsvtqrpsr CONNECT
+ngate_pg_llsr DEV_SEED
+ngate_pg_llsr DEV_PIN
+ngate_pg_llsr CONNECT
+ngate_pd_llsr DEV_SEED
+ngate_pd_llsr DEV_PIN
+ngate_pd_llsr CONNECT
+ngate_pg_ullsr DEV_SEED
+ngate_pg_ullsr DEV_PIN
+ngate_pg_ullsr CONNECT
+ngate_pd_ullsr DEV_SEED
+ngate_pd_ullsr DEV_PIN
+ngate_pd_ullsr CONNECT
+ngate_pg_hltsr DEV_SEED
+ngate_pg_hltsr DEV_PIN
+ngate_pg_hltsr CONNECT
+ngate_pd_hltsr DEV_SEED
+ngate_pd_hltsr DEV_PIN
+ngate_pd_hltsr CONNECT
+ngate_llrpsr DEV_SEED
+ngate_llrpsr DEV_PIN
+ngate_llrpsr CONNECT
+ngate_ullrpsr DEV_SEED
+ngate_ullrpsr DEV_PIN
+ngate_ullrpsr CONNECT
+ngate_hltrpsr DEV_SEED
+ngate_hltrpsr DEV_PIN
+ngate_hltrpsr CONNECT
+ngate_pg_lldpsr DEV_SEED
+ngate_pg_lldpsr DEV_PIN
+ngate_pg_lldpsr CONNECT
+ngate_pd_lldpsr DEV_SEED
+ngate_pd_lldpsr DEV_PIN
+ngate_pd_lldpsr CONNECT
+ngate_pg_ulldpsr DEV_SEED
+ngate_pg_ulldpsr DEV_PIN
+ngate_pg_ulldpsr CONNECT
+ngate_pd_ulldpsr DEV_SEED
+ngate_pd_ulldpsr DEV_PIN
+ngate_pd_ulldpsr CONNECT
+ngate_pg_lpdpsr DEV_SEED
+ngate_pg_lpdpsr DEV_PIN
+ngate_pg_lpdpsr CONNECT
+ngate_pd_lpdpsr DEV_SEED
+ngate_pd_lpdpsr DEV_PIN
+ngate_pd_lpdpsr CONNECT
+ngate_svtrpsr DEV_SEED
+ngate_svtrpsr DEV_PIN
+ngate_svtrpsr CONNECT
+ngate_hvtrpsr DEV_SEED
+ngate_hvtrpsr DEV_PIN
+ngate_hvtrpsr CONNECT
+ngate_svtllrpsr DEV_SEED
+ngate_svtllrpsr DEV_PIN
+ngate_svtllrpsr CONNECT
+ngate_hvtllrpsr DEV_SEED
+ngate_hvtllrpsr DEV_PIN
+ngate_hvtllrpsr CONNECT
+pgate_pu_lpsr DEV_SEED
+pgate_pu_lpsr DEV_PIN
+pgate_pu_lpsr CONNECT
+pgate_pu_llsr DEV_SEED
+pgate_pu_llsr DEV_PIN
+pgate_pu_llsr CONNECT
+pgate_pu_ullsr DEV_SEED
+pgate_pu_ullsr DEV_PIN
+pgate_pu_ullsr CONNECT
+pgate_pu_hltsr DEV_SEED
+pgate_pu_hltsr DEV_PIN
+pgate_pu_hltsr CONNECT
+pgate_pu_lldpsr DEV_SEED
+pgate_pu_lldpsr DEV_PIN
+pgate_pu_lldpsr CONNECT
+pgate_pu_ulldpsr DEV_SEED
+pgate_pu_ulldpsr DEV_PIN
+pgate_pu_ulldpsr CONNECT
+pgate_pu_lpdpsr DEV_SEED
+pgate_pu_lpdpsr DEV_PIN
+pgate_pu_lpdpsr CONNECT
+pgate_s_2psr DEV_SEED
+pgate_s_2psr DEV_PIN
+pgate_s_2psr CONNECT
+ngate_hia15_mac DEV_SEED
+ngate_hia15_mac DEV_PIN
+ngate_hia15_mac CONNECT
+pgate_s DEV_SEED
+pgate_s DEV_PIN
+pgate_s CONNECT
+pgate_sdp DEV_SEED
+pgate_sdp DEV_PIN
+pgate_sdp CONNECT
+pgate_hvs DEV_SEED
+pgate_hvs DEV_PIN
+pgate_hvs CONNECT
+plvgate_mac DEV_PIN
+plvgate_mac CONNECT
+pgate_25ud_mac DEV_SEED
+pgate_25ud_mac DEV_PIN
+pgate_25ud_mac CONNECT
+pgate_25od_mac DEV_SEED
+pgate_25od_mac DEV_PIN
+pgate_25od_mac CONNECT
+pgate_25_mac DEV_SEED
+pgate_25_mac DEV_PIN
+pgate_25_mac CONNECT
+puvgate_mac DEV_PIN
+puvgate_mac CONNECT
+pelvgate_mac DEV_PIN
+pelvgate_mac CONNECT
+pilvtgate_mac DEV_PIN
+pilvtgate_mac CONNECT
+phvgate_mac DEV_PIN
+phvgate_mac CONNECT
+pgate_15_mac DEV_SEED
+pgate_15_mac DEV_PIN
+pgate_15_mac CONNECT
+pgate_15od18_mac DEV_SEED
+pgate_15od18_mac DEV_PIN
+pgate_15od18_mac CONNECT
+pgate_33_mac DEV_SEED
+pgate_33_mac DEV_PIN
+pgate_33_mac CONNECT
+pgate_18_mac DEV_SEED
+pgate_18_mac DEV_PIN
+pgate_18_mac CONNECT
+pgate_18ud12_mac DEV_SEED
+pgate_18ud12_mac DEV_PIN
+pgate_18ud12_mac CONNECT
+pgate_18ud15_mac DEV_SEED
+pgate_18ud15_mac DEV_PIN
+pgate_18ud15_mac CONNECT
+nchvgate_mac DEV_PIN
+nchvgate_mac CONNECT
+navtgate_mac DEV_PIN
+navtgate_mac CONNECT
+alvtpgate_mac DEV_PIN
+alvtpgate_mac CONNECT
+ngate_edc_mac DEV_SEED
+ngate_edc_mac DEV_PIN
+ngate_edc_mac CONNECT
+ngate_lvt18ud12_mac DEV_SEED
+ngate_lvt18ud12_mac DEV_PIN
+ngate_lvt18ud12_mac CONNECT
+nuhvgate_mac DEV_PIN
+nuhvgate_mac CONNECT
+puhvgate_mac DEV_PIN
+puhvgate_mac CONNECT
+nehvgate_mac DEV_PIN
+nehvgate_mac CONNECT
+pehvgate_mac DEV_PIN
+pehvgate_mac CONNECT
+ngate_udm_mac DEV_SEED
+ngate_udm_mac DEV_PIN
+ngate_udm_mac CONNECT
+nthin2 DEV_AUX
+nthin1 DEV_AUX
+ydio DEV_SEED
+nthin DEV_AUX
+pthin2 DEV_AUX
+pthin DEV_AUX
+tiod CONNECT
+nplug_dmy SCONNECT
+tndiff_dmy SCONNECT
+s_tndiff_udm DEV_PIN
+s_tndiff_udm CONNECT
+s_tndiff_udm SCONNECT
+ngate_udm18_mac DEV_SEED
+ngate_udm18_mac DEV_PIN
+ngate_udm18_mac CONNECT
+ngate_udm18ud15_mac DEV_SEED
+ngate_udm18ud15_mac DEV_PIN
+ngate_udm18ud15_mac CONNECT
+pgate_udm_mac DEV_SEED
+pgate_udm_mac DEV_PIN
+pgate_udm_mac CONNECT
+pplug2a CONNECT
+pplug_dmy SCONNECT
+tpdiff_dmy SCONNECT
+s_tpdiff_udm DEV_PIN
+s_tpdiff_udm CONNECT
+s_tpdiff_udm SCONNECT
+pgate_udm18_mac DEV_SEED
+pgate_udm18_mac DEV_PIN
+pgate_udm18_mac CONNECT
+pgate_udm18ud15_mac DEV_SEED
+pgate_udm18ud15_mac DEV_PIN
+pgate_udm18ud15_mac CONNECT
+ngate_hv18_mac DEV_SEED
+ngate_hv18_mac DEV_PIN
+ngate_hv18_mac CONNECT
+s_tndiff_hv DEV_PIN
+s_tndiff_hv CONNECT
+s_tndiff_hv SCONNECT
+pgate_hv18_mac DEV_SEED
+pgate_hv18_mac DEV_PIN
+pgate_hv18_mac CONNECT
+s_tpdiff_hv DEV_PIN
+s_tpdiff_hv CONNECT
+s_tpdiff_hv SCONNECT
+cpdio DEV_SEED
+cndio DEV_SEED
+ndiohg DEV_SEED
+pdiohg DEV_SEED
+cnwdio DEV_SEED
+ndiol DEV_SEED
+pdiol DEV_SEED
+ipdio_25 DEV_SEED
+indio_25 DEV_SEED
+ipdio_25ud DEV_SEED
+indio_25ud DEV_SEED
+ipdio_25od DEV_SEED
+indio_25od DEV_SEED
+ndio_25na DEV_SEED
+cndion DEV_SEED
+ydio_t DEV_PIN
+ydio_t CONNECT
+pdioh DEV_SEED
+ndioh DEV_SEED
+pdio18ll DEV_SEED
+ndio18ll DEV_SEED
+epdio_sa DEV_SEED
+endio_sa DEV_SEED
+ndioelvt DEV_SEED
+pdioelvt DEV_SEED
+pdioilvt DEV_SEED
+cndioilvt DEV_SEED
+ipdio_15 DEV_SEED
+indio_15 DEV_SEED
+ipdio_15od DEV_SEED
+indio_15od DEV_SEED
+ipdio_18 DEV_SEED
+indio_18 DEV_SEED
+indio_18ud12 DEV_SEED
+ipdio_18ud12 DEV_SEED
+indio_18ud15 DEV_SEED
+ipdio_18ud15 DEV_SEED
+ndio_18na DEV_SEED
+ipdio_33 DEV_SEED
+indio_33 DEV_SEED
+cndio_zvt DEV_SEED
+ndio_15na DEV_SEED
+ndio_18ud15na DEV_SEED
+ndio_25od33na DEV_SEED
+ndio_33na DEV_SEED
+ndio_io_lvt DEV_SEED
+ndioav DEV_SEED
+pdiohguhvt DEV_SEED
+ndiohguhvt DEV_SEED
+indio_lvt18ud12 DEV_SEED
+ndioll DEV_SEED
+pdioll DEV_SEED
+pdio25ll DEV_SEED
+ndio25ll DEV_SEED
+pdiouh DEV_SEED
+ndiouh DEV_SEED
+pdioeh DEV_SEED
+ndioeh DEV_SEED
+cnbase1 DEV_PIN
+cnbase1 CONNECT
+cemit1 DEV_PIN
+cemit1 CONNECT
+cemit10 DEV_SEED
+cpbase1 DEV_PIN
+cpbase1 CONNECT
+cnemit1 DEV_PIN
+cnemit1 CONNECT
+ipbase1 CONNECT
+inemit1 CONNECT
+coll1 DEV_PIN
+coll1 SCONNECT
+cemit5 DEV_SEED
+cemit2 DEV_SEED
+cemit1d6 DEV_SEED
+cnemit10 DEV_SEED
+ncoll1 DEV_PIN
+ncoll1 CONNECT
+cnemit5 DEV_SEED
+cnemit2 DEV_SEED
+cnemit1d6 DEV_SEED
+cemit10_mac DEV_SEED
+cemit5_mac DEV_SEED
+cemit2_mac DEV_SEED
+cemit1d6_mac DEV_SEED
+cnemit10_mac DEV_SEED
+cnemit5_mac DEV_SEED
+cnemit2_mac DEV_SEED
+cnemit1d6_mac DEV_SEED
+p3 DEV_PIN
+p3 CONNECT
+crown DEV_PIN
+crown CONNECT
+mim_r DEV_SEED
+mim_r_decap DEV_SEED
+vargt DEV_SEED
+vargt DEV_PIN
+vargt CONNECT
+vargt_p DEV_SEED
+vargt_p DEV_PIN
+vargt_p CONNECT
+vargt_25 DEV_SEED
+vargt_25 DEV_PIN
+vargt_25 CONNECT
+vargt_25_p DEV_SEED
+vargt_25_p DEV_PIN
+vargt_25_p CONNECT
+vargt_edc DEV_SEED
+vargt_edc DEV_PIN
+vargt_edc CONNECT
+vargt_15 DEV_SEED
+vargt_15 DEV_PIN
+vargt_15 CONNECT
+vargt_33 DEV_SEED
+vargt_33 DEV_PIN
+vargt_33 CONNECT
+vargt_18 DEV_SEED
+vargt_18 DEV_PIN
+vargt_18 CONNECT
+vargt_18_p DEV_SEED
+vargt_18_p DEV_PIN
+vargt_18_p CONNECT
+var10_dvar DEV_SEED
+p_poly3 DEV_PIN
+p_poly3 CONNECT
+n_poly3 DEV_PIN
+n_poly3 CONNECT
+var10gt_rf DEV_AUX
+var10_nw DEV_SEED
+var10_rf18 DEV_SEED
+var10_nw_rf18 DEV_SEED
+var10_rf25 DEV_SEED
+var10_nw_rf25 DEV_SEED
+var11_cvar DEV_SEED
+var11gt_rf DEV_AUX
+var11_nw DEV_SEED
+var11_rf18 DEV_SEED
+var11_nw_rf18 DEV_SEED
+var11_rf25 DEV_SEED
+var11_nw_rf25 DEV_SEED
+cvar_pw_rf DEV_SEED
+pvargt_rf DEV_AUX
+cvar_pw_rf18 DEV_SEED
+pvargt_rf18 DEV_AUX
+cvar_pw_rf25 DEV_SEED
+pvargt_rf25 DEV_AUX
+hia_ndio_rf DEV_AUX
+hia_ndio_rf_r DEV_SEED
+hia_pdio_rf DEV_AUX
+hia_pdio_rf_r DEV_SEED
+RFDMY_HIA_bulk DEV_PIN
+RFDMY_HIA_bulk SCONNECT
+ngate_rf DEV_AUX
+ngate_nthin DEV_SEED
+d_tndiff DEV_PIN
+d_tndiff CONNECT
+p_poly_rf DEV_PIN
+p_poly_rf CONNECT
+n_poly_rf DEV_PIN
+n_poly_rf CONNECT
+s_tndiff DEV_PIN
+s_tndiff CONNECT
+ngate_rf_18 DEV_AUX
+ngate_nthin_18 DEV_SEED
+ngate_rf_18ud DEV_AUX
+ngate_nthin_18ud DEV_SEED
+ngate_rf_25 DEV_AUX
+ngate_nthin_25 DEV_SEED
+ngate_rf_25ud DEV_AUX
+ngate_nthin_25ud DEV_SEED
+ngate_rf_25od DEV_AUX
+ngate_nthin_25od DEV_SEED
+ngate_rfhv DEV_AUX
+ngate_nthin_hv DEV_SEED
+ngate_rfulv DEV_AUX
+ngate_nthin_ulv DEV_SEED
+ngate_rflv DEV_AUX
+ngate_nthin_lv DEV_SEED
+pgate_rf_18ud DEV_AUX
+pgate_pthin_18udnw DEV_SEED
+d_tpdiff DEV_PIN
+d_tpdiff CONNECT
+s_tpdiff DEV_PIN
+s_tpdiff CONNECT
+pgate_rf_18 DEV_AUX
+pgate_pthin_18nw DEV_SEED
+pgate_rf_25 DEV_AUX
+pgate_pthin_25nw DEV_SEED
+pgate_rf_25ud DEV_AUX
+pgate_pthin_25udnw DEV_SEED
+pgate_rf_25od DEV_AUX
+pgate_pthin_25odnw DEV_SEED
+pgate_rfhv DEV_AUX
+pgate_pthin_hvnw DEV_SEED
+pgate_rfulv DEV_AUX
+pgate_pthin_ulvnw DEV_SEED
+pgate_rflv DEV_AUX
+pgate_pthin_lvnw DEV_SEED
+pgate_rf DEV_AUX
+pgate_pthin_nw DEV_SEED
+ngate_nthin_5t DEV_SEED
+ngate_nthin_18_5t DEV_SEED
+ngate_nthin_18ud_5t DEV_SEED
+ngate_nthin_lv_5t DEV_SEED
+ngate_nthin_25_5t DEV_SEED
+ngate_nthin_25ud_5t DEV_SEED
+ngate_nthin_25od_5t DEV_SEED
+ngate_nthin_hv_5t DEV_SEED
+ngate_nthin_ulv_5t DEV_SEED
+pgate_pthin_5t DEV_SEED
+rfdmy56 DEV_PIN
+rfdmy56 SCONNECT
+pgate_pthin_nw_5t DEV_SEED
+pgate_pthin_18_5t DEV_SEED
+pgate_pthin_18nw_5t DEV_SEED
+pgate_pthin_18ud_5t DEV_SEED
+pgate_pthin_18udnw_5t DEV_SEED
+pgate_pthin_25_5t DEV_SEED
+pgate_pthin_25nw_5t DEV_SEED
+pgate_pthin_25ud_5t DEV_SEED
+pgate_pthin_25udnw_5t DEV_SEED
+pgate_pthin_25od_5t DEV_SEED
+pgate_pthin_25odnw_5t DEV_SEED
+pgate_pthin_hv_5t DEV_SEED
+pgate_pthin_hvnw_5t DEV_SEED
+pgate_pthin_ulv_5t DEV_SEED
+pgate_pthin_ulvnw_5t DEV_SEED
+pgate_pthin_lv_5t DEV_SEED
+pgate_pthin_lvnw_5t DEV_SEED
+ngate_nthin_6t DEV_SEED
+ngate_nthin_18_6t DEV_SEED
+ngate_nthin_18ud_6t DEV_SEED
+ngate_nthin_lv_6t DEV_SEED
+ngate_nthin_25_6t DEV_SEED
+ngate_nthin_25ud_6t DEV_SEED
+ngate_nthin_25od_6t DEV_SEED
+ngate_nthin_hv_6t DEV_SEED
+ngate_nthin_ulv_6t DEV_SEED
+var_pw_rf DEV_SEED
+var_pw_rf18 DEV_SEED
+nwsti_r DEV_SEED
+nwsti_mr DEV_SEED
+nwod_r DEV_SEED
+nwod_mr DEV_SEED
+rupolym_r DEV_SEED
+rupolym_dp DEV_SEED
+rupolym_dn DEV_SEED
+rupolym_rfr DEV_SEED
+rnmg_r DEV_SEED
+rnmg_dp DEV_SEED
+rnmg_dn DEV_SEED
+rpmg_r DEV_SEED
+rpmg_dp DEV_SEED
+rpmg_dn DEV_SEED
+rpodwo_r DEV_SEED
+rnodwo_r DEV_SEED
+rpodl_r DEV_SEED
+rnodl_r DEV_SEED
+rpods_r DEV_SEED
+rnods_r DEV_SEED
+mt1res DEV_SEED
+M1 DEV_PIN
+M1 CONNECT
+mt2res DEV_SEED
+M2 DEV_PIN
+M2 CONNECT
+sym_ct_rl_ind DEV_SEED
+mt3res DEV_SEED
+M3 DEV_PIN
+M3 DEV_AUX
+M3 CONNECT
+mt4res DEV_SEED
+M4 DEV_PIN
+M4 DEV_AUX
+M4 CONNECT
+mt5res DEV_SEED
+M5 DEV_PIN
+M5 DEV_AUX
+M5 CONNECT
+mt6res DEV_SEED
+M6 DEV_PIN
+M6 DEV_AUX
+M6 CONNECT
+mt7res DEV_SEED
+M7 DEV_PIN
+M7 DEV_AUX
+M7 CONNECT
+mt8res DEV_SEED
+M8 DEV_PIN
+M8 DEV_AUX
+M8 CONNECT
+mt9res DEV_SEED
+M9 DEV_PIN
+M9 CONNECT
+mtAPres DEV_SEED
+AP DEV_PIN
+AP CONNECT
+rpodwo_mr DEV_SEED
+rnodwo_mr DEV_SEED
+rpodl_mr DEV_SEED
+rnodl_mr DEV_SEED
+rpods_mr DEV_SEED
+rnods_mr DEV_SEED
+psub_term_b SCONNECT
+psub_term SCONNECT
+hia_pdio DEV_AUX
+hia_pdio_r DEV_SEED
+hia_ndio DEV_AUX
+hia_ndio_r DEV_SEED
+PROBEM1 DEV_SEED
+PROBEM1_T DEV_PIN
+PROBEM1_T SCONNECT
+PROBEM2 DEV_SEED
+PROBEM2_T DEV_PIN
+PROBEM2_T SCONNECT
+PROBEM3 DEV_SEED
+PROBEM3_T DEV_PIN
+PROBEM3_T SCONNECT
+PROBEM4 DEV_SEED
+PROBEM4_T DEV_PIN
+PROBEM4_T SCONNECT
+PROBEM5 DEV_SEED
+PROBEM5_T DEV_PIN
+PROBEM5_T SCONNECT
+PROBEM6 DEV_SEED
+PROBEM6_T DEV_PIN
+PROBEM6_T SCONNECT
+PROBEM7 DEV_SEED
+PROBEM7_T DEV_PIN
+PROBEM7_T SCONNECT
+sym_ct_lc_ind DEV_SEED
+indm9p DEV_PIN
+indm9p CONNECT
+indm9m DEV_PIN
+indm9m CONNECT
+indm10c DEV_PIN
+indm10c CONNECT
+sym_ind DEV_SEED
+std_mu_z_ind DEV_SEED
+sym_mu_z_ind DEV_SEED
+sym_ct_mu_z_a_ind DEV_SEED
+std_mu_z_ind_dm DEV_SEED
+sym_mu_z_ind_dm DEV_SEED
+sym_ct_mu_z_a28_ind_dm DEV_SEED
+std_mu_a28_ind_dm DEV_SEED
+sym_ct_mu_a28_a28_ind_dm DEV_SEED
+sym_mu_a28_ind_dm DEV_SEED
+var_nw3_rf DEV_SEED
+vargt_rf DEV_AUX
+var_nw3_rf_nw DEV_SEED
+var_nw_rf15_nw DEV_SEED
+vargt_rf15 DEV_AUX
+var_nw_rf18 DEV_SEED
+var_nw_rf18_nw DEV_SEED
+var_nw_rf25 DEV_SEED
+var_nw_rf25_nw DEV_SEED
+ngate_gdio18 DEV_AUX
+ndiff_gdio DEV_SEED
+npdiff_gdio DEV_AUX
+pgate_gdio18_2t DEV_AUX
+pdiff_gdio2 DEV_SEED
+pgate_gdio18_3t DEV_AUX
+pdiff_gdio3 DEV_SEED
+nw_pgdio DEV_PIN
+nw_pgdio SCONNECT
+polyCont CONNECT
+mom8p2 DEV_PIN
+mom8p2 CONNECT
+PROBEM6_B SCONNECT
+RFDMY_HIA_psub SCONNECT
+mom3p1 DEV_PIN
+mom3p1 CONNECT
+PROBEM5_B SCONNECT
+mom8m1 DEV_PIN
+mom8m1 CONNECT
+p3Cont CONNECT
+hia_rf_pplug SCONNECT
+PROBEM2_B SCONNECT
+d_tndiff_udm DEV_PIN
+d_tndiff_udm CONNECT
+d_tndiff_udm SCONNECT
+PROBEM1_B SCONNECT
+mom5m1 DEV_PIN
+mom5m1 CONNECT
+mom7p1 DEV_PIN
+mom7p1 CONNECT
+inbase1 CONNECT
+iemit1 CONNECT
+PROBEM4_B SCONNECT
+d_hvnw_area DEV_AUX
+gcon_aux2 DEV_AUX
+mom6m1 DEV_PIN
+mom6m1 CONNECT
+dfm_gate1 DEV_AUX
+p_blc CONNECT
+PROBEM7_B SCONNECT
+mom8m2 DEV_PIN
+mom8m2 CONNECT
+mom7m2 DEV_PIN
+mom7m2 CONNECT
+mom7m1 DEV_PIN
+mom7m1 CONNECT
+p_polyCont CONNECT
+nplug CONNECT
+nplug SCONNECT
+n_blc CONNECT
+nthin_udm DEV_AUX
+p_odCont CONNECT
+n_odCont CONNECT
+mom4m2 DEV_PIN
+mom4m2 CONNECT
+pplug CONNECT
+pplug SCONNECT
+MOM_field4 DEV_AUX
+hia_rf_via SCONNECT
+rfdmy56_via SCONNECT
+d_tndiff_hv DEV_PIN
+d_tndiff_hv CONNECT
+d_tndiff_hv SCONNECT
+mom4m1 DEV_PIN
+mom4m1 CONNECT
+MOM_field5 DEV_AUX
+n_polyCont CONNECT
+mom5p1 DEV_PIN
+mom5p1 CONNECT
+MOM_field2 DEV_AUX
+d_tpdiff_udm DEV_PIN
+d_tpdiff_udm CONNECT
+d_tpdiff_udm SCONNECT
+VIA1 CONNECT
+RV CONNECT
+nxwell_npn CONNECT
+gcon_aux DEV_AUX
+mom6p1 DEV_PIN
+mom6p1 CONNECT
+d_tpdiff_hv DEV_PIN
+d_tpdiff_hv CONNECT
+d_tpdiff_hv SCONNECT
+mom5p2 DEV_PIN
+mom5p2 CONNECT
+pthin_udm DEV_AUX
+ntap CONNECT
+MOM_field3 DEV_AUX
+nxwell_float SCONNECT
+PROBEM3_B SCONNECT
+VIA2 CONNECT
+MOM_field6 DEV_AUX
+mom5m2 DEV_PIN
+mom5m2 CONNECT
+dnwc SCONNECT
+mom4p2 DEV_PIN
+mom4p2 CONNECT
+VIA5 CONNECT
+mom6m2 DEV_PIN
+mom6m2 CONNECT
+mom7p2 DEV_PIN
+mom7p2 CONNECT
+VIA3 CONNECT
+mom3m2 DEV_PIN
+mom3m2 CONNECT
+mom8p1 DEV_PIN
+mom8p1 CONNECT
+VIA4 CONNECT
+dinsaflag_aux DEV_AUX
+mom4p1 DEV_PIN
+mom4p1 CONNECT
+mom3p2 DEV_PIN
+mom3p2 CONNECT
+VIA6 CONNECT
+mom6p2 DEV_PIN
+mom6p2 CONNECT
+n_pplug CONNECT
+n_pplug SCONNECT
+d_hvpw_area DEV_AUX
+nthin2_hv DEV_AUX
+mom3m1 DEV_PIN
+mom3m1 CONNECT
+MOM_field1 DEV_AUX
+pthin2_hv DEV_AUX
+n_poly DEV_PIN
+n_poly CONNECT
+p_poly DEV_PIN
+p_poly CONNECT
+poly CONNECT
+tndiff_woR DEV_PIN
+tndiff_woR CONNECT
+tndiff_woR SCONNECT
+tpdiff_woR DEV_PIN
+tpdiff_woR CONNECT
+tpdiff_woR SCONNECT
+tndiff_RC CONNECT
+tndiff_RC SCONNECT
+tndiff DEV_PIN
+tndiff CONNECT
+tndiff SCONNECT
+tpdiff_RC CONNECT
+tpdiff_RC SCONNECT
+tpdiff DEV_PIN
+tpdiff CONNECT
+tpdiff SCONNECT
+<ENCRYPTED_LAYER_2352> DEV_AUX
+<ENCRYPTED_LAYER_2415> DEV_AUX
+<ENCRYPTED_LAYER_2418> DEV_AUX
+<ENCRYPTED_LAYER_2426> DEV_AUX
+<ENCRYPTED_LAYER_2429> DEV_AUX
+<ENCRYPTED_LAYER_2446> DEV_AUX
+<ENCRYPTED_LAYER_2449> DEV_AUX
+<ENCRYPTED_LAYER_2457> DEV_AUX
+<ENCRYPTED_LAYER_2460> DEV_AUX
+<ENCRYPTED_LAYER_2483> DEV_AUX
+navtgate_macz DEV_SEED
+nchvgate_macz DEV_SEED
+nehvgate_macz DEV_SEED
+nelvgate_macz DEV_SEED
+ngate_hg_macz DEV_SEED
+nuhvgate_hg_macz DEV_SEED
+ngate_hia_macz DEV_SEED
+nhvgate_macz DEV_SEED
+nlvgate_macz DEV_SEED
+ngate_macz DEV_SEED
+nilvtgate_macz DEV_SEED
+ngate_svt_sp_macz DEV_SEED
+nuhvgate_macz DEV_SEED
+nuvgate_macz DEV_SEED
+alvtpgate_macz DEV_SEED
+pehvgate_macz DEV_SEED
+pelvgate_macz DEV_SEED
+pgate_hg_macz DEV_SEED
+puhvgate_hg_macz DEV_SEED
+phvgate_macz DEV_SEED
+plvgate_macz DEV_SEED
+pgate_macz DEV_SEED
+pilvtgate_macz DEV_SEED
+pgate_svt_sp_macz DEV_SEED
+puhvgate_macz DEV_SEED
+puvgate_macz DEV_SEED
+MOMDMY100 DEV_AUX
+dmetal1 DEV_AUX
+dmetal2 DEV_AUX
+dmetal3 DEV_AUX
+dmetal4 DEV_AUX
+dmetal5 DEV_AUX
+VIA7 CONNECT
+RCTM9 DEV_SEED
+ctm_9 DEV_PIN
+ctm_9 CONNECT
+cbm_9 DEV_PIN
+cbm_9 CONNECT
+cbm_via8 CONNECT
+ctm_via8 CONNECT
+VIA8 CONNECT
+MOM_hole1 DEV_AUX
+MOM_hole2 DEV_AUX
+MOM_hole3 DEV_AUX
+MOM_hole4 DEV_AUX
+MOM_hole5 DEV_AUX
+MOM_hole6 DEV_AUX
+fmom13_reg_n DEV_SEED
+fmom13_reg_n_dm DEV_SEED
+fmom13_reg_p DEV_SEED
+fmom13_reg_p_dm DEV_SEED
+fmom13_reg_2t DEV_SEED
+fmom13_reg_nw DEV_SEED
+fmom13_reg_nw_dm DEV_SEED
+fmom13_reg_pw DEV_SEED
+fmom13_reg_pw_dm DEV_SEED
+fmom13_reg_ntn DEV_SEED
+fmom13_reg_ntn_dm DEV_SEED
+fmom13_reg_ntn_wo_pring DEV_SEED
+fmom13_reg_ntn_wo_pring_dm DEV_SEED
+fmom13_mx_reg_n DEV_SEED
+fmom13_mx_reg_n_dm DEV_SEED
+fmom13_mx_reg_p DEV_SEED
+fmom13_mx_reg_p_dm DEV_SEED
+fmom13_mx_reg_4t DEV_SEED
+fmom13_mx_reg_nw DEV_SEED
+fmom13_mx_reg_nw_dm DEV_SEED
+fmom13_mx_reg_pw DEV_SEED
+fmom13_mx_reg_pw_dm DEV_SEED
+fmom13_mx_reg_ntn DEV_SEED
+fmom13_mx_reg_ntn_dm DEV_SEED
+fmom13_rf_reg_nw DEV_SEED
+fmom13_rf_reg_nw_dm DEV_SEED
+fmom13_rf_reg_pw DEV_SEED
+fmom13_rf_reg_pw_dm DEV_SEED
+fmom13_rf_reg_ntn DEV_SEED
+fmom13_rf_reg_ntn_dm DEV_SEED
+mom13_mx_aux DEV_AUX
+mom13_extc DEV_AUX
+fmom14_reg_n DEV_SEED
+fmom14_reg_n_dm DEV_SEED
+fmom14_reg_p DEV_SEED
+fmom14_reg_p_dm DEV_SEED
+fmom14_reg_2t DEV_SEED
+fmom14_reg_nw DEV_SEED
+fmom14_reg_nw_dm DEV_SEED
+fmom14_reg_pw DEV_SEED
+fmom14_reg_pw_dm DEV_SEED
+fmom14_reg_ntn DEV_SEED
+fmom14_reg_ntn_dm DEV_SEED
+fmom14_reg_ntn_wo_pring DEV_SEED
+fmom14_reg_ntn_wo_pring_dm DEV_SEED
+fmom14_mx_reg_n DEV_SEED
+fmom14_mx_reg_n_dm DEV_SEED
+fmom14_mx_reg_p DEV_SEED
+fmom14_mx_reg_p_dm DEV_SEED
+fmom14_mx_reg_4t DEV_SEED
+fmom14_mx_reg_nw DEV_SEED
+fmom14_mx_reg_nw_dm DEV_SEED
+fmom14_mx_reg_pw DEV_SEED
+fmom14_mx_reg_pw_dm DEV_SEED
+fmom14_mx_reg_ntn DEV_SEED
+fmom14_mx_reg_ntn_dm DEV_SEED
+fmom14_rf_reg_nw DEV_SEED
+fmom14_rf_reg_nw_dm DEV_SEED
+fmom14_rf_reg_pw DEV_SEED
+fmom14_rf_reg_pw_dm DEV_SEED
+fmom14_rf_reg_ntn DEV_SEED
+fmom14_rf_reg_ntn_dm DEV_SEED
+mom14_mx_aux DEV_AUX
+mom14_extc DEV_AUX
+fmom15_reg_n DEV_SEED
+fmom15_reg_n_dm DEV_SEED
+fmom15_reg_p DEV_SEED
+fmom15_reg_p_dm DEV_SEED
+fmom15_reg_2t DEV_SEED
+fmom15_reg_nw DEV_SEED
+fmom15_reg_nw_dm DEV_SEED
+fmom15_reg_pw DEV_SEED
+fmom15_reg_pw_dm DEV_SEED
+fmom15_reg_ntn DEV_SEED
+fmom15_reg_ntn_dm DEV_SEED
+fmom15_reg_ntn_wo_pring DEV_SEED
+fmom15_reg_ntn_wo_pring_dm DEV_SEED
+fmom15_mx_reg_n DEV_SEED
+fmom15_mx_reg_n_dm DEV_SEED
+fmom15_mx_reg_p DEV_SEED
+fmom15_mx_reg_p_dm DEV_SEED
+fmom15_mx_reg_4t DEV_SEED
+fmom15_mx_reg_nw DEV_SEED
+fmom15_mx_reg_nw_dm DEV_SEED
+fmom15_mx_reg_pw DEV_SEED
+fmom15_mx_reg_pw_dm DEV_SEED
+fmom15_mx_reg_ntn DEV_SEED
+fmom15_mx_reg_ntn_dm DEV_SEED
+fmom15_rf_reg_nw DEV_SEED
+fmom15_rf_reg_nw_dm DEV_SEED
+fmom15_rf_reg_pw DEV_SEED
+fmom15_rf_reg_pw_dm DEV_SEED
+fmom15_rf_reg_ntn DEV_SEED
+fmom15_rf_reg_ntn_dm DEV_SEED
+mom15_mx_aux DEV_AUX
+mom15_extc DEV_AUX
+fmom16_reg_n DEV_SEED
+fmom16_reg_n_dm DEV_SEED
+fmom16_reg_p DEV_SEED
+fmom16_reg_p_dm DEV_SEED
+fmom16_reg_2t DEV_SEED
+fmom16_reg_nw DEV_SEED
+fmom16_reg_nw_dm DEV_SEED
+fmom16_reg_pw DEV_SEED
+fmom16_reg_pw_dm DEV_SEED
+fmom16_reg_ntn DEV_SEED
+fmom16_reg_ntn_dm DEV_SEED
+fmom16_reg_ntn_wo_pring DEV_SEED
+fmom16_reg_ntn_wo_pring_dm DEV_SEED
+fmom16_mx_reg_n DEV_SEED
+fmom16_mx_reg_n_dm DEV_SEED
+fmom16_mx_reg_p DEV_SEED
+fmom16_mx_reg_p_dm DEV_SEED
+fmom16_mx_reg_4t DEV_SEED
+fmom16_mx_reg_nw DEV_SEED
+fmom16_mx_reg_nw_dm DEV_SEED
+fmom16_mx_reg_pw DEV_SEED
+fmom16_mx_reg_pw_dm DEV_SEED
+fmom16_mx_reg_ntn DEV_SEED
+fmom16_mx_reg_ntn_dm DEV_SEED
+fmom16_rf_reg_nw DEV_SEED
+fmom16_rf_reg_nw_dm DEV_SEED
+fmom16_rf_reg_pw DEV_SEED
+fmom16_rf_reg_pw_dm DEV_SEED
+fmom16_rf_reg_ntn DEV_SEED
+fmom16_rf_reg_ntn_dm DEV_SEED
+mom16_mx_aux DEV_AUX
+mom16_extc DEV_AUX
+fmom17_reg_n DEV_SEED
+fmom17_reg_n_dm DEV_SEED
+fmom17_reg_p DEV_SEED
+fmom17_reg_p_dm DEV_SEED
+fmom17_reg_2t DEV_SEED
+fmom17_reg_nw DEV_SEED
+fmom17_reg_nw_dm DEV_SEED
+fmom17_reg_pw DEV_SEED
+fmom17_reg_pw_dm DEV_SEED
+fmom17_reg_ntn DEV_SEED
+fmom17_reg_ntn_dm DEV_SEED
+fmom17_reg_ntn_wo_pring DEV_SEED
+fmom17_reg_ntn_wo_pring_dm DEV_SEED
+fmom17_mx_reg_n DEV_SEED
+fmom17_mx_reg_n_dm DEV_SEED
+fmom17_mx_reg_p DEV_SEED
+fmom17_mx_reg_p_dm DEV_SEED
+fmom17_mx_reg_4t DEV_SEED
+fmom17_mx_reg_nw DEV_SEED
+fmom17_mx_reg_nw_dm DEV_SEED
+fmom17_mx_reg_pw DEV_SEED
+fmom17_mx_reg_pw_dm DEV_SEED
+fmom17_mx_reg_ntn DEV_SEED
+fmom17_mx_reg_ntn_dm DEV_SEED
+fmom17_rf_reg_nw DEV_SEED
+fmom17_rf_reg_nw_dm DEV_SEED
+fmom17_rf_reg_pw DEV_SEED
+fmom17_rf_reg_pw_dm DEV_SEED
+fmom17_rf_reg_ntn DEV_SEED
+fmom17_rf_reg_ntn_dm DEV_SEED
+mom17_mx_aux DEV_AUX
+mom17_extc DEV_AUX
+fmom18_reg_n DEV_SEED
+fmom18_reg_n_dm DEV_SEED
+fmom18_reg_p DEV_SEED
+fmom18_reg_p_dm DEV_SEED
+fmom18_reg_2t DEV_SEED
+fmom18_reg_nw DEV_SEED
+fmom18_reg_nw_dm DEV_SEED
+fmom18_reg_pw DEV_SEED
+fmom18_reg_pw_dm DEV_SEED
+fmom18_reg_ntn DEV_SEED
+fmom18_reg_ntn_dm DEV_SEED
+fmom18_reg_ntn_wo_pring DEV_SEED
+fmom18_reg_ntn_wo_pring_dm DEV_SEED
+fmom18_mx_reg_n DEV_SEED
+fmom18_mx_reg_n_dm DEV_SEED
+fmom18_mx_reg_p DEV_SEED
+fmom18_mx_reg_p_dm DEV_SEED
+fmom18_mx_reg_4t DEV_SEED
+fmom18_mx_reg_nw DEV_SEED
+fmom18_mx_reg_nw_dm DEV_SEED
+fmom18_mx_reg_pw DEV_SEED
+fmom18_mx_reg_pw_dm DEV_SEED
+fmom18_mx_reg_ntn DEV_SEED
+fmom18_mx_reg_ntn_dm DEV_SEED
+fmom18_rf_reg_nw DEV_SEED
+fmom18_rf_reg_nw_dm DEV_SEED
+fmom18_rf_reg_pw DEV_SEED
+fmom18_rf_reg_pw_dm DEV_SEED
+fmom18_rf_reg_ntn DEV_SEED
+fmom18_rf_reg_ntn_dm DEV_SEED
+mom18_mx_aux DEV_AUX
+mom18_extc DEV_AUX
+fmom24_reg_n DEV_SEED
+fmom24_reg_n_dm DEV_SEED
+fmom24_reg_p DEV_SEED
+fmom24_reg_p_dm DEV_SEED
+fmom24_reg_2t DEV_SEED
+fmom24_reg_nw DEV_SEED
+fmom24_reg_nw_dm DEV_SEED
+fmom24_reg_pw DEV_SEED
+fmom24_reg_pw_dm DEV_SEED
+fmom24_reg_ntn DEV_SEED
+fmom24_reg_ntn_dm DEV_SEED
+fmom24_reg_ntn_wo_pring DEV_SEED
+fmom24_reg_ntn_wo_pring_dm DEV_SEED
+fmom24_mx_reg_n DEV_SEED
+fmom24_mx_reg_n_dm DEV_SEED
+fmom24_mx_reg_p DEV_SEED
+fmom24_mx_reg_p_dm DEV_SEED
+fmom24_mx_reg_4t DEV_SEED
+fmom24_mx_reg_nw DEV_SEED
+fmom24_mx_reg_nw_dm DEV_SEED
+fmom24_mx_reg_pw DEV_SEED
+fmom24_mx_reg_pw_dm DEV_SEED
+fmom24_mx_reg_ntn DEV_SEED
+fmom24_mx_reg_ntn_dm DEV_SEED
+fmom24_rf_reg_nw DEV_SEED
+fmom24_rf_reg_nw_dm DEV_SEED
+fmom24_rf_reg_pw DEV_SEED
+fmom24_rf_reg_pw_dm DEV_SEED
+fmom24_rf_reg_ntn DEV_SEED
+fmom24_rf_reg_ntn_dm DEV_SEED
+mom24_mx_aux DEV_AUX
+fmom25_reg_n DEV_SEED
+fmom25_reg_n_dm DEV_SEED
+fmom25_reg_p DEV_SEED
+fmom25_reg_p_dm DEV_SEED
+fmom25_reg_2t DEV_SEED
+fmom25_reg_nw DEV_SEED
+fmom25_reg_nw_dm DEV_SEED
+fmom25_reg_pw DEV_SEED
+fmom25_reg_pw_dm DEV_SEED
+fmom25_reg_ntn DEV_SEED
+fmom25_reg_ntn_dm DEV_SEED
+fmom25_reg_ntn_wo_pring DEV_SEED
+fmom25_reg_ntn_wo_pring_dm DEV_SEED
+fmom25_mx_reg_n DEV_SEED
+fmom25_mx_reg_n_dm DEV_SEED
+fmom25_mx_reg_p DEV_SEED
+fmom25_mx_reg_p_dm DEV_SEED
+fmom25_mx_reg_4t DEV_SEED
+fmom25_mx_reg_nw DEV_SEED
+fmom25_mx_reg_nw_dm DEV_SEED
+fmom25_mx_reg_pw DEV_SEED
+fmom25_mx_reg_pw_dm DEV_SEED
+fmom25_mx_reg_ntn DEV_SEED
+fmom25_mx_reg_ntn_dm DEV_SEED
+fmom25_rf_reg_nw DEV_SEED
+fmom25_rf_reg_nw_dm DEV_SEED
+fmom25_rf_reg_pw DEV_SEED
+fmom25_rf_reg_pw_dm DEV_SEED
+fmom25_rf_reg_ntn DEV_SEED
+fmom25_rf_reg_ntn_dm DEV_SEED
+mom25_mx_aux DEV_AUX
+fmom26_reg_n DEV_SEED
+fmom26_reg_n_dm DEV_SEED
+fmom26_reg_p DEV_SEED
+fmom26_reg_p_dm DEV_SEED
+fmom26_reg_2t DEV_SEED
+fmom26_reg_nw DEV_SEED
+fmom26_reg_nw_dm DEV_SEED
+fmom26_reg_pw DEV_SEED
+fmom26_reg_pw_dm DEV_SEED
+fmom26_reg_ntn DEV_SEED
+fmom26_reg_ntn_dm DEV_SEED
+fmom26_reg_ntn_wo_pring DEV_SEED
+fmom26_reg_ntn_wo_pring_dm DEV_SEED
+fmom26_mx_reg_n DEV_SEED
+fmom26_mx_reg_n_dm DEV_SEED
+fmom26_mx_reg_p DEV_SEED
+fmom26_mx_reg_p_dm DEV_SEED
+fmom26_mx_reg_4t DEV_SEED
+fmom26_mx_reg_nw DEV_SEED
+fmom26_mx_reg_nw_dm DEV_SEED
+fmom26_mx_reg_pw DEV_SEED
+fmom26_mx_reg_pw_dm DEV_SEED
+fmom26_mx_reg_ntn DEV_SEED
+fmom26_mx_reg_ntn_dm DEV_SEED
+fmom26_rf_reg_nw DEV_SEED
+fmom26_rf_reg_nw_dm DEV_SEED
+fmom26_rf_reg_pw DEV_SEED
+fmom26_rf_reg_pw_dm DEV_SEED
+fmom26_rf_reg_ntn DEV_SEED
+fmom26_rf_reg_ntn_dm DEV_SEED
+mom26_mx_aux DEV_AUX
+fmom27_reg_n DEV_SEED
+fmom27_reg_n_dm DEV_SEED
+fmom27_reg_p DEV_SEED
+fmom27_reg_p_dm DEV_SEED
+fmom27_reg_2t DEV_SEED
+fmom27_reg_nw DEV_SEED
+fmom27_reg_nw_dm DEV_SEED
+fmom27_reg_pw DEV_SEED
+fmom27_reg_pw_dm DEV_SEED
+fmom27_reg_ntn DEV_SEED
+fmom27_reg_ntn_dm DEV_SEED
+fmom27_reg_ntn_wo_pring DEV_SEED
+fmom27_reg_ntn_wo_pring_dm DEV_SEED
+fmom27_mx_reg_n DEV_SEED
+fmom27_mx_reg_n_dm DEV_SEED
+fmom27_mx_reg_p DEV_SEED
+fmom27_mx_reg_p_dm DEV_SEED
+fmom27_mx_reg_4t DEV_SEED
+fmom27_mx_reg_nw DEV_SEED
+fmom27_mx_reg_nw_dm DEV_SEED
+fmom27_mx_reg_pw DEV_SEED
+fmom27_mx_reg_pw_dm DEV_SEED
+fmom27_mx_reg_ntn DEV_SEED
+fmom27_mx_reg_ntn_dm DEV_SEED
+fmom27_rf_reg_nw DEV_SEED
+fmom27_rf_reg_nw_dm DEV_SEED
+fmom27_rf_reg_pw DEV_SEED
+fmom27_rf_reg_pw_dm DEV_SEED
+fmom27_rf_reg_ntn DEV_SEED
+fmom27_rf_reg_ntn_dm DEV_SEED
+mom27_mx_aux DEV_AUX
+fmom28_reg_n DEV_SEED
+fmom28_reg_n_dm DEV_SEED
+fmom28_reg_p DEV_SEED
+fmom28_reg_p_dm DEV_SEED
+fmom28_reg_2t DEV_SEED
+fmom28_reg_nw DEV_SEED
+fmom28_reg_nw_dm DEV_SEED
+fmom28_reg_pw DEV_SEED
+fmom28_reg_pw_dm DEV_SEED
+fmom28_reg_ntn DEV_SEED
+fmom28_reg_ntn_dm DEV_SEED
+fmom28_reg_ntn_wo_pring DEV_SEED
+fmom28_reg_ntn_wo_pring_dm DEV_SEED
+fmom28_mx_reg_n DEV_SEED
+fmom28_mx_reg_n_dm DEV_SEED
+fmom28_mx_reg_p DEV_SEED
+fmom28_mx_reg_p_dm DEV_SEED
+fmom28_mx_reg_4t DEV_SEED
+fmom28_mx_reg_nw DEV_SEED
+fmom28_mx_reg_nw_dm DEV_SEED
+fmom28_mx_reg_pw DEV_SEED
+fmom28_mx_reg_pw_dm DEV_SEED
+fmom28_mx_reg_ntn DEV_SEED
+fmom28_mx_reg_ntn_dm DEV_SEED
+fmom28_rf_reg_nw DEV_SEED
+fmom28_rf_reg_nw_dm DEV_SEED
+fmom28_rf_reg_pw DEV_SEED
+fmom28_rf_reg_pw_dm DEV_SEED
+fmom28_rf_reg_ntn DEV_SEED
+fmom28_rf_reg_ntn_dm DEV_SEED
+mom28_mx_aux DEV_AUX
+fmom35_reg_n DEV_SEED
+fmom35_reg_n_dm DEV_SEED
+fmom35_reg_p DEV_SEED
+fmom35_reg_p_dm DEV_SEED
+fmom35_reg_2t DEV_SEED
+fmom35_reg_nw DEV_SEED
+fmom35_reg_nw_dm DEV_SEED
+fmom35_reg_pw DEV_SEED
+fmom35_reg_pw_dm DEV_SEED
+fmom35_reg_ntn DEV_SEED
+fmom35_reg_ntn_dm DEV_SEED
+fmom35_reg_ntn_wo_pring DEV_SEED
+fmom35_reg_ntn_wo_pring_dm DEV_SEED
+fmom35_mx_reg_n DEV_SEED
+fmom35_mx_reg_n_dm DEV_SEED
+fmom35_mx_reg_p DEV_SEED
+fmom35_mx_reg_p_dm DEV_SEED
+fmom35_mx_reg_4t DEV_SEED
+fmom35_mx_reg_nw DEV_SEED
+fmom35_mx_reg_nw_dm DEV_SEED
+fmom35_mx_reg_pw DEV_SEED
+fmom35_mx_reg_pw_dm DEV_SEED
+fmom35_mx_reg_ntn DEV_SEED
+fmom35_mx_reg_ntn_dm DEV_SEED
+fmom35_rf_reg_nw DEV_SEED
+fmom35_rf_reg_nw_dm DEV_SEED
+fmom35_rf_reg_pw DEV_SEED
+fmom35_rf_reg_pw_dm DEV_SEED
+fmom35_rf_reg_ntn DEV_SEED
+fmom35_rf_reg_ntn_dm DEV_SEED
+mom35_mx_aux DEV_AUX
+fmom36_reg_n DEV_SEED
+fmom36_reg_n_dm DEV_SEED
+fmom36_reg_p DEV_SEED
+fmom36_reg_p_dm DEV_SEED
+fmom36_reg_2t DEV_SEED
+fmom36_reg_nw DEV_SEED
+fmom36_reg_nw_dm DEV_SEED
+fmom36_reg_pw DEV_SEED
+fmom36_reg_pw_dm DEV_SEED
+fmom36_reg_ntn DEV_SEED
+fmom36_reg_ntn_dm DEV_SEED
+fmom36_reg_ntn_wo_pring DEV_SEED
+fmom36_reg_ntn_wo_pring_dm DEV_SEED
+fmom36_mx_reg_n DEV_SEED
+fmom36_mx_reg_n_dm DEV_SEED
+fmom36_mx_reg_p DEV_SEED
+fmom36_mx_reg_p_dm DEV_SEED
+fmom36_mx_reg_4t DEV_SEED
+fmom36_mx_reg_nw DEV_SEED
+fmom36_mx_reg_nw_dm DEV_SEED
+fmom36_mx_reg_pw DEV_SEED
+fmom36_mx_reg_pw_dm DEV_SEED
+fmom36_mx_reg_ntn DEV_SEED
+fmom36_mx_reg_ntn_dm DEV_SEED
+fmom36_rf_reg_nw DEV_SEED
+fmom36_rf_reg_nw_dm DEV_SEED
+fmom36_rf_reg_pw DEV_SEED
+fmom36_rf_reg_pw_dm DEV_SEED
+fmom36_rf_reg_ntn DEV_SEED
+fmom36_rf_reg_ntn_dm DEV_SEED
+mom36_mx_aux DEV_AUX
+fmom37_reg_n DEV_SEED
+fmom37_reg_n_dm DEV_SEED
+fmom37_reg_p DEV_SEED
+fmom37_reg_p_dm DEV_SEED
+fmom37_reg_2t DEV_SEED
+fmom37_reg_nw DEV_SEED
+fmom37_reg_nw_dm DEV_SEED
+fmom37_reg_pw DEV_SEED
+fmom37_reg_pw_dm DEV_SEED
+fmom37_reg_ntn DEV_SEED
+fmom37_reg_ntn_dm DEV_SEED
+fmom37_reg_ntn_wo_pring DEV_SEED
+fmom37_reg_ntn_wo_pring_dm DEV_SEED
+fmom37_mx_reg_n DEV_SEED
+fmom37_mx_reg_n_dm DEV_SEED
+fmom37_mx_reg_p DEV_SEED
+fmom37_mx_reg_p_dm DEV_SEED
+fmom37_mx_reg_4t DEV_SEED
+fmom37_mx_reg_nw DEV_SEED
+fmom37_mx_reg_nw_dm DEV_SEED
+fmom37_mx_reg_pw DEV_SEED
+fmom37_mx_reg_pw_dm DEV_SEED
+fmom37_mx_reg_ntn DEV_SEED
+fmom37_mx_reg_ntn_dm DEV_SEED
+fmom37_rf_reg_nw DEV_SEED
+fmom37_rf_reg_nw_dm DEV_SEED
+fmom37_rf_reg_pw DEV_SEED
+fmom37_rf_reg_pw_dm DEV_SEED
+fmom37_rf_reg_ntn DEV_SEED
+fmom37_rf_reg_ntn_dm DEV_SEED
+mom37_mx_aux DEV_AUX
+fmom38_reg_n DEV_SEED
+fmom38_reg_n_dm DEV_SEED
+fmom38_reg_p DEV_SEED
+fmom38_reg_p_dm DEV_SEED
+fmom38_reg_2t DEV_SEED
+fmom38_reg_nw DEV_SEED
+fmom38_reg_nw_dm DEV_SEED
+fmom38_reg_pw DEV_SEED
+fmom38_reg_pw_dm DEV_SEED
+fmom38_reg_ntn DEV_SEED
+fmom38_reg_ntn_dm DEV_SEED
+fmom38_reg_ntn_wo_pring DEV_SEED
+fmom38_reg_ntn_wo_pring_dm DEV_SEED
+fmom38_mx_reg_n DEV_SEED
+fmom38_mx_reg_n_dm DEV_SEED
+fmom38_mx_reg_p DEV_SEED
+fmom38_mx_reg_p_dm DEV_SEED
+fmom38_mx_reg_4t DEV_SEED
+fmom38_mx_reg_nw DEV_SEED
+fmom38_mx_reg_nw_dm DEV_SEED
+fmom38_mx_reg_pw DEV_SEED
+fmom38_mx_reg_pw_dm DEV_SEED
+fmom38_mx_reg_ntn DEV_SEED
+fmom38_mx_reg_ntn_dm DEV_SEED
+fmom38_rf_reg_nw DEV_SEED
+fmom38_rf_reg_nw_dm DEV_SEED
+fmom38_rf_reg_pw DEV_SEED
+fmom38_rf_reg_pw_dm DEV_SEED
+fmom38_rf_reg_ntn DEV_SEED
+fmom38_rf_reg_ntn_dm DEV_SEED
+mom38_mx_aux DEV_AUX
+fmom46_reg_n DEV_SEED
+fmom46_reg_n_dm DEV_SEED
+fmom46_reg_p DEV_SEED
+fmom46_reg_p_dm DEV_SEED
+fmom46_reg_2t DEV_SEED
+fmom46_reg_nw DEV_SEED
+fmom46_reg_nw_dm DEV_SEED
+fmom46_reg_pw DEV_SEED
+fmom46_reg_pw_dm DEV_SEED
+fmom46_reg_ntn DEV_SEED
+fmom46_reg_ntn_dm DEV_SEED
+fmom46_reg_ntn_wo_pring DEV_SEED
+fmom46_reg_ntn_wo_pring_dm DEV_SEED
+fmom46_mx_reg_n DEV_SEED
+fmom46_mx_reg_n_dm DEV_SEED
+fmom46_mx_reg_p DEV_SEED
+fmom46_mx_reg_p_dm DEV_SEED
+fmom46_mx_reg_4t DEV_SEED
+fmom46_mx_reg_nw DEV_SEED
+fmom46_mx_reg_nw_dm DEV_SEED
+fmom46_mx_reg_pw DEV_SEED
+fmom46_mx_reg_pw_dm DEV_SEED
+fmom46_mx_reg_ntn DEV_SEED
+fmom46_mx_reg_ntn_dm DEV_SEED
+fmom46_rf_reg_nw DEV_SEED
+fmom46_rf_reg_nw_dm DEV_SEED
+fmom46_rf_reg_pw DEV_SEED
+fmom46_rf_reg_pw_dm DEV_SEED
+fmom46_rf_reg_ntn DEV_SEED
+fmom46_rf_reg_ntn_dm DEV_SEED
+mom46_mx_aux DEV_AUX
+fmom47_reg_n DEV_SEED
+fmom47_reg_n_dm DEV_SEED
+fmom47_reg_p DEV_SEED
+fmom47_reg_p_dm DEV_SEED
+fmom47_reg_2t DEV_SEED
+fmom47_reg_nw DEV_SEED
+fmom47_reg_nw_dm DEV_SEED
+fmom47_reg_pw DEV_SEED
+fmom47_reg_pw_dm DEV_SEED
+fmom47_reg_ntn DEV_SEED
+fmom47_reg_ntn_dm DEV_SEED
+fmom47_reg_ntn_wo_pring DEV_SEED
+fmom47_reg_ntn_wo_pring_dm DEV_SEED
+fmom47_mx_reg_n DEV_SEED
+fmom47_mx_reg_n_dm DEV_SEED
+fmom47_mx_reg_p DEV_SEED
+fmom47_mx_reg_p_dm DEV_SEED
+fmom47_mx_reg_4t DEV_SEED
+fmom47_mx_reg_nw DEV_SEED
+fmom47_mx_reg_nw_dm DEV_SEED
+fmom47_mx_reg_pw DEV_SEED
+fmom47_mx_reg_pw_dm DEV_SEED
+fmom47_mx_reg_ntn DEV_SEED
+fmom47_mx_reg_ntn_dm DEV_SEED
+fmom47_rf_reg_nw DEV_SEED
+fmom47_rf_reg_nw_dm DEV_SEED
+fmom47_rf_reg_pw DEV_SEED
+fmom47_rf_reg_pw_dm DEV_SEED
+fmom47_rf_reg_ntn DEV_SEED
+fmom47_rf_reg_ntn_dm DEV_SEED
+mom47_mx_aux DEV_AUX
+fmom48_reg_n DEV_SEED
+fmom48_reg_n_dm DEV_SEED
+fmom48_reg_p DEV_SEED
+fmom48_reg_p_dm DEV_SEED
+fmom48_reg_2t DEV_SEED
+fmom48_reg_nw DEV_SEED
+fmom48_reg_nw_dm DEV_SEED
+fmom48_reg_pw DEV_SEED
+fmom48_reg_pw_dm DEV_SEED
+fmom48_reg_ntn DEV_SEED
+fmom48_reg_ntn_dm DEV_SEED
+fmom48_reg_ntn_wo_pring DEV_SEED
+fmom48_reg_ntn_wo_pring_dm DEV_SEED
+fmom48_mx_reg_n DEV_SEED
+fmom48_mx_reg_n_dm DEV_SEED
+fmom48_mx_reg_p DEV_SEED
+fmom48_mx_reg_p_dm DEV_SEED
+fmom48_mx_reg_4t DEV_SEED
+fmom48_mx_reg_nw DEV_SEED
+fmom48_mx_reg_nw_dm DEV_SEED
+fmom48_mx_reg_pw DEV_SEED
+fmom48_mx_reg_pw_dm DEV_SEED
+fmom48_mx_reg_ntn DEV_SEED
+fmom48_mx_reg_ntn_dm DEV_SEED
+fmom48_rf_reg_nw DEV_SEED
+fmom48_rf_reg_nw_dm DEV_SEED
+fmom48_rf_reg_pw DEV_SEED
+fmom48_rf_reg_pw_dm DEV_SEED
+fmom48_rf_reg_ntn DEV_SEED
+fmom48_rf_reg_ntn_dm DEV_SEED
+mom48_mx_aux DEV_AUX
+fmom57_reg_n DEV_SEED
+fmom57_reg_n_dm DEV_SEED
+fmom57_reg_p DEV_SEED
+fmom57_reg_p_dm DEV_SEED
+fmom57_reg_2t DEV_SEED
+fmom57_reg_nw DEV_SEED
+fmom57_reg_nw_dm DEV_SEED
+fmom57_reg_pw DEV_SEED
+fmom57_reg_pw_dm DEV_SEED
+fmom57_reg_ntn DEV_SEED
+fmom57_reg_ntn_dm DEV_SEED
+fmom57_reg_ntn_wo_pring DEV_SEED
+fmom57_reg_ntn_wo_pring_dm DEV_SEED
+fmom57_mx_reg_n DEV_SEED
+fmom57_mx_reg_n_dm DEV_SEED
+fmom57_mx_reg_p DEV_SEED
+fmom57_mx_reg_p_dm DEV_SEED
+fmom57_mx_reg_4t DEV_SEED
+fmom57_mx_reg_nw DEV_SEED
+fmom57_mx_reg_nw_dm DEV_SEED
+fmom57_mx_reg_pw DEV_SEED
+fmom57_mx_reg_pw_dm DEV_SEED
+fmom57_mx_reg_ntn DEV_SEED
+fmom57_mx_reg_ntn_dm DEV_SEED
+fmom57_rf_reg_nw DEV_SEED
+fmom57_rf_reg_nw_dm DEV_SEED
+fmom57_rf_reg_pw DEV_SEED
+fmom57_rf_reg_pw_dm DEV_SEED
+fmom57_rf_reg_ntn DEV_SEED
+fmom57_rf_reg_ntn_dm DEV_SEED
+mom57_mx_aux DEV_AUX
+fmom58_reg_n DEV_SEED
+fmom58_reg_n_dm DEV_SEED
+fmom58_reg_p DEV_SEED
+fmom58_reg_p_dm DEV_SEED
+fmom58_reg_2t DEV_SEED
+fmom58_reg_nw DEV_SEED
+fmom58_reg_nw_dm DEV_SEED
+fmom58_reg_pw DEV_SEED
+fmom58_reg_pw_dm DEV_SEED
+fmom58_reg_ntn DEV_SEED
+fmom58_reg_ntn_dm DEV_SEED
+fmom58_reg_ntn_wo_pring DEV_SEED
+fmom58_reg_ntn_wo_pring_dm DEV_SEED
+fmom58_mx_reg_n DEV_SEED
+fmom58_mx_reg_n_dm DEV_SEED
+fmom58_mx_reg_p DEV_SEED
+fmom58_mx_reg_p_dm DEV_SEED
+fmom58_mx_reg_4t DEV_SEED
+fmom58_mx_reg_nw DEV_SEED
+fmom58_mx_reg_nw_dm DEV_SEED
+fmom58_mx_reg_pw DEV_SEED
+fmom58_mx_reg_pw_dm DEV_SEED
+fmom58_mx_reg_ntn DEV_SEED
+fmom58_mx_reg_ntn_dm DEV_SEED
+fmom58_rf_reg_nw DEV_SEED
+fmom58_rf_reg_nw_dm DEV_SEED
+fmom58_rf_reg_pw DEV_SEED
+fmom58_rf_reg_pw_dm DEV_SEED
+fmom58_rf_reg_ntn DEV_SEED
+fmom58_rf_reg_ntn_dm DEV_SEED
+mom58_mx_aux DEV_AUX
+fmom68_reg_n DEV_SEED
+fmom68_reg_n_dm DEV_SEED
+fmom68_reg_p DEV_SEED
+fmom68_reg_p_dm DEV_SEED
+fmom68_reg_2t DEV_SEED
+fmom68_reg_nw DEV_SEED
+fmom68_reg_nw_dm DEV_SEED
+fmom68_reg_pw DEV_SEED
+fmom68_reg_pw_dm DEV_SEED
+fmom68_reg_ntn DEV_SEED
+fmom68_reg_ntn_dm DEV_SEED
+fmom68_reg_ntn_wo_pring DEV_SEED
+fmom68_reg_ntn_wo_pring_dm DEV_SEED
+fmom68_mx_reg_n DEV_SEED
+fmom68_mx_reg_n_dm DEV_SEED
+fmom68_mx_reg_p DEV_SEED
+fmom68_mx_reg_p_dm DEV_SEED
+fmom68_mx_reg_4t DEV_SEED
+fmom68_mx_reg_nw DEV_SEED
+fmom68_mx_reg_nw_dm DEV_SEED
+fmom68_mx_reg_pw DEV_SEED
+fmom68_mx_reg_pw_dm DEV_SEED
+fmom68_mx_reg_ntn DEV_SEED
+fmom68_mx_reg_ntn_dm DEV_SEED
+fmom68_rf_reg_nw DEV_SEED
+fmom68_rf_reg_nw_dm DEV_SEED
+fmom68_rf_reg_pw DEV_SEED
+fmom68_rf_reg_pw_dm DEV_SEED
+fmom68_rf_reg_ntn DEV_SEED
+fmom68_rf_reg_ntn_dm DEV_SEED
+mom68_mx_aux DEV_AUX
+gate1_not_IO2_not_IO2 CONNECT
+all_sd CONNECT
+all_sd_cop CONNECT
+ngate_PROP DEV_AUX
+nCore_WPEPROP DEV_AUX
+pCore_WPEPROP DEV_AUX
+nIO_WPEPROP DEV_AUX
+pIO_WPEPROP DEV_AUX
+nmos_SOB DEV_AUX
+pmos_SOB DEV_AUX
+lod_PROP DEV_AUX
+gate_COP DEV_AUX
+IND_RAD DEV_AUX
+IND_NR DEV_AUX
+IND_GDIS DEV_AUX
+IND_W DEV_AUX
+IND_S DEV_AUX
+IND_CTW DEV_AUX
+# CONNECTIVITY: 
+CONNECT AP M9 BY RV
+CONNECT AP indm10c
+CONNECT M1 d_tndiff BY n_odCont
+CONNECT M1 d_tndiff_hv BY n_odCont
+CONNECT M1 d_tndiff_udm BY n_odCont
+CONNECT M1 d_tpdiff BY p_odCont
+CONNECT M1 d_tpdiff_hv BY p_odCont
+CONNECT M1 d_tpdiff_udm BY p_odCont
+CONNECT M1 n_poly BY n_polyCont
+CONNECT M1 n_poly_rf BY n_polyCont
+CONNECT M1 p3 BY p3Cont
+CONNECT M1 p_poly BY p_polyCont
+CONNECT M1 p_poly_rf BY p_polyCont
+CONNECT M1 poly BY polyCont
+CONNECT M1 s_tndiff BY n_odCont
+CONNECT M1 s_tndiff_hv BY n_odCont
+CONNECT M1 s_tndiff_udm BY n_odCont
+CONNECT M1 s_tpdiff BY p_odCont
+CONNECT M1 s_tpdiff_hv BY p_odCont
+CONNECT M1 s_tpdiff_udm BY p_odCont
+CONNECT M1 tndiff BY n_odCont
+CONNECT M1 tpdiff BY p_odCont
+CONNECT M1 ydio_t BY n_odCont
+CONNECT M2 M1 BY VIA1
+CONNECT M3 M2 BY VIA2
+CONNECT M3 mom3m1
+CONNECT M3 mom3m2
+CONNECT M3 mom3p1
+CONNECT M3 mom3p2
+CONNECT M4 M3 BY VIA3
+CONNECT M4 mom4m1
+CONNECT M4 mom4m2
+CONNECT M4 mom4p1
+CONNECT M4 mom4p2
+CONNECT M5 M4 BY VIA4
+CONNECT M5 mom5m1
+CONNECT M5 mom5m2
+CONNECT M5 mom5p1
+CONNECT M5 mom5p2
+CONNECT M6 M5 BY VIA5
+CONNECT M6 mom6m1
+CONNECT M6 mom6m2
+CONNECT M6 mom6p1
+CONNECT M6 mom6p2
+CONNECT M7 M6 BY VIA6
+CONNECT M7 mom7m1
+CONNECT M7 mom7m2
+CONNECT M7 mom7p1
+CONNECT M7 mom7p2
+CONNECT M8 M7 BY VIA7
+CONNECT M8 mom8m1
+CONNECT M8 mom8m2
+CONNECT M8 mom8p1
+CONNECT M8 mom8p2
+CONNECT M9 M8 BY VIA8
+CONNECT M9 indm9m
+CONNECT M9 indm9p
+CONNECT cemit1 tpdiff
+CONNECT cnbase1 tndiff BY nplug
+CONNECT cnemit1 tndiff
+CONNECT cpbase1 tpdiff BY pplug
+CONNECT iemit1 tpdiff
+CONNECT inbase1 tndiff BY nplug
+CONNECT inemit1 tndiff
+CONNECT ipbase1 tpdiff BY pplug
+CONNECT metal_interface n_poly
+CONNECT metal_interface p_poly
+CONNECT n_poly crown BY n_blc
+CONNECT n_poly n_poly3
+CONNECT n_poly n_poly_rf
+CONNECT n_poly p_poly
+CONNECT n_pplug tpdiff
+CONNECT ncoll1 nxwell_npn
+CONNECT nplug tndiff
+CONNECT ntap tndiff
+CONNECT p_poly crown BY p_blc
+CONNECT p_poly p_poly3
+CONNECT p_poly p_poly_rf
+CONNECT poly n_poly
+CONNECT poly p_poly
+CONNECT pplug tpdiff
+CONNECT pplug2a tpdiff
+CONNECT tiod tndiff
+CONNECT tiod tpdiff
+CONNECT tndiff crown BY n_blc
+CONNECT tndiff d_tndiff_hv
+CONNECT tndiff d_tndiff_udm
+CONNECT tndiff nxwell_npn BY nplug
+CONNECT tndiff s_tndiff_hv
+CONNECT tndiff s_tndiff_udm
+CONNECT tndiff tpdiff
+CONNECT tndiff ydio_t
+CONNECT tpdiff crown BY p_blc
+CONNECT tpdiff d_tpdiff_hv
+CONNECT tpdiff d_tpdiff_udm
+CONNECT tpdiff s_tpdiff_hv
+CONNECT tpdiff s_tpdiff_udm
+CONNECT vargt n_poly
+CONNECT vargt_15 n_poly
+CONNECT vargt_18 n_poly
+CONNECT vargt_25 n_poly
+CONNECT vargt_33 n_poly
+CONNECT vargt_edc n_poly
+CONNECT vargt_p p_poly
+CONNECT vargt_18_p p_poly
+CONNECT vargt_25_p p_poly
+CONNECT tndiff tndiff_RC
+CONNECT tndiff_RC s_tndiff_udm
+CONNECT cnbase1 s_tndiff_udm BY nplug
+CONNECT cnemit1 s_tndiff_udm
+CONNECT inbase1 s_tndiff_udm BY nplug
+CONNECT inemit1 s_tndiff_udm
+CONNECT nplug s_tndiff_udm
+CONNECT ntap s_tndiff_udm
+CONNECT tiod s_tndiff_udm
+CONNECT s_tndiff_udm crown BY n_blc
+CONNECT s_tndiff_udm d_tndiff_hv
+CONNECT s_tndiff_udm d_tndiff_udm
+CONNECT s_tndiff_udm nxwell_npn BY nplug
+CONNECT s_tndiff_udm s_tndiff_hv
+CONNECT s_tndiff_udm tpdiff
+CONNECT s_tndiff_udm ydio_t
+CONNECT s_tndiff_udm tndiff_woR
+CONNECT tndiff_RC d_tndiff_udm
+CONNECT cnbase1 d_tndiff_udm BY nplug
+CONNECT cnemit1 d_tndiff_udm
+CONNECT inbase1 d_tndiff_udm BY nplug
+CONNECT inemit1 d_tndiff_udm
+CONNECT nplug d_tndiff_udm
+CONNECT ntap d_tndiff_udm
+CONNECT tiod d_tndiff_udm
+CONNECT d_tndiff_udm crown BY n_blc
+CONNECT d_tndiff_udm d_tndiff_hv
+CONNECT d_tndiff_udm nxwell_npn BY nplug
+CONNECT d_tndiff_udm s_tndiff_hv
+CONNECT d_tndiff_udm s_tndiff_udm
+CONNECT d_tndiff_udm tpdiff
+CONNECT d_tndiff_udm ydio_t
+CONNECT d_tndiff_udm tndiff_woR
+CONNECT tndiff_RC s_tndiff_hv
+CONNECT cnbase1 s_tndiff_hv BY nplug
+CONNECT cnemit1 s_tndiff_hv
+CONNECT inbase1 s_tndiff_hv BY nplug
+CONNECT inemit1 s_tndiff_hv
+CONNECT nplug s_tndiff_hv
+CONNECT ntap s_tndiff_hv
+CONNECT tiod s_tndiff_hv
+CONNECT s_tndiff_hv crown BY n_blc
+CONNECT s_tndiff_hv d_tndiff_hv
+CONNECT s_tndiff_hv d_tndiff_udm
+CONNECT s_tndiff_hv nxwell_npn BY nplug
+CONNECT s_tndiff_hv s_tndiff_udm
+CONNECT s_tndiff_hv tpdiff
+CONNECT s_tndiff_hv ydio_t
+CONNECT s_tndiff_hv tndiff_woR
+CONNECT tndiff_RC d_tndiff_hv
+CONNECT cnbase1 d_tndiff_hv BY nplug
+CONNECT cnemit1 d_tndiff_hv
+CONNECT inbase1 d_tndiff_hv BY nplug
+CONNECT inemit1 d_tndiff_hv
+CONNECT nplug d_tndiff_hv
+CONNECT ntap d_tndiff_hv
+CONNECT tiod d_tndiff_hv
+CONNECT d_tndiff_hv crown BY n_blc
+CONNECT d_tndiff_hv d_tndiff_udm
+CONNECT d_tndiff_hv nxwell_npn BY nplug
+CONNECT d_tndiff_hv s_tndiff_hv
+CONNECT d_tndiff_hv s_tndiff_udm
+CONNECT d_tndiff_hv tpdiff
+CONNECT d_tndiff_hv ydio_t
+CONNECT d_tndiff_hv tndiff_woR
+CONNECT tpdiff_RC s_tpdiff_udm
+CONNECT cemit1 s_tpdiff_udm
+CONNECT cpbase1 s_tpdiff_udm BY pplug
+CONNECT iemit1 s_tpdiff_udm
+CONNECT ipbase1 s_tpdiff_udm BY pplug
+CONNECT n_pplug s_tpdiff_udm
+CONNECT pplug s_tpdiff_udm
+CONNECT pplug2a s_tpdiff_udm
+CONNECT tiod s_tpdiff_udm
+CONNECT tndiff s_tpdiff_udm
+CONNECT s_tpdiff_udm crown BY p_blc
+CONNECT s_tpdiff_udm d_tpdiff_hv
+CONNECT s_tpdiff_udm d_tpdiff_udm
+CONNECT s_tpdiff_udm s_tpdiff_hv
+CONNECT s_tpdiff_udm tpdiff_woR
+CONNECT tpdiff_RC d_tpdiff_udm
+CONNECT cemit1 d_tpdiff_udm
+CONNECT cpbase1 d_tpdiff_udm BY pplug
+CONNECT iemit1 d_tpdiff_udm
+CONNECT ipbase1 d_tpdiff_udm BY pplug
+CONNECT n_pplug d_tpdiff_udm
+CONNECT pplug d_tpdiff_udm
+CONNECT pplug2a d_tpdiff_udm
+CONNECT tiod d_tpdiff_udm
+CONNECT tndiff d_tpdiff_udm
+CONNECT d_tpdiff_udm crown BY p_blc
+CONNECT d_tpdiff_udm d_tpdiff_hv
+CONNECT d_tpdiff_udm s_tpdiff_hv
+CONNECT d_tpdiff_udm s_tpdiff_udm
+CONNECT d_tpdiff_udm tpdiff_woR
+CONNECT tpdiff_RC s_tpdiff_hv
+CONNECT cemit1 s_tpdiff_hv
+CONNECT cpbase1 s_tpdiff_hv BY pplug
+CONNECT iemit1 s_tpdiff_hv
+CONNECT ipbase1 s_tpdiff_hv BY pplug
+CONNECT n_pplug s_tpdiff_hv
+CONNECT pplug s_tpdiff_hv
+CONNECT pplug2a s_tpdiff_hv
+CONNECT tiod s_tpdiff_hv
+CONNECT tndiff s_tpdiff_hv
+CONNECT s_tpdiff_hv crown BY p_blc
+CONNECT s_tpdiff_hv d_tpdiff_hv
+CONNECT s_tpdiff_hv d_tpdiff_udm
+CONNECT s_tpdiff_hv s_tpdiff_udm
+CONNECT s_tpdiff_hv tpdiff_woR
+CONNECT tpdiff_RC d_tpdiff_hv
+CONNECT cemit1 d_tpdiff_hv
+CONNECT cpbase1 d_tpdiff_hv BY pplug
+CONNECT iemit1 d_tpdiff_hv
+CONNECT ipbase1 d_tpdiff_hv BY pplug
+CONNECT n_pplug d_tpdiff_hv
+CONNECT pplug d_tpdiff_hv
+CONNECT pplug2a d_tpdiff_hv
+CONNECT tiod d_tpdiff_hv
+CONNECT tndiff d_tpdiff_hv
+CONNECT d_tpdiff_hv crown BY p_blc
+CONNECT d_tpdiff_hv d_tpdiff_udm
+CONNECT d_tpdiff_hv s_tpdiff_hv
+CONNECT d_tpdiff_hv s_tpdiff_udm
+CONNECT d_tpdiff_hv tpdiff_woR
+CONNECT M1 tndiff_RC BY n_odCont
+CONNECT cnbase1 tndiff_RC BY nplug
+CONNECT cnemit1 tndiff_RC
+CONNECT inbase1 tndiff_RC BY nplug
+CONNECT inemit1 tndiff_RC
+CONNECT nplug tndiff_RC
+CONNECT ntap tndiff_RC
+CONNECT tiod tndiff_RC
+CONNECT tndiff_RC crown BY n_blc
+CONNECT tndiff_RC nxwell_npn BY nplug
+CONNECT tndiff_RC tpdiff
+CONNECT tndiff_RC ydio_t
+CONNECT tndiff tndiff_woR
+CONNECT tndiff_woR tndiff_RC
+CONNECT M1 tndiff_woR BY n_odCont
+CONNECT cnbase1 tndiff_woR BY nplug
+CONNECT cnemit1 tndiff_woR
+CONNECT inbase1 tndiff_woR BY nplug
+CONNECT inemit1 tndiff_woR
+CONNECT nplug tndiff_woR
+CONNECT ntap tndiff_woR
+CONNECT tiod tndiff_woR
+CONNECT tndiff_woR crown BY n_blc
+CONNECT tndiff_woR d_tndiff_hv
+CONNECT tndiff_woR d_tndiff_udm
+CONNECT tndiff_woR nxwell_npn BY nplug
+CONNECT tndiff_woR s_tndiff_hv
+CONNECT tndiff_woR s_tndiff_udm
+CONNECT tndiff_woR tpdiff
+CONNECT tndiff_woR ydio_t
+CONNECT tpdiff tpdiff_RC
+CONNECT tpdiff_RC tndiff_RC
+CONNECT M1 tpdiff_RC BY p_odCont
+CONNECT cemit1 tpdiff_RC
+CONNECT cpbase1 tpdiff_RC BY pplug
+CONNECT iemit1 tpdiff_RC
+CONNECT ipbase1 tpdiff_RC BY pplug
+CONNECT n_pplug tpdiff_RC
+CONNECT pplug tpdiff_RC
+CONNECT pplug2a tpdiff_RC
+CONNECT tiod tpdiff_RC
+CONNECT tndiff tpdiff_RC
+CONNECT tpdiff_RC crown BY p_blc
+CONNECT tpdiff tpdiff_woR
+CONNECT tpdiff_woR tpdiff_RC
+CONNECT M1 tpdiff_woR BY p_odCont
+CONNECT cemit1 tpdiff_woR
+CONNECT cpbase1 tpdiff_woR BY pplug
+CONNECT iemit1 tpdiff_woR
+CONNECT ipbase1 tpdiff_woR BY pplug
+CONNECT n_pplug tpdiff_woR
+CONNECT pplug tpdiff_woR
+CONNECT pplug2a tpdiff_woR
+CONNECT tiod tpdiff_woR
+CONNECT tndiff tpdiff_woR
+CONNECT tpdiff_woR crown BY p_blc
+CONNECT tpdiff_woR d_tpdiff_hv
+CONNECT tpdiff_woR d_tpdiff_udm
+CONNECT tpdiff_woR s_tpdiff_hv
+CONNECT tpdiff_woR s_tpdiff_udm
+CONNECT tpdiff_woR tndiff_woR
+CONNECT ngate_15_mac n_poly
+CONNECT ngate_15od18_mac n_poly
+CONNECT ngate_18_mac n_poly
+CONNECT ngate_18ud12_mac n_poly
+CONNECT ngate_18ud15_mac n_poly
+CONNECT ngate_25_mac n_poly
+CONNECT ngate_25od_mac n_poly
+CONNECT ngate_25ud_mac n_poly
+CONNECT ngate_33_mac n_poly
+CONNECT navtgate_mac n_poly
+CONNECT nchvgate_mac n_poly
+CONNECT ngate_edc_mac n_poly
+CONNECT nehvgate_mac n_poly
+CONNECT nelvgate_mac n_poly
+CONNECT ngate_hg_mac n_poly
+CONNECT nuhvgate_hg_mac n_poly
+CONNECT ngate_hia15_mac n_poly
+CONNECT ngate_hia18_mac n_poly
+CONNECT ngate_hia25_mac n_poly
+CONNECT ngate_hia_mac n_poly
+CONNECT ngate_lpqrpsr n_poly
+CONNECT ngate_lprpsr n_poly
+CONNECT ngate_hlsvtqrpsr n_poly
+CONNECT ngate_hltrpsr n_poly
+CONNECT nhvgate_mac n_poly
+CONNECT ngate_hvtllrpsr n_poly
+CONNECT ngate_hvtrpsr n_poly
+CONNECT ngate_io_lvt_mac n_poly
+CONNECT ngate_llrpsr n_poly
+CONNECT ngate_lvt18ud12_mac n_poly
+CONNECT nlvgate_mac n_poly
+CONNECT ngate_lvtrpsr n_poly
+CONNECT ngate_mac n_poly
+CONNECT nilvtgate_mac n_poly
+CONNECT ngate_15na_mac n_poly
+CONNECT ngate_18na_mac n_poly
+CONNECT ngate_18naud15_mac n_poly
+CONNECT ngate_25na_mac n_poly
+CONNECT ngate_25naod_mac n_poly
+CONNECT ngate_25naud_mac n_poly
+CONNECT ngate_33na_mac n_poly
+CONNECT nlgate_mac n_poly
+CONNECT ngate_qrpsr n_poly
+CONNECT ngate_rom n_poly
+CONNECT ngate_rpsr n_poly
+CONNECT ngate_svt_sp_mac n_poly
+CONNECT ngate_svtllrpsr n_poly
+CONNECT ngate_svtrpsr n_poly
+CONNECT nuhvgate_mac n_poly
+CONNECT ngate_ullrpsr n_poly
+CONNECT nuvgate_mac n_poly
+CONNECT nzvgate_mac n_poly
+CONNECT ngate_sdppd n_poly
+CONNECT ngate_pd_lpdpsr n_poly
+CONNECT ngate_pd_lpsr n_poly
+CONNECT ngate_pd_hltsr n_poly
+CONNECT ngate_hvspd n_poly
+CONNECT ngate_siopd n_poly
+CONNECT ngate_pd_lldpsr n_poly
+CONNECT ngate_pd_llsr n_poly
+CONNECT ngate_spd n_poly
+CONNECT ngate_stgopd n_poly
+CONNECT ngate_pd_ulldpsr n_poly
+CONNECT ngate_pd_ullsr n_poly
+CONNECT ngate_sdppg n_poly
+CONNECT ngate_pg_lpdpsr n_poly
+CONNECT ngate_pg_lpsr n_poly
+CONNECT ngate_pg_hltsr n_poly
+CONNECT ngate_hvspg n_poly
+CONNECT ngate_siopg n_poly
+CONNECT ngate_pg_lldpsr n_poly
+CONNECT ngate_pg_llsr n_poly
+CONNECT ngate_spg n_poly
+CONNECT ngate_stgopg n_poly
+CONNECT ngate_pg_ulldpsr n_poly
+CONNECT ngate_pg_ullsr n_poly
+CONNECT ngate_rpdsr n_poly
+CONNECT pgate_15_mac p_poly
+CONNECT pgate_15od18_mac p_poly
+CONNECT pgate_18_mac p_poly
+CONNECT pgate_18ud12_mac p_poly
+CONNECT pgate_18ud15_mac p_poly
+CONNECT pgate_25_mac p_poly
+CONNECT pgate_25od_mac p_poly
+CONNECT pgate_25ud_mac p_poly
+CONNECT pgate_33_mac p_poly
+CONNECT alvtpgate_mac p_poly
+CONNECT pehvgate_mac p_poly
+CONNECT pelvgate_mac p_poly
+CONNECT pgate_hg_mac p_poly
+CONNECT puhvgate_hg_mac p_poly
+CONNECT phvgate_mac p_poly
+CONNECT plvgate_mac p_poly
+CONNECT pgate_mac p_poly
+CONNECT pilvtgate_mac p_poly
+CONNECT pgate_svt_sp_mac p_poly
+CONNECT puhvgate_mac p_poly
+CONNECT puvgate_mac p_poly
+CONNECT pgate_s_2psr p_poly
+CONNECT pgate_sdp p_poly
+CONNECT pgate_pu_lpdpsr p_poly
+CONNECT pgate_pu_lpsr p_poly
+CONNECT pgate_pu_hltsr p_poly
+CONNECT pgate_hvs p_poly
+CONNECT pgate_sio p_poly
+CONNECT pgate_pu_lldpsr p_poly
+CONNECT pgate_pu_llsr p_poly
+CONNECT pgate_s p_poly
+CONNECT pgate_stgo p_poly
+CONNECT pgate_pu_ulldpsr p_poly
+CONNECT pgate_pu_ullsr p_poly
+CONNECT ngate_hv18_mac n_poly
+CONNECT ngate_udm18_mac n_poly
+CONNECT ngate_udm18ud15_mac n_poly
+CONNECT ngate_udm_mac n_poly
+CONNECT pgate_hv18_mac p_poly
+CONNECT pgate_udm18_mac p_poly
+CONNECT pgate_udm18ud15_mac p_poly
+CONNECT pgate_udm_mac p_poly
+CONNECT M9 ctm_9 BY ctm_via8
+CONNECT M9 cbm_9 BY cbm_via8
+CONNECT gate1_not_IO2_not_IO2 n_poly
+CONNECT gate1_not_IO2_not_IO2 p_poly
+CONNECT all_sd_cop tndiff
+CONNECT all_sd_cop tpdiff
+CONNECT all_sd tndiff
+CONNECT all_sd tpdiff
+CONNECT tpdiff psub_term_b BY n_pplug
+CONNECT tpdiff psub_term BY pplug
+CONNECT tpdiff psub BY pplug
+CONNECT tpdiff RFDMY_HIA_bulk BY hia_rf_pplug
+CONNECT tpdiff coll1 BY pplug
+CONNECT tndiff nxwell BY nplug
+CONNECT s_tndiff_udm nxwell BY nplug
+CONNECT d_tndiff_udm nxwell BY nplug
+CONNECT s_tndiff_hv nxwell BY nplug
+CONNECT d_tndiff_hv nxwell BY nplug
+CONNECT s_tpdiff_udm RFDMY_HIA_bulk BY hia_rf_pplug
+CONNECT s_tpdiff_udm coll1 BY pplug
+CONNECT s_tpdiff_udm psub_term_b BY n_pplug
+CONNECT s_tpdiff_udm psub BY pplug
+CONNECT s_tpdiff_udm psub_term BY pplug
+CONNECT d_tpdiff_udm RFDMY_HIA_bulk BY hia_rf_pplug
+CONNECT d_tpdiff_udm coll1 BY pplug
+CONNECT d_tpdiff_udm psub_term_b BY n_pplug
+CONNECT d_tpdiff_udm psub BY pplug
+CONNECT d_tpdiff_udm psub_term BY pplug
+CONNECT s_tpdiff_hv RFDMY_HIA_bulk BY hia_rf_pplug
+CONNECT s_tpdiff_hv coll1 BY pplug
+CONNECT s_tpdiff_hv psub_term_b BY n_pplug
+CONNECT s_tpdiff_hv psub BY pplug
+CONNECT s_tpdiff_hv psub_term BY pplug
+CONNECT d_tpdiff_hv RFDMY_HIA_bulk BY hia_rf_pplug
+CONNECT d_tpdiff_hv coll1 BY pplug
+CONNECT d_tpdiff_hv psub_term_b BY n_pplug
+CONNECT d_tpdiff_hv psub BY pplug
+CONNECT d_tpdiff_hv psub_term BY pplug
+CONNECT tndiff_RC nxwell BY nplug
+CONNECT tndiff_woR nxwell BY nplug
+CONNECT tpdiff_RC psub BY pplug
+CONNECT tpdiff_RC RFDMY_HIA_bulk BY hia_rf_pplug
+CONNECT tpdiff_RC coll1 BY pplug
+CONNECT tpdiff_RC psub_term_b BY n_pplug
+CONNECT tpdiff_RC psub_term BY pplug
+CONNECT tpdiff_woR RFDMY_HIA_bulk BY hia_rf_pplug
+CONNECT tpdiff_woR coll1 BY pplug
+CONNECT tpdiff_woR psub_term_b BY n_pplug
+CONNECT tpdiff_woR psub BY pplug
+CONNECT tpdiff_woR psub_term BY pplug
+CONNECT tndiff nxwell_float BY nplug
+CONNECT nxwell tndiff_dmy BY nplug_dmy
+CONNECT nxwell PROBEM5_T BY PROBEM5_B
+CONNECT nxwell PROBEM2_T BY PROBEM2_B
+CONNECT nxwell DNW BY dnwc
+CONNECT nxwell PROBEM3_T BY PROBEM3_B
+CONNECT nxwell PROBEM7_T BY PROBEM7_B
+CONNECT nxwell PROBEM1_T BY PROBEM1_B
+CONNECT nxwell PROBEM4_T BY PROBEM4_B
+CONNECT nxwell PROBEM6_T BY PROBEM6_B
+CONNECT psub PROBEM5_T BY PROBEM5_B
+CONNECT psub PROBEM2_T BY PROBEM2_B
+CONNECT psub RFDMY_HIA_psub BY hia_rf_via
+CONNECT psub PROBEM3_T BY PROBEM3_B
+CONNECT psub PROBEM7_T BY PROBEM7_B
+CONNECT psub PROBEM1_T BY PROBEM1_B
+CONNECT psub rfdmy56 BY rfdmy56_via
+CONNECT psub tpdiff_dmy BY pplug_dmy
+CONNECT psub PROBEM4_T BY PROBEM4_B
+CONNECT psub PROBEM6_T BY PROBEM6_B
+CONNECT psub nw_pgdio
+# IMPLICIT CONNECTIVITY: 
+IMPLICIT_CONNECT cnwdio nxwell
+IMPLICIT_CONNECT cemit10 cemit1
+IMPLICIT_CONNECT cemit5 cemit1
+IMPLICIT_CONNECT cemit2 cemit1
+IMPLICIT_CONNECT cemit1d6 cemit1
+IMPLICIT_CONNECT cnemit10 cnemit1
+IMPLICIT_CONNECT cnemit5 cnemit1
+IMPLICIT_CONNECT cnemit2 cnemit1
+IMPLICIT_CONNECT cnemit1d6 cnemit1
+IMPLICIT_CONNECT cemit10_mac cemit1
+IMPLICIT_CONNECT cemit5_mac cemit1
+IMPLICIT_CONNECT cemit2_mac cemit1
+IMPLICIT_CONNECT cemit1d6_mac cemit1
+IMPLICIT_CONNECT cnemit10_mac cnemit1
+IMPLICIT_CONNECT cnemit5_mac cnemit1
+IMPLICIT_CONNECT cnemit2_mac cnemit1
+IMPLICIT_CONNECT cnemit1d6_mac cnemit1
+IMPLICIT_CONNECT mim_r crown
+IMPLICIT_CONNECT mim_r_decap crown
+IMPLICIT_CONNECT var10_dvar nxwell
+IMPLICIT_CONNECT var10_nw nxwell
+IMPLICIT_CONNECT var10_rf18 nxwell
+IMPLICIT_CONNECT var10_nw_rf18 nxwell
+IMPLICIT_CONNECT var10_rf25 nxwell
+IMPLICIT_CONNECT var10_nw_rf25 nxwell
+IMPLICIT_CONNECT var11_cvar nxwell
+IMPLICIT_CONNECT var11_nw nxwell
+IMPLICIT_CONNECT var11_rf18 nxwell
+IMPLICIT_CONNECT var11_nw_rf18 nxwell
+IMPLICIT_CONNECT var11_rf25 nxwell
+IMPLICIT_CONNECT var11_nw_rf25 nxwell
+IMPLICIT_CONNECT var_nw3_rf nxwell
+IMPLICIT_CONNECT var_nw3_rf_nw nxwell
+IMPLICIT_CONNECT var_nw_rf15_nw nxwell
+IMPLICIT_CONNECT var_nw_rf18 nxwell
+IMPLICIT_CONNECT var_nw_rf18_nw nxwell
+IMPLICIT_CONNECT var_nw_rf25 nxwell
+IMPLICIT_CONNECT var_nw_rf25_nw nxwell
+IMPLICIT_CONNECT dmetal1 M1
+IMPLICIT_CONNECT dmetal2 M2
+IMPLICIT_CONNECT dmetal3 M3
+IMPLICIT_CONNECT dmetal4 M4
+IMPLICIT_CONNECT dmetal5 M5
+# LAYER ALIASES: 
+ALIAS pplug2a ptap
+ALIAS pvargt_rf vargt_rf1
+ALIAS pvargt_rf18 vargt_rf18
+ALIAS pvargt_rf25 vargt_rf25
+ALIAS psub_term_b n_psub
+ALIAS mom14_extc mom24_extc
+ALIAS mom15_extc mom35_extc
+ALIAS mom15_extc mom25_extc
+ALIAS mom16_extc mom46_extc
+ALIAS mom16_extc mom36_extc
+ALIAS mom16_extc mom26_extc
+ALIAS mom17_extc mom57_extc
+ALIAS mom17_extc mom37_extc
+ALIAS mom17_extc mom47_extc
+ALIAS mom17_extc mom27_extc
+ALIAS mom18_extc mom28_extc
+ALIAS mom18_extc mom38_extc
+ALIAS mom18_extc mom48_extc
+ALIAS mom18_extc mom58_extc
+ALIAS mom18_extc mom68_extc
+ALIAS ngate_PROP pgate_PROP

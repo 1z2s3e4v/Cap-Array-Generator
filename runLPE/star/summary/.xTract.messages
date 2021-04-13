@@ -1,0 +1,43 @@
+Parsing option_file: xtract.tech (EX-304)
+Running Amd_64b    
+Initializing extraction ... (EX-724)
+Reading binary grd file ../cln28hpc+_1p09m+ut-alrdl_6x2z_typical.nxtgrd ... (EX-135)
+----- R mode: no R extraction -----
+----- Importing design ----- 
+Ary stats nx=10 ny=8 dx=4590 dy=4849 nentry=1332  max/cell=37 av/cell=16.65
+ Ary stats nx=2 ny=1 dx=22950 dy=38789 nentry=0  max/cell=0 av/cell=0
+ Import design time is 0 seconds.
+----- Initializing models ----- 
+Initialize models time is 0 seconds.
+----- Extracting 7 nets ----- 
+Completed  10%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.531
+Completed  30%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.742
+Completed  50%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.742
+Completed  70%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.742
+ Processing non-critical polygons ... 
+Completed 100%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.742
+num of ccaps : 290
+num of ccap hits : 0
+num of ccap misses: 0
+num of ccap grounds 0
+num of ccaps grounded: 0
+num of ccaps not grounded: 0
+num of ccaps grounded due to not non-short condition: 0
+Extraction time is 0 seconds.
+----- Reducing 7 nets ----- 
+----- Floating fill reduction ----- 
+Floating fill reduction time is 0 seconds.Mem=520.742
+Reduction time is 0 seconds.
+Total capacitance environments constructed = 2763
+Unique capacitance environments constructed = 1750 (63.337%)
+Total resistance environments constructed = 0
+Unique resistance environments constructed = 0
+Extracted 15649 capacitors, 33 resistors, 0 reluctors, 561 nodes
+Reduced to 7 nodes,  (98.7522%)
+Reduced to 0 resistors,  (100%)
+Reduced to 1430 capacitors: 1430 Cc and 0 Cg (90.862%)
+  
+xTractor      Elp=00:00:01 Cpu=00:00:01 Usr=1.1    Sys=0.2    Mem=520.7 
+  
+Done          Elp=00:00:01 Cpu=00:00:01 Usr=1.1    Sys=0.2    Mem=520.7 
+

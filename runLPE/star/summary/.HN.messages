@@ -1,0 +1,12 @@
+pre = 0
+main thread = 0
+_write_tokens = 0
+_write_file = 0
+  
+InitDB        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=164.0 
+HN            Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=193.9 
+  
+Done          Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=193.9 
+
+End Time: Sat Apr 10 19:52:02 2021
+

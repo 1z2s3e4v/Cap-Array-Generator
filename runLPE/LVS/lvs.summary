@@ -1,0 +1,37 @@
+
+
+==================================================================================
+=== CALIBRE::LVS-H SUMMARY REPORT
+===
+
+Extraction Summary
+------------------
+Extraction Start Time:                       Sun Jan 10 14:06:15 2021
+Extraction Finish Time:                      Sun Jan 10 14:06:19 2021
+Circuit Extraction Report:                   ARRAY_CMP_T1.lvs.report.ext
+Circuit Extraction SPICE Netlist:            /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/LVS/ARRAY_CMP_T1.sp
+
+Electrical Rule Checking (ERC)
+------------------------------
+ERC Results Database:                        ARRAY_CMP_T1.erc.results
+ERC Summary Report File:                     ARRAY_CMP_T1.erc.summary
+TOTAL ERC RuleChecks Executed:               35
+TOTAL ERC RuleCheck Results Generated:       2 (23)
+PDSP Files:
+                                             svdb/ARRAY_CMP_T1.pdsp
+
+Comparison Summary
+------------------
+Comparison Start Time:                       Sun Jan 10 14:06:20 2021
+Comparison Finish Time:                      Sun Jan 10 14:06:20 2021
+LVS Comparison Report:                       ARRAY_CMP_T1.lvs.report
+LVS Comparison Status:                       CORRECT.
+
+                            #                _   _     
+                           #                 *   *     
+                      #   #                    |       
+                       # #                   \___/     
+                        #                              
+
+Comparison Warning Types Detected:           1
+

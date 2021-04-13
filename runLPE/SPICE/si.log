@@ -1,0 +1,5 @@
+Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.13s.
+*WARNING* (icLic-203) Failed to check out license Virtuoso_Schematic_Editor_L ("Schematics L") to run Schematics L because of status code -5.
+Attempting to check out the next available license Virtuoso_Schematic_Editor_XL ("Schematics XL") per license checkout order L, XL.
+*INFO* (icLic-302) License Virtuoso_Schematic_Editor_XL ("Schematics XL") was used to run Schematics L.
+*Error* dbClose: argument #1 should be a database object (type template = "d") - nil

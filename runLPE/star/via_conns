@@ -1,0 +1,54 @@
+RV
+UP: AP
+DOWN: M9
+VIA1
+UP: M2
+DOWN: M1
+VIA2
+UP: M3
+DOWN: M2
+VIA3
+UP: M4
+DOWN: M3
+VIA4
+UP: M5
+DOWN: M4
+VIA5
+UP: M6
+DOWN: M5
+VIA6
+UP: M7
+DOWN: M6
+VIA7
+UP: M8
+DOWN: M7
+VIA8
+UP: M9
+DOWN: M8
+hia_rf_pplug
+UP: d_tpdiff_hv d_tpdiff_udm s_tpdiff_hv s_tpdiff_udm tpdiff tpdiff_RC tpdiff_woR
+DOWN: RFDMY_HIA_bulk
+n_odCont
+UP: M1
+DOWN: d_tndiff d_tndiff_hv d_tndiff_udm s_tndiff s_tndiff_hv s_tndiff_udm tndiff tndiff_RC tndiff_woR ydio_t
+n_polyCont
+UP: M1
+DOWN: n_poly n_poly_rf
+nplug
+UP: d_tndiff_hv d_tndiff_udm s_tndiff_hv s_tndiff_udm tndiff tndiff_RC tndiff_woR
+DOWN: cnbase1 inbase1 nxwell nxwell_npn
+nplug_dmy
+UP: tndiff_dmy
+DOWN: nxwell
+p_odCont
+UP: M1
+DOWN: d_tpdiff d_tpdiff_hv d_tpdiff_udm s_tpdiff s_tpdiff_hv s_tpdiff_udm tpdiff tpdiff_RC tpdiff_woR
+p_polyCont
+UP: M1
+DOWN: p_poly p_poly_rf
+pplug
+UP: d_tpdiff_hv d_tpdiff_udm s_tpdiff_hv s_tpdiff_udm tpdiff tpdiff_RC tpdiff_woR
+DOWN: coll1 cpbase1 ipbase1 psub psub_term
+pplug_dmy
+UP: tpdiff_dmy
+DOWN: psub

@@ -1,0 +1,25 @@
+# bit <nit_num>
+bit 4
+# -----------------------------------------------------------------
+# CapUnit <Lib> <Cell> <View>
+#CapUnit ADC_SAR4BIT CU1F layout
+# -----------------------------------------------------------------
+# OutputLayout <Lib> <Cell> <View>
+#OutputLayout ADC_SAR4BIT ARRAY_CMP_T1 layout
+# -----------------------------------------------------------------
+# Cap <num_of_cap>
+#Cap 6
+# <Netname> <capRatio> <finCapNum> <capLen> <topPin> <buttomPin>
+SL1A 1 1 2.2 TOP_ARRAY SL1A
+SL1B 1 1 2.2 TOP_ARRAY SL1B
+SL2A 2 2 2.2 TOP_ARRAY SL2A
+SL2B 2 2 2.2 TOP_ARRAY SL2B
+SL3A 4 4 2.2 TOP_ARRAY SL3A
+SL3B 4 4 2.2 TOP_ARRAY SL3B
+# -----------------------------------------------------------------
+# Dummy <num_of_dummy>
+#Dummy 2
+# <name> <capRatio> <finCapNum> <capLen> <topPin> <buttomPin>
+# dummy1 5 5 2.2 TOP_ARRAY VSS09A
+# dummy2 3 3 2.2 VDD09A VDD09A
+# -----------------------------------------------------------------

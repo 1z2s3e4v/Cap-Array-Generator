@@ -1,0 +1,367 @@
+* Calibre pushdown separate-properties (back-annotation) data
+***************************************
+*
+* These lvs-actionable properties, indexed by DEVICE element(model) will be kept in the netlist:
+*
+* KEEP_PROP_BEGIN
+* KEEP_PROP D(ndio) A
+* KEEP_PROP D(ndio_15) A
+* KEEP_PROP D(ndio_15od18) A
+* KEEP_PROP D(ndio_18) A
+* KEEP_PROP D(ndio_18ll) A
+* KEEP_PROP D(ndio_18ud12) A
+* KEEP_PROP D(ndio_18ud15) A
+* KEEP_PROP D(ndio_25) A
+* KEEP_PROP D(ndio_25ll) A
+* KEEP_PROP D(ndio_25od33) A
+* KEEP_PROP D(ndio_25ud18) A
+* KEEP_PROP D(ndio_33) A
+* KEEP_PROP D(ndio_avt) A
+* KEEP_PROP D(ndio_ehvt) A
+* KEEP_PROP D(ndio_elvt) A
+* KEEP_PROP D(ndio_esd) A
+* KEEP_PROP D(ndio_hg) A
+* KEEP_PROP D(ndio_hguhvt) A
+* KEEP_PROP D(ndio_hvt) A
+* KEEP_PROP D(ndio_io_lvt) A
+* KEEP_PROP D(ndio_ll) A
+* KEEP_PROP D(ndio_lvt) A
+* KEEP_PROP D(ndio_lvt18ud12) A
+* KEEP_PROP D(ndio_mlvt) A
+* KEEP_PROP D(ndio_na) A
+* KEEP_PROP D(ndio_na15) A
+* KEEP_PROP D(ndio_na18) A
+* KEEP_PROP D(ndio_na18ud15) A
+* KEEP_PROP D(ndio_na25) A
+* KEEP_PROP D(ndio_na25od33) A
+* KEEP_PROP D(ndio_na33) A
+* KEEP_PROP D(ndio_uhvt) A
+* KEEP_PROP D(ndio_ulvt) A
+* KEEP_PROP D(ndio_zvt) A
+* KEEP_PROP D(nwdio) A
+* KEEP_PROP D(pdio) A
+* KEEP_PROP D(pdio_15) A
+* KEEP_PROP D(pdio_15od18) A
+* KEEP_PROP D(pdio_18) A
+* KEEP_PROP D(pdio_18ll) A
+* KEEP_PROP D(pdio_18ud12) A
+* KEEP_PROP D(pdio_18ud15) A
+* KEEP_PROP D(pdio_25) A
+* KEEP_PROP D(pdio_25ll) A
+* KEEP_PROP D(pdio_25od33) A
+* KEEP_PROP D(pdio_25ud18) A
+* KEEP_PROP D(pdio_33) A
+* KEEP_PROP D(pdio_ehvt) A
+* KEEP_PROP D(pdio_elvt) A
+* KEEP_PROP D(pdio_hg) A
+* KEEP_PROP D(pdio_hguhvt) A
+* KEEP_PROP D(pdio_hvt) A
+* KEEP_PROP D(pdio_ll) A
+* KEEP_PROP D(pdio_lvt) A
+* KEEP_PROP D(pdio_mlvt) A
+* KEEP_PROP D(pdio_uhvt) A
+* KEEP_PROP D(pdio_ulvt) A
+* KEEP_PROP LDDN(nch_hv18_mac) L W
+* KEEP_PROP LDDN(nch_udm18_mac) L W
+* KEEP_PROP LDDN(nch_udm18ud15_mac) L W
+* KEEP_PROP LDDN(nch_udm_mac) L W
+* KEEP_PROP LDDP(pch_hv18_mac) L W
+* KEEP_PROP LDDP(pch_udm18_mac) L W
+* KEEP_PROP LDDP(pch_udm18ud15_mac) L W
+* KEEP_PROP LDDP(pch_udm_mac) L W
+* KEEP_PROP MN(nch_15_mac) L W
+* KEEP_PROP MN(nch_15od18_mac) L W
+* KEEP_PROP MN(nch_18_mac) L W
+* KEEP_PROP MN(nch_18ud12_mac) L W
+* KEEP_PROP MN(nch_18ud15_mac) L W
+* KEEP_PROP MN(nch_25_mac) L W
+* KEEP_PROP MN(nch_25od33_mac) L W
+* KEEP_PROP MN(nch_25ud18_mac) L W
+* KEEP_PROP MN(nch_33_mac) L W
+* KEEP_PROP MN(nch_avt_mac) L W
+* KEEP_PROP MN(nch_chvt_mac) L W
+* KEEP_PROP MN(nch_edc_mac) L W
+* KEEP_PROP MN(nch_ehvt_mac) L W
+* KEEP_PROP MN(nch_elvt_mac) L W
+* KEEP_PROP MN(nch_hg_mac) L W
+* KEEP_PROP MN(nch_hguhvt_mac) L W
+* KEEP_PROP MN(nch_hia15_mac) L W
+* KEEP_PROP MN(nch_hia18_mac) L W
+* KEEP_PROP MN(nch_hia25_mac) L W
+* KEEP_PROP MN(nch_hia_mac) L W
+* KEEP_PROP MN(nch_hlqrpsr) L W
+* KEEP_PROP MN(nch_hlrpsr) L W
+* KEEP_PROP MN(nch_hlsvtrpsr) L W
+* KEEP_PROP MN(nch_hltrpsr) L W
+* KEEP_PROP MN(nch_hvt_mac) L W
+* KEEP_PROP MN(nch_hvtllrpsr) L W
+* KEEP_PROP MN(nch_hvtrpsr) L W
+* KEEP_PROP MN(nch_io_lvt_mac) L W
+* KEEP_PROP MN(nch_llrpsr) L W
+* KEEP_PROP MN(nch_lvt18ud12_mac) L W
+* KEEP_PROP MN(nch_lvt_mac) L W
+* KEEP_PROP MN(nch_lvtrpsr) L W
+* KEEP_PROP MN(nch_mac) L W
+* KEEP_PROP MN(nch_mlvt_mac) L W
+* KEEP_PROP MN(nch_na15_mac) L W
+* KEEP_PROP MN(nch_na18_mac) L W
+* KEEP_PROP MN(nch_na18ud15_mac) L W
+* KEEP_PROP MN(nch_na25_mac) L W
+* KEEP_PROP MN(nch_na25od33_mac) L W
+* KEEP_PROP MN(nch_na25ud18_mac) L W
+* KEEP_PROP MN(nch_na33_mac) L W
+* KEEP_PROP MN(nch_na_mac) L W
+* KEEP_PROP MN(nch_qrpsr) L W
+* KEEP_PROP MN(nch_rom) L W
+* KEEP_PROP MN(nch_rpsr) L W
+* KEEP_PROP MN(nch_svt_sp_mac) L W
+* KEEP_PROP MN(nch_svtllrpsr) L W
+* KEEP_PROP MN(nch_svtrpsr) L W
+* KEEP_PROP MN(nch_uhvt_mac) L W
+* KEEP_PROP MN(nch_ullrpsr) L W
+* KEEP_PROP MN(nch_ulvt_mac) L W
+* KEEP_PROP MN(nch_zvt_mac) L W
+* KEEP_PROP MN(nchpd_dpsr) L W
+* KEEP_PROP MN(nchpd_hldpsr) L W
+* KEEP_PROP MN(nchpd_hlsr) L W
+* KEEP_PROP MN(nchpd_hltsr) L W
+* KEEP_PROP MN(nchpd_hvtsr) L W
+* KEEP_PROP MN(nchpd_iosr_mac) L W
+* KEEP_PROP MN(nchpd_lldpsr) L W
+* KEEP_PROP MN(nchpd_llsr) L W
+* KEEP_PROP MN(nchpd_sr) L W
+* KEEP_PROP MN(nchpd_tgosr) L W
+* KEEP_PROP MN(nchpd_ulldpsr) L W
+* KEEP_PROP MN(nchpd_ullsr) L W
+* KEEP_PROP MN(nchpg_dpsr) L W
+* KEEP_PROP MN(nchpg_hldpsr) L W
+* KEEP_PROP MN(nchpg_hlsr) L W
+* KEEP_PROP MN(nchpg_hltsr) L W
+* KEEP_PROP MN(nchpg_hvtsr) L W
+* KEEP_PROP MN(nchpg_iosr_mac) L W
+* KEEP_PROP MN(nchpg_lldpsr) L W
+* KEEP_PROP MN(nchpg_llsr) L W
+* KEEP_PROP MN(nchpg_sr) L W
+* KEEP_PROP MN(nchpg_tgosr) L W
+* KEEP_PROP MN(nchpg_ulldpsr) L W
+* KEEP_PROP MN(nchpg_ullsr) L W
+* KEEP_PROP MN(nchrpd_sr) L W
+* KEEP_PROP MP(pch_15_mac) L W
+* KEEP_PROP MP(pch_15od18_mac) L W
+* KEEP_PROP MP(pch_18_mac) L W
+* KEEP_PROP MP(pch_18ud12_mac) L W
+* KEEP_PROP MP(pch_18ud15_mac) L W
+* KEEP_PROP MP(pch_25_mac) L W
+* KEEP_PROP MP(pch_25od33_mac) L W
+* KEEP_PROP MP(pch_25ud18_mac) L W
+* KEEP_PROP MP(pch_33_mac) L W
+* KEEP_PROP MP(pch_alvt_mac) L W
+* KEEP_PROP MP(pch_ehvt_mac) L W
+* KEEP_PROP MP(pch_elvt_mac) L W
+* KEEP_PROP MP(pch_hg_mac) L W
+* KEEP_PROP MP(pch_hguhvt_mac) L W
+* KEEP_PROP MP(pch_hvt_mac) L W
+* KEEP_PROP MP(pch_lvt_mac) L W
+* KEEP_PROP MP(pch_mac) L W
+* KEEP_PROP MP(pch_mlvt_mac) L W
+* KEEP_PROP MP(pch_svt_sp_mac) L W
+* KEEP_PROP MP(pch_uhvt_mac) L W
+* KEEP_PROP MP(pch_ulvt_mac) L W
+* KEEP_PROP MP(pchpu_2psr) L W
+* KEEP_PROP MP(pchpu_dpsr) L W
+* KEEP_PROP MP(pchpu_hldpsr) L W
+* KEEP_PROP MP(pchpu_hlsr) L W
+* KEEP_PROP MP(pchpu_hltsr) L W
+* KEEP_PROP MP(pchpu_hvtsr) L W
+* KEEP_PROP MP(pchpu_iosr_mac) L W
+* KEEP_PROP MP(pchpu_lldpsr) L W
+* KEEP_PROP MP(pchpu_llsr) L W
+* KEEP_PROP MP(pchpu_sr) L W
+* KEEP_PROP MP(pchpu_tgosr) L W
+* KEEP_PROP MP(pchpu_ulldpsr) L W
+* KEEP_PROP MP(pchpu_ullsr) L W
+* KEEP_PROP Q(npn10) A
+* KEEP_PROP Q(npn10_mis) A
+* KEEP_PROP Q(npn1d6) A
+* KEEP_PROP Q(npn1d6_mis) A
+* KEEP_PROP Q(npn2) A
+* KEEP_PROP Q(npn2_mis) A
+* KEEP_PROP Q(npn5) A
+* KEEP_PROP Q(npn5_mis) A
+* KEEP_PROP Q(pnp10) A
+* KEEP_PROP Q(pnp10_mis) A
+* KEEP_PROP Q(pnp1d6) A
+* KEEP_PROP Q(pnp1d6_mis) A
+* KEEP_PROP Q(pnp2) A
+* KEEP_PROP Q(pnp2_mis) A
+* KEEP_PROP Q(pnp5) A
+* KEEP_PROP Q(pnp5_mis) A
+* KEEP_PROP cfmom nr s w lr stm spm dmflag
+* KEEP_PROP cfmom_2t nr s w lr stm spm
+* KEEP_PROP cfmom_mx nr s w lr stm spm dmflag multi
+* KEEP_PROP cfmom_mx_4t nr s w lr stm spm multi
+* KEEP_PROP cfmom_wo nr s w lr stm spm shield dmflag
+* KEEP_PROP cfmom_wo_mx nr s w lr stm spm shield dmflag multi
+* KEEP_PROP cfmom_wo_rf nr s w lr stm spm shield dmflag
+* KEEP_PROP cmoscap_rf lr wr br gr
+* KEEP_PROP cmoscap_rf18 lr wr br gr
+* KEEP_PROP cmoscap_rf18_nw lr wr br gr
+* KEEP_PROP cmoscap_rf25 lr wr br gr
+* KEEP_PROP cmoscap_rf25_nw lr wr br gr
+* KEEP_PROP cmoscap_rf_nw lr wr br gr
+* KEEP_PROP dmoscap_rf wr lr br gr
+* KEEP_PROP dmoscap_rf18 wr lr br gr
+* KEEP_PROP dmoscap_rf18_nw wr lr br gr
+* KEEP_PROP dmoscap_rf25 wr lr br gr
+* KEEP_PROP dmoscap_rf25_nw wr lr br gr
+* KEEP_PROP dmoscap_rf_nw wr lr br gr
+* KEEP_PROP mimcap_sin lt wt
+* KEEP_PROP moscap_rf lr wr br gr
+* KEEP_PROP moscap_rf15_nw lr wr br gr
+* KEEP_PROP moscap_rf18 lr wr br gr
+* KEEP_PROP moscap_rf18_nw lr wr br gr
+* KEEP_PROP moscap_rf25 lr wr br gr
+* KEEP_PROP moscap_rf25_nw lr wr br gr
+* KEEP_PROP moscap_rf_nw lr wr br gr
+* KEEP_PROP ndio_gated_mac wg dw nr
+* KEEP_PROP ndio_hia_mac w l nf
+* KEEP_PROP ndio_hia_rf aw al fn
+* KEEP_PROP nmos_rf_18_5t wr lr nr
+* KEEP_PROP nmos_rf_18_6t wr lr nr
+* KEEP_PROP nmos_rf_18_nw wr lr nr
+* KEEP_PROP nmos_rf_18ud15_5t wr lr nr
+* KEEP_PROP nmos_rf_18ud15_6t wr lr nr
+* KEEP_PROP nmos_rf_18ud15_nw wr lr nr
+* KEEP_PROP nmos_rf_25_5t wr lr nr
+* KEEP_PROP nmos_rf_25_6t wr lr nr
+* KEEP_PROP nmos_rf_25_nw wr lr nr
+* KEEP_PROP nmos_rf_25od33_5t wr lr nr
+* KEEP_PROP nmos_rf_25od33_6t wr lr nr
+* KEEP_PROP nmos_rf_25od33_nw wr lr nr
+* KEEP_PROP nmos_rf_25ud18_5t wr lr nr
+* KEEP_PROP nmos_rf_25ud18_6t wr lr nr
+* KEEP_PROP nmos_rf_25ud18_nw wr lr nr
+* KEEP_PROP nmos_rf_5t wr lr nr
+* KEEP_PROP nmos_rf_6t wr lr nr
+* KEEP_PROP nmos_rf_hvt_5t wr lr nr
+* KEEP_PROP nmos_rf_hvt_6t wr lr nr
+* KEEP_PROP nmos_rf_hvt_nw wr lr nr
+* KEEP_PROP nmos_rf_lvt_5t wr lr nr
+* KEEP_PROP nmos_rf_lvt_6t wr lr nr
+* KEEP_PROP nmos_rf_lvt_nw wr lr nr
+* KEEP_PROP nmos_rf_nw wr lr nr
+* KEEP_PROP nmos_rf_ulvt_5t wr lr nr
+* KEEP_PROP nmos_rf_ulvt_6t wr lr nr
+* KEEP_PROP nmos_rf_ulvt_nw wr lr nr
+* KEEP_PROP nmoscap wr lr
+* KEEP_PROP nmoscap_15 wr lr
+* KEEP_PROP nmoscap_18 wr lr
+* KEEP_PROP nmoscap_25 wr lr
+* KEEP_PROP nmoscap_33 wr lr
+* KEEP_PROP nmoscap_edc wr lr
+* KEEP_PROP pcmoscap_rf lr wr br gr
+* KEEP_PROP pcmoscap_rf18 lr wr br gr
+* KEEP_PROP pcmoscap_rf25 lr wr br gr
+* KEEP_PROP pdio_gated_mac wg dw nr
+* KEEP_PROP pdio_gated_mac_3t wg dw nr
+* KEEP_PROP pdio_hia_mac w l nf
+* KEEP_PROP pdio_hia_rf aw al fn
+* KEEP_PROP pmos_rf_18_5t wr lr nr
+* KEEP_PROP pmos_rf_18_nw wr lr nr
+* KEEP_PROP pmos_rf_18_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_18ud15_5t wr lr nr
+* KEEP_PROP pmos_rf_18ud15_nw wr lr nr
+* KEEP_PROP pmos_rf_18ud15_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_25_5t wr lr nr
+* KEEP_PROP pmos_rf_25_nw wr lr nr
+* KEEP_PROP pmos_rf_25_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_25od33_5t wr lr nr
+* KEEP_PROP pmos_rf_25od33_nw wr lr nr
+* KEEP_PROP pmos_rf_25od33_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_25ud18_5t wr lr nr
+* KEEP_PROP pmos_rf_25ud18_nw wr lr nr
+* KEEP_PROP pmos_rf_25ud18_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_5t wr lr nr
+* KEEP_PROP pmos_rf_hvt_5t wr lr nr
+* KEEP_PROP pmos_rf_hvt_nw wr lr nr
+* KEEP_PROP pmos_rf_hvt_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_lvt_5t wr lr nr
+* KEEP_PROP pmos_rf_lvt_nw wr lr nr
+* KEEP_PROP pmos_rf_lvt_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_nw wr lr nr
+* KEEP_PROP pmos_rf_nw_5t wr lr nr
+* KEEP_PROP pmos_rf_ulvt_5t wr lr nr
+* KEEP_PROP pmos_rf_ulvt_nw wr lr nr
+* KEEP_PROP pmos_rf_ulvt_nw_5t wr lr nr
+* KEEP_PROP pmoscap wr lr
+* KEEP_PROP pmoscap_18 wr lr
+* KEEP_PROP pmoscap_25 wr lr
+* KEEP_PROP pmoscap_rf lr wr br gr
+* KEEP_PROP pmoscap_rf18 lr wr br gr
+* KEEP_PROP probe1 a pj
+* KEEP_PROP probe2 a pj
+* KEEP_PROP probe3 a pj
+* KEEP_PROP probe4 a pj
+* KEEP_PROP probe5 a pj
+* KEEP_PROP probe6 a pj
+* KEEP_PROP probe7 a pj
+* KEEP_PROP rm1w w l
+* KEEP_PROP rm2w w l
+* KEEP_PROP rm3w w l
+* KEEP_PROP rm4w w l
+* KEEP_PROP rm5w w l
+* KEEP_PROP rm6w w l
+* KEEP_PROP rm7w w l
+* KEEP_PROP rm8w w l
+* KEEP_PROP rm9w w l
+* KEEP_PROP rmap w l
+* KEEP_PROP rnmg w l
+* KEEP_PROP rnmg_m wr lr
+* KEEP_PROP rnodl w l
+* KEEP_PROP rnodl_m wr lr
+* KEEP_PROP rnods w l
+* KEEP_PROP rnods_m wr lr
+* KEEP_PROP rnodwo w l
+* KEEP_PROP rnodwo_m wr lr
+* KEEP_PROP rnwod w l
+* KEEP_PROP rnwod_m wr lr
+* KEEP_PROP rnwsti w l
+* KEEP_PROP rnwsti_m wr lr
+* KEEP_PROP rpmg w l
+* KEEP_PROP rpmg_m wr lr
+* KEEP_PROP rpodl w l
+* KEEP_PROP rpodl_m wr lr
+* KEEP_PROP rpods w l
+* KEEP_PROP rpods_m wr lr
+* KEEP_PROP rpodwo w l
+* KEEP_PROP rpodwo_m wr lr
+* KEEP_PROP rupolym w l
+* KEEP_PROP rupolym_m wr lr
+* KEEP_PROP rupolym_rf w l
+* KEEP_PROP spiral_std_mu_a28_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_std_mu_z lay w spacing nr rad gdis
+* KEEP_PROP spiral_std_mu_z_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_ct_mu_a28_a28_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_ct_mu_z_a lay w spacing nr rad gdis ctapw
+* KEEP_PROP spiral_sym_ct_mu_z_a28_dm lay w spacing nr rad gdis ctapw
+* KEEP_PROP spiral_sym_mu_a28_dm lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_mu_z lay w spacing nr rad gdis
+* KEEP_PROP spiral_sym_mu_z_dm lay w spacing nr rad gdis
+* KEEP_PROP_END
+*
+.SUBCKT CU1F
+* nothing transcripted
+.ENDS
+***************************************
+.SUBCKT ICV_1
+* nothing transcripted
+.ENDS
+***************************************
+.SUBCKT ICV_2
+* nothing transcripted
+.ENDS
+***************************************
+.SUBCKT ARRAY_CMP
+* nothing transcripted
+.ENDS
+***************************************

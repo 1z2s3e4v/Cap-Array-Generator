@@ -1,0 +1,30 @@
+Gds_Map 10000
+Layers:
+0 0 25 Apr 10 19:51:48 2021                   
+psub 1 0
+M1 2 0
+M2 3 0
+M3 4 0
+M4 5 0
+M5 6 0
+M6 7 0
+psub_term_b 8 0
+MOM_field4 9 0
+MOM_field5 10 0
+VIA1 11 0
+VIA2 12 0
+MOM_field6 13 0
+VIA5 14 0
+VIA3 15 0
+VIA4 16 0
+MOMDMY100 17 0
+MOM_hole4 18 0
+MOM_hole5 19 0
+MOM_hole6 20 0
+mom14_extc 21 0
+mom15_extc 22 0
+mom16_extc 23 0
+fmom46_reg_2t 24 0 ORIGINAL
+fmom46_reg_2t 25 0 DEVICE
+END OF RESPONSE
+0 0 0 Apr 10 19:51:48 2021

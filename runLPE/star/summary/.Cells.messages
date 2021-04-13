@@ -1,0 +1,15 @@
+WARNING: Floating nets will be translated as fill. (SX-0728)
+create_xin_writer; sort_xin_in_memory YES cut_trap YES text_counter NO
+  
+InitDB        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=164.0 
+ReadHNdb      Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.6 
+NetSelect     Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.7 
+CellSelect    Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.7 
+ImportCells   Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=189.4 
+ReadStdCells  Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=189.4 
+Cells         Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=189.4 
+  
+Done          Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=189.4 
+
+End Time: Sat Apr 10 19:52:03 2021
+

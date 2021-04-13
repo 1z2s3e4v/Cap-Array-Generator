@@ -1,0 +1,4 @@
+ADC_SAR4BIT ARRAY_CMP_T1 layout_T1_template
+ADC_SAR4BIT ARRAY_CMP_T1 layout_skill_FI
+~/frank/project/output/path.txt
+~/frank/project/output/layout_skill.gds

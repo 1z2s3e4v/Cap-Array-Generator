@@ -1,0 +1,17 @@
+pre = 0
+main thread = 0
+_write_tokens = 0
+_write_file = 0
+INTERNAL Warning: '56' items are not found in POWER_NETS, updated them in tech_file  
+ReadHNdb      Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.4 
+LoadXF        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=210.1 
+BldXrefHN     Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.8 
+ReadXHNdb     Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.8 
+BldXrefTab    Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.8 
+SNetSel       Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.9 
+XrefHN        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.9 
+  
+Done          Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=212.9 
+
+End Time: Sat Apr 10 19:52:02 2021
+

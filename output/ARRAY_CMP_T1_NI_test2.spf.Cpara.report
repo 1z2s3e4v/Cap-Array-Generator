@@ -1,0 +1,57 @@
+Total_Cpara=1.56e-14, Total_Error_Cpara=3.64e-15(23.3%),
+Mismatch=38.7% (SL3A,SL1B), avg_mismatch=13.8%
+Target Cap. Ratio: 4 : 4 : 2 : 2 : 1 : 1
+Real Cap. Ratio: 3.14 : 3.31 : 1.86 : 1.99 : 1.18 : 1.28
+---------------------------------------------------------------------------
+SL3A(4): total=3.84e-15
+  SL3B: total=1.86e-18, Mismatch=1.25%, error_proportion=0.046%
+    C7_10: 1.86e-18
+SL3B(4): total=4.04e-15
+  SL2A: total=1.03e-17, Mismatch=3.17%, error_proportion=0.254%
+    C8_43: 9.34e-19
+    C8_44: 4e-18
+    C8_45: 4e-18
+    C8_49: 1.34e-18
+  SL2B: total=6.81e-17, Mismatch=5.12%, error_proportion=1.68%
+    C3_28: 6.81e-17
+  SL3A: total=1.86e-18, Mismatch=1.25%, error_proportion=0.046%
+    C7_10: 1.86e-18
+SL2A(2): total=2.28e-15
+  SL1A: total=9.86e-17, Mismatch=13.2%, error_proportion=4.33%
+    C9_75: 8.44e-17
+    C9_81: 1.42e-17
+  SL2B: total=2.16e-17, Mismatch=3.24%, error_proportion=0.887%
+    C8_41: 1.13e-18
+    C8_47: 2.14e-18
+    C8_50: 1.83e-17
+  SL3B: total=1.03e-17, Mismatch=3.17%, error_proportion=0.254%
+    C8_43: 9.34e-19
+    C8_44: 4e-18
+    C8_45: 4e-18
+    C8_49: 1.34e-18
+SL2B(2): total=2.44e-15
+  SL1A: total=2.98e-17, Mismatch=9.11%, error_proportion=1.22%
+    C9_74: 2.11e-18
+    C9_79: 2.77e-17
+  SL1B: total=9.79e-17, Mismatch=14.3%, error_proportion=4.02%
+    C2_65: 9.79e-17
+  SL2A: total=2.16e-17, Mismatch=3.24%, error_proportion=0.887%
+    C8_41: 1.13e-18
+    C8_47: 2.14e-18
+    C8_50: 1.83e-17
+  SL3B: total=6.81e-17, Mismatch=5.12%, error_proportion=1.68%
+    C3_28: 6.81e-17
+SL1A(1): total=1.44e-15
+  SL1B: total=3.94e-18, Mismatch=8.04%, error_proportion=0.252%
+    C9_76: 3.94e-18
+  SL2A: total=9.86e-17, Mismatch=13.2%, error_proportion=4.33%
+    C9_75: 8.44e-17
+    C9_81: 1.42e-17
+  SL2B: total=2.98e-17, Mismatch=9.11%, error_proportion=1.22%
+    C9_74: 2.11e-18
+    C9_79: 2.77e-17
+SL1B(1): total=1.57e-15
+  SL1A: total=3.94e-18, Mismatch=8.04%, error_proportion=0.252%
+    C9_76: 3.94e-18
+  SL2B: total=9.79e-17, Mismatch=14.3%, error_proportion=4.02%
+    C2_65: 9.79e-17

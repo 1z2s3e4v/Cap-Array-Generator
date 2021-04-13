@@ -1,0 +1,16 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "ARRAY_CMP"
+  repList "auCdl schematic"
+  stopList "auCdl"
+  hierDelim "."
+  netlistDir "/raidj/user/t28/t28u25/LPE/SPICE"
+ )
+( model
+( "ADC_SAR4BIT/CU1F/schematic" "CU1F" )
+( "ADC_SAR4BIT/ARRAY_CMP/schematic" "ARRAY_CMP" )
+ )
+( "CU1F" "ihnl/cds0/map" )
+( "ARRAY_CMP" "ihnl/cds1/map" )
+ )

@@ -1,0 +1,202 @@
+                                        
+                                  StarRC (TM)
+                                        
+               Version K-2015.06-SP1 for linux64 - Jul 15, 2015 
+                                        
+                    Copyright (c) 1999 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+ExecName: /usr/cad/synopsys/star-rcxt/cur/linux64_starrc/bin/StarXtract
+Version: K-2015.06-SP1
+Built on: Jul 15 2015 23:06:57
+Start Time: Sat Dec  5 00:36:46 2020
+
+Host ............ JCAD03
+
+xTractorName:/usr/cad/synopsys/star-rcxt/cur/linux64_starrc/bin/xTractor
+Version: K-2015.06-SP1
+Built on: Jul 15 2015 23:07:08
+Start Time: Sat Dec  5 00:36:46 2020
+MOS_GATE_CAPACITANCE is set to zero because this is an ADP flow. (SX-0178)
+
+Block ........... ARRAY_CMP
+Star Directory .. /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/star
+WARNING: Ignoring DP_MODE:USER setting, continue with DP_MODE:AUTO! (SX-0507)
+Ignoring REMOVE_FLOATING_NETS:YES becuse TRANSLATE_FLOATING_AS_FILL:YES is specifed. (SX-0246)
+Since TRANSLATE_FLOATING_AS_FILL is set to YES, floating nets are translated as floating metal fill.
+Metal fill polygon handling applies only to floating metal fills. (SX-0247)
+
+Map Layers:  Sat Dec  5 00:36:50 2020
+WARNING: Physical layer ctm_9 does not exist in process Line: ctm_9			ctm_9 (SX-1919)
+WARNING: Physical layer cbm_9 does not exist in process Line: cbm_9			cbm_9 (SX-1919)
+WARNING: Physical layer ctm_8 does not exist in process Line: ctm_8			ctm_8 (SX-1919)
+WARNING: Physical layer cbm_8 does not exist in process Line: cbm_8			cbm_8 (SX-1919)
+WARNING: Physical layer p3	       does not exist in process Line: p3		p3 (SX-1919)
+WARNING: Physical layer crown	       does not exist in process Line: crown		crown (SX-1919)
+WARNING: Physical layer p3Cont does not exist in process Line: p3Cont	p3Cont (SX-1936)
+WARNING: Physical layer n_blc does not exist in process Line: n_blc   n_blc (SX-1936)
+WARNING: Physical layer p_blc does not exist in process Line: p_blc   p_blc (SX-1936)
+WARNING: Physical layer ctm_via8 does not exist in process Line: ctm_via8		ctm_via8 (SX-1936)
+WARNING: Physical layer cbm_via8 does not exist in process Line: cbm_via8		cbm_via8 (SX-1936)
+WARNING: Physical layer ctm_via7 does not exist in process Line: ctm_via7		ctm_via7 (SX-1936)
+WARNING: Physical layer cbm_via7 does not exist in process Line: cbm_via7		cbm_via7 (SX-1936)
+  Warnings: 13    Errors: 0    (See file summary/layers.sum)
+  Layers        Elp=00:00:00 Cpu=00:00:00 Usr=0.5    Sys=0.0    Mem=202.6 
+Done
+
+Create Models:  Sat Dec  5 00:36:50 2020
+  Warnings: 0    Errors: 0
+  Models        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=164.0 
+Done
+
+Build HN:  Sat Dec  5 00:36:50 2020
+  Warnings: 0    Errors: 0
+  HN            Elp=00:00:01 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=196.2 
+Done
+
+Translate ADP:  Sat Dec  5 00:36:51 2020
+  Warnings: 0    Errors: 0
+  ADPTranslate  Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=200.6 
+Done
+
+Build XrefHN:  Sat Dec  5 00:36:51 2020
+  Warnings: 0    Errors: 0
+  XrefHN        Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=212.9 
+Done
+
+Sort ADP:  Sat Dec  5 00:36:51 2020
+  Warnings: 0    Errors: 0
+  ADPSort       Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.7 
+Done
+
+Process Cells:  Sat Dec  5 00:36:51 2020
+WARNING: Floating nets will be translated as fill. (SX-0728)
+  Warnings: 1    Errors: 0    (See file summary/cells.sum)
+  Cells         Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=188.4 
+Done
+
+Translate DB:  Sat Dec  5 00:36:51 2020
+  Warnings: 0    Errors: 0
+  Translate     Elp=00:00:01 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=187.8 
+Done
+
+Netlist Setup:  Sat Dec  5 00:36:52 2020
+  Warnings: 0    Errors: 0
+  NetlistSetup  Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.4 
+Done
+
+xTract DB:  Sat Dec  5 00:36:52 2020
+Completed   9%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.531
+Completed  27%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.82
+Completed  45%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.82
+Completed  63%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.82
+Completed 100%  Time=00:00:00  RemainingTime=00:00:00  Mem=520.82
+Extracted 15595 capacitors, 637 resistors, 0 reluctors, 599 nodes
+Reduced to 138 nodes,  (76.9616%)
+Reduced to 176 resistors,  (72.3705%)
+Reduced to 287 capacitors: 207 Cc and 80 Cg (98.1597%)
+  Warnings: 0    Errors: 0
+  xTract        Elp=00:00:01 Cpu=00:00:01 Usr=1.1    Sys=0.2    Mem=520.8 
+Done
+
+xTract Post Process DB:  Sat Dec  5 00:36:53 2020
+Completed  14%  Time=00:00:00  RemainingTime=00:00:00  Mem=173.566
+Completed  42%  Time=00:00:00  RemainingTime=00:00:00  Mem=173.566
+Completed  57%  Time=00:00:00  RemainingTime=00:00:00  Mem=173.566
+Completed  71%  Time=00:00:00  RemainingTime=00:00:00  Mem=173.566
+Completed  85%  Time=00:00:00  RemainingTime=00:00:00  Mem=173.566
+Completed 100%  Time=00:00:00  RemainingTime=00:00:00  Mem=173.566
+  Warnings: 0    Errors: 0
+  xTractPP      Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=173.6 
+Done
+
+Report Violations:  Sat Dec  5 00:36:53 2020
+  Warnings: 0    Errors: 0
+  ReportViolations Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=0.0   
+Done
+
+Netlist DB:  Sat Dec  5 00:36:53 2020
+Completed   0%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed   2%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed   3%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed   5%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed   6%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed   7%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed   9%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed  10%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed  20%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed  29%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.215
+Completed  39%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+Completed  48%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+Completed  57%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+Completed  67%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+Completed  76%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+Completed  86%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+Completed  95%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+Completed 100%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.277
+  Warnings: 0    Errors: 0
+  Netlist       Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=205.3 
+Done
+  
+Layers           Elp=00:00:00 Cpu=00:00:00 Usr=0.5    Sys=0.0    Mem=202.6 
+Models           Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=164.0 
+HN               Elp=00:00:01 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=196.2 
+ADPTranslate     Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=200.6 
+XrefHN           Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=212.9 
+ADPSort          Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.7 
+Cells            Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=188.4 
+Translate        Elp=00:00:01 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=187.8 
+NetlistSetup     Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.4 
+xTract           Elp=00:00:01 Cpu=00:00:01 Usr=1.1    Sys=0.2    Mem=520.8 
+xTractPP         Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=173.6 
+ReportViolations Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=0.0   
+Netlist          Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=205.3 
+  
+Done          Elp=00:00:03 Cpu=00:00:02 Usr=1.9    Sys=0.4    Mem=520.8 
+
+End Time: Sat Dec  5 00:36:54 2020
+
+
+
+RUN-TIME SUMMARY:
+----------------------------------------------------------------------------------------------
+CPU#   | STAGE SUMMARY                                            |END TIME        |HOST NAME
+----------------------------------------------------------------------------------------------
+CPU_01 |*Layers              Elp=00:00:00 Cpu=00:00:00 Mem=202.6  |Dec  5 00:36:50 |JCAD03
+CPU_01 |*Models              Elp=00:00:00 Cpu=00:00:00 Mem=164    |Dec  5 00:36:50 |JCAD03
+CPU_01 |*HN                  Elp=00:00:01 Cpu=00:00:00 Mem=196.2  |Dec  5 00:36:51 |JCAD03
+CPU_01 |*ADPTranslate        Elp=00:00:00 Cpu=00:00:00 Mem=200.6  |Dec  5 00:36:51 |JCAD03
+CPU_01 |*XrefHN              Elp=00:00:00 Cpu=00:00:00 Mem=212.9  |Dec  5 00:36:51 |JCAD03
+CPU_01 |*ADPSort             Elp=00:00:00 Cpu=00:00:00 Mem=180.7  |Dec  5 00:36:51 |JCAD03
+CPU_01 |*Cells               Elp=00:00:00 Cpu=00:00:00 Mem=188.4  |Dec  5 00:36:51 |JCAD03
+CPU_01 |*Translate           Elp=00:00:01 Cpu=00:00:00 Mem=187.8  |Dec  5 00:36:52 |JCAD03
+CPU_01 |*xTract              Elp=00:00:00 Cpu=00:00:00 Mem=180.4  |Dec  5 00:36:52 |JCAD03
+CPU_01 |*xTract              Elp=00:00:01 Cpu=00:00:01 Mem=520.8  |Dec  5 00:36:53 |JCAD03
+CPU_01 |*xTractPP            Elp=00:00:00 Cpu=00:00:00 Mem=173.6  |Dec  5 00:36:53 |JCAD03
+CPU_01 |*ReportViolations    Elp=00:00:00 Cpu=00:00:00 Mem=0      |Dec  5 00:36:53 |JCAD03
+CPU_01 |*Netlist             Elp=00:00:01 Cpu=00:00:00 Mem=205.3  |Dec  5 00:36:54 |JCAD03
+----------------------------------------------------------------------------------------------
+Start Time: Sat Dec  5 00:36:49 2020
+End Time: Sat Dec  5 00:36:54 2020
+----------------------------------------------------------------------------------------------
+Overall:         Elp=00:00:05  Cpu=00:00:02
+PreXtraction:    Elp=00:00:03  Cpu=00:00:00
+Xtraction:       Elp=00:00:01  Cpu=00:00:01
+PostXtraction:   Elp=00:00:01  Cpu=00:00:00
+----------------------------------------------------------------------------------------------
+
+
+
+Message Summary:
+----------------------------------------------------------------------------------------------
+SX-0178 (x   1)|Information  |MOS_GATE_CAPACITANCE IS SET TO ZERO BECAUSE THIS IS AN ADP FLOW. 
+SX-0246 (x   1)|Information  |IGNORING REMOVE_FLOATING_NETS:YES BECUSE TRANSLATE_FLOATING_AS_FILL:YES IS SPECIFED.
+SX-0247 (x   1)|Information  |SINCE TRANSLATE_FLOATING_AS_FILL IS SET TO YES, FLOATING NETS ARE TRANSLATED AS FLOATING METAL FILL. METAL FILL POLYGON HANDLING APPLIES ONLY TO FLOATING METAL FILLS.
+SX-0507 (x   1)|Warning      |IGNORING DP_MODE:USER SETTING, CONTINUE WITH DP_MODE:AUTO! 
+SX-0728 (x   1)|Warning      |FLOATING NETS WILL BE TRANSLATED AS FILL.
+SX-1919 (x   6)|Warning      |PHYSICAL LAYER () DOES NOT EXIST IN PROCESS LINE: ()
+SX-1936 (x   7)|Warning      |PHYSICAL LAYER () DOES NOT EXIST IN PROCESS LINE: ()
+

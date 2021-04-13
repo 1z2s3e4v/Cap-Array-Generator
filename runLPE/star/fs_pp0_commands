@@ -1,0 +1,135 @@
+LAYER_FILE layers
+TCAD_FILE_NAME /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/cln28hpc+_1p09m+ut-alrdl_6x2z_typical.nxtgrd
+MULTITABLE
+
+CFG HP_1D2VIO_NMOS ngate_siopg ngate_siopd
+CFG HP_1D2VIO_PMOS pgate_sio
+CFG HP_1D5VIO_NMOS ngate_15_mac ngate_15od18_mac ngate_hia15_mac
+CFG HP_1D5VIO_PMOS pgate_15_mac pgate_15od18_mac
+CFG HP_1D8VIO_NMOS ngate_18_mac ngate_lvt18ud12_mac ngate_hv18_mac ngate_hia18_mac ngate_18ud12_mac ngate_18ud15_mac ngate_io_lvt_mac ngate_stgopg ngate_stgopd
+CFG HP_1D8VIO_PMOS pgate_18_mac pgate_18ud12_mac pgate_18ud15_mac pgate_stgo pgate_hv18_mac
+CFG HP_2D5VIO_NMOS ngate_25_mac ngate_hia25_mac ngate_25od_mac ngate_25ud_mac
+CFG HP_2D5VIO_PMOS pgate_25_mac pgate_25od_mac pgate_25ud_mac
+CFG HP_3D3VIO_NMOS ngate_33_mac
+CFG HP_3D3VIO_PMOS pgate_33_mac
+CFG HP_ALVT_CORE_PMOS alvtpgate_mac
+CFG HP_CHVT_CORE_NMOS nchvgate_mac
+CFG HP_CORE_NMOS ngate_mac ngate_svt_sp_mac nilvtgate_mac ngate_hia_mac navtgate_mac ngate_spd ngate_spg ngate_rpsr ngate_sdppd ngate_sdppg ngate_qrpsr ngate_pg_lpsr ngate_pd_lpsr ngate_lprpsr ngate_lpqrpsr ngate_pg_llsr ngate_pd_llsr ngate_llrpsr ngate_pg_lldpsr ngate_pd_lldpsr ngate_pg_lpdpsr ngate_pd_lpdpsr ngate_svtrpsr ngate_svtllrpsr ngate_hlsvtqrpsr ngate_hltrpsr ngate_pd_hltsr ngate_pg_hltsr ngate_pg_ullsr ngate_pd_ullsr ngate_ullrpsr ngate_pg_ulldpsr ngate_pd_ulldpsr ngate_rpdsr
+CFG HP_CORE_PMOS pilvtgate_mac pgate_svt_sp_mac pgate_mac pgate_pu_hltsr pgate_pu_lpsr pgate_pu_llsr pgate_pu_lldpsr pgate_pu_lpdpsr pgate_s_2psr pgate_pu_ullsr pgate_pu_ulldpsr pgate_s pgate_sdp
+CFG HP_EDC_NMOS ngate_edc_mac
+CFG HP_HG_NMOS ngate_hg_mac
+CFG HP_HG_PMOS pgate_hg_mac
+CFG HP_HG_UHVT_NMOS nuhvgate_hg_mac
+CFG HP_HG_UHVT_PMOS puhvgate_hg_mac
+CFG HP_HVT_CORE_NMOS nhvgate_mac ngate_hvspd ngate_hvspg ngate_rom ngate_hvtrpsr ngate_hvtllrpsr
+CFG HP_HVT_CORE_PMOS phvgate_mac pgate_hvs
+CFG HP_LVT_CORE_NMOS nlvgate_mac ngate_lvtrpsr
+CFG HP_LVT_CORE_PMOS plvgate_mac
+CFG HP_NA_1D5VIO ngate_15na_mac
+CFG HP_NA_1D8VIO ngate_18na_mac ngate_18naud15_mac
+CFG HP_NA_2D5VIO ngate_25na_mac ngate_25naud_mac ngate_25naod_mac
+CFG HP_NA_3D3VIO ngate_33na_mac
+CFG HP_NA_CORE nlgate_mac
+CFG HP_UHVT_CORE_NMOS nuhvgate_mac nehvgate_mac
+CFG HP_UHVT_CORE_PMOS puhvgate_mac pehvgate_mac
+CFG HP_ULVT_CORE_NMOS nuvgate_mac nelvgate_mac
+CFG HP_ULVT_CORE_PMOS puvgate_mac pelvgate_mac
+CFG HP_ZVT_CORE nzvgate_mac
+ECG HP_1D2VIO_NMOS ngate_siopg ngate_siopd
+ECG HP_1D2VIO_PMOS pgate_sio
+ECG HP_1D5VIO_NMOS ngate_15_mac ngate_15od18_mac ngate_hia15_mac
+ECG HP_1D5VIO_PMOS pgate_15_mac pgate_15od18_mac
+ECG HP_1D8VIO_NMOS ngate_18_mac ngate_lvt18ud12_mac ngate_hv18_mac ngate_hia18_mac ngate_18ud12_mac ngate_18ud15_mac ngate_io_lvt_mac ngate_stgopg ngate_stgopd
+ECG HP_1D8VIO_PMOS pgate_18_mac pgate_18ud12_mac pgate_18ud15_mac pgate_stgo pgate_hv18_mac
+ECG HP_2D5VIO_NMOS ngate_25_mac ngate_hia25_mac ngate_25od_mac ngate_25ud_mac
+ECG HP_2D5VIO_PMOS pgate_25_mac pgate_25od_mac pgate_25ud_mac
+ECG HP_3D3VIO_NMOS ngate_33_mac
+ECG HP_3D3VIO_PMOS pgate_33_mac
+ECG HP_ALVT_CORE_PMOS alvtpgate_mac
+ECG HP_CHVT_CORE_NMOS nchvgate_mac
+ECG HP_CORE_NMOS ngate_mac ngate_svt_sp_mac nilvtgate_mac ngate_hia_mac navtgate_mac ngate_spd ngate_spg ngate_rpsr ngate_sdppd ngate_sdppg ngate_qrpsr ngate_pg_lpsr ngate_pd_lpsr ngate_lprpsr ngate_lpqrpsr ngate_pg_llsr ngate_pd_llsr ngate_llrpsr ngate_pg_lldpsr ngate_pd_lldpsr ngate_pg_lpdpsr ngate_pd_lpdpsr ngate_svtrpsr ngate_svtllrpsr ngate_hlsvtqrpsr ngate_hltrpsr ngate_pd_hltsr ngate_pg_hltsr ngate_pg_ullsr ngate_pd_ullsr ngate_ullrpsr ngate_pg_ulldpsr ngate_pd_ulldpsr ngate_rpdsr
+ECG HP_CORE_PMOS pilvtgate_mac pgate_svt_sp_mac pgate_mac pgate_pu_hltsr pgate_pu_lpsr pgate_pu_llsr pgate_pu_lldpsr pgate_pu_lpdpsr pgate_s_2psr pgate_pu_ullsr pgate_pu_ulldpsr pgate_s pgate_sdp
+ECG HP_EDC_NMOS ngate_edc_mac
+ECG HP_HG_NMOS ngate_hg_mac
+ECG HP_HG_PMOS pgate_hg_mac
+ECG HP_HG_UHVT_NMOS nuhvgate_hg_mac
+ECG HP_HG_UHVT_PMOS puhvgate_hg_mac
+ECG HP_HVT_CORE_NMOS nhvgate_mac ngate_hvspd ngate_hvspg ngate_rom ngate_hvtrpsr ngate_hvtllrpsr
+ECG HP_HVT_CORE_PMOS phvgate_mac pgate_hvs
+ECG HP_LVT_CORE_NMOS nlvgate_mac ngate_lvtrpsr
+ECG HP_LVT_CORE_PMOS plvgate_mac
+ECG HP_NA_1D5VIO ngate_15na_mac
+ECG HP_NA_1D8VIO ngate_18na_mac ngate_18naud15_mac
+ECG HP_NA_2D5VIO ngate_25na_mac ngate_25naud_mac ngate_25naod_mac
+ECG HP_NA_3D3VIO ngate_33na_mac
+ECG HP_NA_CORE nlgate_mac
+ECG HP_UHVT_CORE_NMOS nuhvgate_mac nehvgate_mac
+ECG HP_UHVT_CORE_PMOS puhvgate_mac pehvgate_mac
+ECG HP_ULVT_CORE_NMOS nuvgate_mac nelvgate_mac
+ECG HP_ULVT_CORE_PMOS puvgate_mac pelvgate_mac
+ECG HP_ZVT_CORE nzvgate_mac
+DIFF tndiff s_tndiff_udm d_tndiff_udm s_tndiff_hv d_tndiff_hv tpdiff s_tpdiff_udm d_tpdiff_udm s_tpdiff_hv d_tpdiff_hv ydio_t
+CONT n_odCont p_odCont
+ENDTABLE
+OP DNW NOT psub nxwell => DNW
+DELETE DNW
+OP PROBEM1_B NOT psub nxwell => PROBEM1_B
+DELETE PROBEM1_B
+OP PROBEM1_T NOT psub nxwell => PROBEM1_T
+DELETE PROBEM1_T
+OP PROBEM2_B NOT psub nxwell => PROBEM2_B
+DELETE PROBEM2_B
+OP PROBEM2_T NOT psub nxwell => PROBEM2_T
+DELETE PROBEM2_T
+OP PROBEM3_B NOT psub nxwell => PROBEM3_B
+DELETE PROBEM3_B
+OP PROBEM3_T NOT psub nxwell => PROBEM3_T
+DELETE PROBEM3_T
+OP PROBEM4_B NOT psub nxwell => PROBEM4_B
+DELETE PROBEM4_B
+OP PROBEM4_T NOT psub nxwell => PROBEM4_T
+DELETE PROBEM4_T
+OP PROBEM5_B NOT psub nxwell => PROBEM5_B
+DELETE PROBEM5_B
+OP PROBEM5_T NOT psub nxwell => PROBEM5_T
+DELETE PROBEM5_T
+OP PROBEM6_B NOT psub nxwell => PROBEM6_B
+DELETE PROBEM6_B
+OP PROBEM6_T NOT psub nxwell => PROBEM6_T
+DELETE PROBEM6_T
+OP PROBEM7_B NOT psub nxwell => PROBEM7_B
+DELETE PROBEM7_B
+OP PROBEM7_T NOT psub nxwell => PROBEM7_T
+DELETE PROBEM7_T
+OP RFDMY_HIA_bulk NOT psub nxwell => RFDMY_HIA_bulk
+DELETE RFDMY_HIA_bulk
+OP RFDMY_HIA_psub NOT psub nxwell => RFDMY_HIA_psub
+DELETE RFDMY_HIA_psub
+OP cnbase1 NOT psub nxwell => cnbase1
+DELETE cnbase1
+OP coll1 NOT psub nxwell => coll1
+DELETE coll1
+OP cpbase1 NOT psub nxwell => cpbase1
+DELETE cpbase1
+OP dnwc NOT psub nxwell => dnwc
+DELETE dnwc
+OP hia_rf_via NOT psub nxwell => hia_rf_via
+DELETE hia_rf_via
+OP inbase1 NOT psub nxwell => inbase1
+DELETE inbase1
+OP ipbase1 NOT psub nxwell => ipbase1
+DELETE ipbase1
+OP ncoll1 NOT psub nxwell => ncoll1
+DELETE ncoll1
+OP nw_pgdio NOT psub nxwell => nw_pgdio
+DELETE nw_pgdio
+OP nxwell_npn NOT psub nxwell => nxwell_npn
+DELETE nxwell_npn
+OP psub_term NOT psub nxwell => psub_term
+DELETE psub_term
+OP rfdmy56 NOT psub nxwell => rfdmy56
+DELETE rfdmy56
+OP rfdmy56_via NOT psub nxwell => rfdmy56_via
+DELETE rfdmy56_via
+OP psub NOT nxwell => psub
+DELETE psub

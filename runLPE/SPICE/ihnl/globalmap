@@ -1,0 +1,9 @@
+CADENCE IHNL11140
+$model
+ADC_SAR4BIT/CU1F/schematic CU1F
+ADC_SAR4BIT/ARRAY_CMP/schematic ARRAY_CMP
+$endmodel
+$net
+$endnet
+$param
+$endparam

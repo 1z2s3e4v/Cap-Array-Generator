@@ -1,0 +1,69 @@
+# Automagically generated file: Please do not edit!
+lvs_LvsOutFile RUNDIR /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE
+lvs_LvsfVersion 4
+lvs_LvsInputSummary {0 0 0}
+lvs_LvsComparisonSummary {3 1 0 0}
+lvs_SourceCase YES
+lvs_LayoutCase YES
+lvs_PowerName VDD09A
+lvs_PowerName AHVDD
+lvs_PowerName AHVDDB
+lvs_PowerName AHVDDG
+lvs_PowerName AHVDDR
+lvs_PowerName AHVDDWELL
+lvs_PowerName AVDD
+lvs_PowerName AVDDB
+lvs_PowerName AVDDBG
+lvs_PowerName AVDDG
+lvs_PowerName AVDDR
+lvs_PowerName AVDWELL
+lvs_PowerName DHVDD
+lvs_PowerName DVDD
+lvs_PowerName HVDDWELL
+lvs_PowerName TACVDD
+lvs_PowerName TAVD33
+lvs_PowerName TAVD33PST
+lvs_PowerName TAVDD
+lvs_PowerName TAVDDPST
+lvs_PowerName TVDD
+lvs_PowerName VD33
+lvs_PowerName VDD
+lvs_PowerName VDD5V
+lvs_PowerName VDDESD
+lvs_PowerName VDDG
+lvs_PowerName VDDM
+lvs_PowerName VDDPST
+lvs_PowerName VDDSA
+lvs_PowerName VDWELL
+lvs_GroundName VSS09A
+lvs_GroundName AGND
+lvs_GroundName AHVSS
+lvs_GroundName AHVSSB
+lvs_GroundName AHVSSG
+lvs_GroundName AHVSSR
+lvs_GroundName AHVSSUB
+lvs_GroundName AVSS
+lvs_GroundName AVSSB
+lvs_GroundName AVSSBG
+lvs_GroundName AVSSG
+lvs_GroundName AVSSR
+lvs_GroundName AVSSUB
+lvs_GroundName DHVSS
+lvs_GroundName DVSS
+lvs_GroundName GND
+lvs_GroundName HVSSUB
+lvs_GroundName TACVSS
+lvs_GroundName TAVSS
+lvs_GroundName TAVSSPST
+lvs_GroundName TVSS
+lvs_GroundName VS33
+lvs_GroundName VSS
+lvs_GroundName VSSESD
+lvs_GroundName VSSG
+lvs_GroundName VSSM
+lvs_GroundName VSSPST
+lvs_GroundName VSSUB
+lvs_LvsOutFile LVS_REPORT ./LVS/lvs.rep
+lvs_LvsOutFile SOURCE_NETLIST /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp
+lvs_LvsOutFile RULES_FILE DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
+lvs_LvsRunTimes 1607609860 1607609860

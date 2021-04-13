@@ -1,0 +1,80 @@
+Total_Cpara=1.76e-14, Total_Error_Cpara=2.04e-15, Mismatch=22.2%
+Target Cap. Ratio: 4 : 4 : 2 : 2 : 1 : 1
+Real Cap. Ratio: 3.11 : 3.27 : 1.92 : 1.99 : 1.2 : 1.25
+---------------------------------------------------------------------------
+SL3A(4): total=4.31e-15
+  SL3B: total=9.99e-17, Mismatch=1.2%, error_proportion=2.21%
+    C9_12: 1.74e-17
+    C9_13: 1.74e-17
+    C9_14: 1.55e-17
+    C9_17: 8.96e-18
+    C9_19: 7.62e-20
+    C9_21: 8.96e-18
+    C9_24: 2.96e-17
+    C9_9: 2.04e-18
+  SL2A: total=1.78e-16, Mismatch=5.78%, error_proportion=4.14%
+    C8_46: 1.57e-16
+    C8_52: 2.95e-18
+    C8_53: 2.95e-18
+    C8_78: 1.57e-17
+SL3B(4): total=4.53e-15
+  SL3A: total=9.99e-17, Mismatch=1.2%, error_proportion=2.21%
+    C9_12: 1.74e-17
+    C9_13: 1.74e-17
+    C9_14: 1.55e-17
+    C9_17: 8.96e-18
+    C9_19: 7.62e-20
+    C9_21: 8.96e-18
+    C9_24: 2.96e-17
+    C9_9: 2.04e-18
+  SL2A: total=2.34e-17, Mismatch=4.3%, error_proportion=0.517%
+    C8_45: 3.32e-18
+    C8_58: 7.47e-18
+    C8_77: 1.26e-17
+    C8_82: 7.62e-20
+  SL2B: total=1.89e-16, Mismatch=5.5%, error_proportion=4.17%
+    C3_34: 1.76e-16
+    C3_43: 1.28e-17
+SL2A(2): total=2.65e-15
+  SL3A: total=1.78e-16, Mismatch=5.78%, error_proportion=4.14%
+    C8_46: 1.57e-16
+    C8_52: 2.95e-18
+    C8_53: 2.95e-18
+    C8_78: 1.57e-17
+  SL3B: total=2.34e-17, Mismatch=4.3%, error_proportion=0.517%
+    C8_45: 3.32e-18
+    C8_58: 7.47e-18
+    C8_77: 1.26e-17
+    C8_82: 7.62e-20
+  SL2B: total=1.47e-16, Mismatch=1.97%, error_proportion=5.31%
+    C8_47: 3.43e-18
+    C8_56: 1.28e-17
+    C8_79: 8.96e-18
+    C8_80: 1.22e-16
+  SL1A: total=1.68e-16, Mismatch=12.6%, error_proportion=6.34%
+    C7_95: 1.68e-16
+SL2B(2): total=2.76e-15
+  SL3B: total=1.89e-16, Mismatch=5.5%, error_proportion=4.17%
+    C3_34: 1.76e-16
+    C3_43: 1.28e-17
+  SL2A: total=1.47e-16, Mismatch=1.97%, error_proportion=5.31%
+    C8_47: 3.43e-18
+    C8_56: 1.28e-17
+    C8_79: 8.96e-18
+    C8_80: 1.22e-16
+  SL1A: total=1.6e-17, Mismatch=10.2%, error_proportion=0.578%
+    C7_93: 1.6e-17
+  SL1B: total=1.9e-16, Mismatch=12.7%, error_proportion=6.87%
+    C2_84: 1.9e-16
+SL1A(1): total=1.66e-15
+  SL2A: total=1.68e-16, Mismatch=12.6%, error_proportion=6.34%
+    C7_95: 1.68e-16
+  SL2B: total=1.6e-17, Mismatch=10.2%, error_proportion=0.578%
+    C7_93: 1.6e-17
+  SL1B: total=8.89e-18, Mismatch=4.05%, error_proportion=0.514%
+    C7_96: 8.89e-18
+SL1B(1): total=1.73e-15
+  SL2B: total=1.9e-16, Mismatch=12.7%, error_proportion=6.87%
+    C2_84: 1.9e-16
+  SL1A: total=8.89e-18, Mismatch=4.05%, error_proportion=0.514%
+    C7_96: 8.89e-18

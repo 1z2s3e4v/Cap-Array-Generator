@@ -1,0 +1,55 @@
+-stage_id 1
+-o xout
+-is_xtor_level
+-clean_xin
+-fs_assisted
+-filter
+-message_suppression_limit  100
+-i xin
+-tcad_file ../cln28hpc+_1p09m+ut-alrdl_6x2z_typical.nxtgrd
+-layer_info layer_info
+-extract_via_caps 
+-nvc
+-density_based_thickness
+-density_outside_block 0.5
+-xm 400
+-extraction C
+-rfuzz 1000000
+-r 1
+-suppress_file xtract.sup
+-floating_metal_fill
+-floating_metal_fill
+-af 600
+-strict_cell_overlap_handling
+-trench_contact_virtual_via_segmentation_ratio 2.0
+-max_virtual_via_segmentation_number 1000000
+-net_segment_cut_length 20
+-stop_extraction_on_numerous_shorts 
+-abutment_merge_mode 3
+-group_grd_layers_in_cleaner 2
+-new_scan_engine 2
+-clean_xin_mode 1
+-layer_based_nxtgrd_read
+-noncritical_min_area 0.25
+-noncritical_min_length 0.25
+-new_cap_environment 6
+-new_cap_environment_nondominant 1
+-new_cap_model 1
+-new_etch_behavior
+-enhanced_3d_overlap 1
+-new_cap_extract_noncritical
+-high_capacitance_precision_mode
+-thickness_var_threshold 0.0
+-thickness_var_threshold_discard 0.0
+-new_cap_plane_limit -1.0
+-new_cap_simple_via_pad_model 0
+-disable_second_neighbor_pruning
+-new_cap_fill_extract_iterations 0
+-inter_pic_level_connections
+-fine_dbu
+-calc_text_count
+-pi_cap_polygon
+-pi_cap_polygon_length 20
+-net_command_file select_nets
+-small_net_delay_threshold 0.25
+-lateral_cap_scaling_mode 2

@@ -1,0 +1,13 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 3
+lvs_ExtRunTimes 1607437382 1607437385
+lvs_ExtOutFile RUNDIR /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/LVS
+lvs_ExtOutFile RULES_FILE /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/LVS/_LVS.rule_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoErcSummary {35 2 23 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/LVS/ARRAY_CMP.sp
+lvs_ExtOutFile EXTRACTION_REPORT ARRAY_CMP.lvs.report.ext
+lvs_ExtOutFile LAYOUT_PDSP {  svdb/ARRAY_CMP.pdsp }
+lvs_ExtOutFile ERC_DATABASE ARRAY_CMP.erc.results
+lvs_ExtOutFile ERC_SUMMARY ARRAY_CMP.erc.summary

@@ -1,0 +1,22 @@
+WARNING: Physical layer ctm_9 does not exist in process Line: ctm_9			ctm_9 (SX-1919)
+WARNING: Physical layer cbm_9 does not exist in process Line: cbm_9			cbm_9 (SX-1919)
+WARNING: Physical layer ctm_8 does not exist in process Line: ctm_8			ctm_8 (SX-1919)
+WARNING: Physical layer cbm_8 does not exist in process Line: cbm_8			cbm_8 (SX-1919)
+WARNING: Physical layer p3	       does not exist in process Line: p3		p3 (SX-1919)
+WARNING: Physical layer crown	       does not exist in process Line: crown		crown (SX-1919)
+WARNING: Physical layer p3Cont does not exist in process Line: p3Cont	p3Cont (SX-1936)
+WARNING: Physical layer n_blc does not exist in process Line: n_blc   n_blc (SX-1936)
+WARNING: Physical layer p_blc does not exist in process Line: p_blc   p_blc (SX-1936)
+WARNING: Physical layer ctm_via8 does not exist in process Line: ctm_via8		ctm_via8 (SX-1936)
+WARNING: Physical layer cbm_via8 does not exist in process Line: cbm_via8		cbm_via8 (SX-1936)
+WARNING: Physical layer ctm_via7 does not exist in process Line: ctm_via7		ctm_via7 (SX-1936)
+WARNING: Physical layer cbm_via7 does not exist in process Line: cbm_via7		cbm_via7 (SX-1936)
+no CFIG because of IGNORE_CAP:ALL
+  
+InitDB        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=164.0 
+Layers        Elp=00:00:00 Cpu=00:00:00 Usr=0.5    Sys=0.0    Mem=202.6 
+  
+Done          Elp=00:00:00 Cpu=00:00:00 Usr=0.5    Sys=0.0    Mem=202.6 
+
+End Time: Sat Apr 10 19:52:01 2021
+

@@ -1,0 +1,23 @@
+# SVDB: Layout Netlist Names (lnn) (File format 1)
+# SVDB: Layout Primary ARRAY_CMP_T1
+# SVDB: Rules -0 DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o 
+# SVDB: GDSII -0 /user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/gds/ARRAY_CMP_T1_PI_test_matching.gds Sat Apr 10 19:41:50 2021
+# SVDB: SNL -0 /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp 
+# SVDB: 
+# SVDB: 
+# SVDB: 
+# SVDB: 
+# SVDB: End of header.
+% CU1F 4
+% ICV_1 5
+% ICV_2 7
+% ARRAY_CMP_T1 0
+1 VDD09A
+2 SL3B
+3 SL3A
+4 SL2B
+5 SL1B
+6 VSS09A
+7 TOP_ARRAY
+8 SL2A
+9 SL1A

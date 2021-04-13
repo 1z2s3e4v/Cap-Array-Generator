@@ -1,0 +1,28 @@
+                                        
+                                  StarRC (TM)
+                                        
+               Version K-2015.06-SP1 for linux64 - Jul 15, 2015 
+                                        
+                    Copyright (c) 1999 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+ExecName: /usr/cad/synopsys/star-rcxt/cur/linux64_starrc/bin/StarXtract
+Version: K-2015.06-SP1
+Built on: Jul 15 2015 23:06:57
+Start Time: Sat Apr 10 19:52:02 2021
+
+Host ............ JCAD03
+
+  
+ReadHNdb      Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=180.4 
+LoadXF        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=210.1 
+BldXrefHN     Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.8 
+ReadXHNdb     Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.8 
+BldXrefTab    Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.8 
+SNetSel       Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.9 
+XrefHN        Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=212.9 
+  
+Done          Elp=00:00:00 Cpu=00:00:00 Usr=0.1    Sys=0.0    Mem=212.9 
