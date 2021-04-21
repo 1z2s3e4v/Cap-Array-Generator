@@ -41,7 +41,7 @@ class Parser_C{
 public:
     Parser_C(ParamHdl_C *pParamHdl);
 
-    void parseSimpleInput(string);
+    bool parseInput(string);
     void parseSPICE(string,string);
     bool parseSPF(string);
     void parseCFG(string);
@@ -54,13 +54,13 @@ public:
     bool isGenLayoutMode(){return gen_layout_mode;}
     string getBinRoot(){return bin_root;}
     string getSpfFilename(){return spf_filename;}
-    string getSIFilename(){return simple_input_filename;}
+    string getSIFilename(){return input_filename;}
     string getTopCell(){return spice_topcell;}
     string getSpiceFilename(){return spice_filename;}
     string getLayoutOutFilename(){return layout_out_fileName;}
 
     bool parser_ok = true;
-    string simple_input_filename;
+    string input_filename;
     string spice_topcell;
     string spice_filename;
     string spf_filename;
@@ -74,7 +74,9 @@ public:
     int design_bit = 0;
     int num_of_cap = 0;
     int num_of_dummy = 0;
+    int num_of_pin = 0;
     vector<string> v_nets;
+    vector<string> v_pins;
     map<string, int> m_finCaps; // input signal(net) -> ratio of this net 
     map<string, CapNet> m_capNet;
     map<string, CapNet> m_dummyCap;

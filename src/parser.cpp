@@ -10,9 +10,9 @@ Parser_C::Parser_C(ParamHdl_C *pParamHdl){
             spice_topcell = pParamHdl->getVal("topcell");
             parseSPICE(spice_filename,spice_topcell);
         }
-        else if(pParamHdl->getVal("simpleInput") != ""){
-            simple_input_filename = pParamHdl->getVal("simpleInput");
-            parseSimpleInput(simple_input_filename);
+        else if(pParamHdl->getVal("input") != ""){
+            input_filename = pParamHdl->getVal("input");
+            parseInput(input_filename);
         }
         if(pParamHdl->getVal("out") != ""){
             layout_out_fileName = pParamHdl->getVal("out");
@@ -33,9 +33,9 @@ Parser_C::Parser_C(ParamHdl_C *pParamHdl){
     }
     else if(pParamHdl->getMode() == "genparaRpt"){
         compute_parasitic_mode = true;
-        simple_input_filename = pParamHdl->getVal("simpleInput");
+        input_filename = pParamHdl->getVal("input");
         spf_filename = pParamHdl->getVal("spf");
-        parseSimpleInput(simple_input_filename);
+        parseInput(input_filename);
         parseSPF(spf_filename);
     }
 }
@@ -45,20 +45,26 @@ void Parser_C::parseCFG(string fileName){
 void Parser_C::parseSPICE(string fileName,string topcellName){
     
 }
-void Parser_C::parseSimpleInput(string fileName){
+bool Parser_C::parseInput(string fileName){
     cout << "\033[94m[Parser]\033[0m - parsing netlist \'" << fileName << "\'\n";
     ifstream fin(fileName);
+    if(!fin.is_open()) {
+        cout << "\033[94m[Parser]\033[0m - cannot open spf file \'" << fileName << "\'\n";
+        return false;
+    }
     string line;
     vector<pair<string,int> > v_pairNameCap;
+    string mode="";
     while(getline(fin,line)){
         if(line[0] == '#') continue; // comment
         stringstream ss(line);
-        string head,mode="";
+        string head;
 
         // read head
         ss >> head;
         if(head == "bit"){
             ss >> design_bit;
+            mode = "other";
         }
         else if(head == "Cap"){
             ss >> num_of_cap;
@@ -70,9 +76,18 @@ void Parser_C::parseSimpleInput(string fileName){
         }
         else if(head == "CapUnit"){
             ss >> capUnit.lib >> capUnit.cell >> capUnit.view;
+            mode = "other";
         }
         else if(head == "OutputLayout"){
             ss >> capUnit.lib >> capUnit.cell >> capUnit.view;
+            mode = "other";
+        }
+        else if(head == "Pin"){
+            string pin;
+            while(ss >> pin){
+                v_pins.push_back(pin);
+            }
+            mode = "other";
         }
         // content
         else{
@@ -93,10 +108,11 @@ void Parser_C::parseSimpleInput(string fileName){
     for(int i=0;i<v_pairNameCap.size();++i){
         v_nets.push_back(v_pairNameCap[i].first);
     }
+    return true;
 }
 bool Parser_C::parseSPF(string fileName){
     cout << "\033[94m[Parser]\033[0m - parsing spf file \'" << fileName << "\'\n";
-    if(m_finCaps.size()==0 || (m_finCaps.size()==1 && m_finCaps.find("dummy")!=m_finCaps.end())){
+    if(m_finCaps.size()==0){
         cout << "[error] - Please input a ligal netlist.\n";
         parser_ok = false;
         return false;

@@ -45,9 +45,9 @@ bool ParamHdl_C::isHelpMode(){
     return help_mode;
 }
 void ParamHdl_C::printHelp(){
-        cout << "usage: ./gen_capArray -genlayout -simpleInput <input.txt>                       // Generate layout automatically.\n";
+        cout << "usage: ./gen_capArray -genlayout -input <input.txt>                       // Generate layout automatically.\n";
         cout << "or:    ./gen_capArray -genlayout -sp <netlist.sp> -topcell <cell name>          // Generate layout automatically.\n";
-        cout << "or:    ./gen_capArray -genparaRpt -spf <parasitic.spf> -simpleInput <input.txt>    // Get total parasitic for all finger cap.\n";
+        cout << "or:    ./gen_capArray -genparaRpt -spf <parasitic.spf> -input <input.txt>    // Get total parasitic for all finger cap.\n";
 }
 void ParamHdl_C::printMode(){
     if(run_mode == "genlayout"){

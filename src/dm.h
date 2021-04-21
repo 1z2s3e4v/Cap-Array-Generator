@@ -2,7 +2,9 @@
 #define DM_H
 
 #include "parser.h"
+#include "PR.h"
 #include "draw.h"
+#include "data.h"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -11,67 +13,10 @@
 #include <algorithm>
 #include <random>
 #include <cstdlib>
+#include <stdlib.h>
 
 using namespace std;
 
-// parameter ---------------------------------------------------------------------------------------------------------
-#define INST_START_X 0
-#define CAP_PIN_START_X 1.050
-#define CAP_PIN_Y 0.160
-#define CAP_SPACING_1 0.21
-#define CAP_SPACING_2 0.32
-#define WIRE_WIDTH 0.11
-#define BUS_START_X 0.535
-#define BUS_START_Y -0.505
-#define BUS_END_X k 4.045
-#define BUS_END_Y -1.055
-// ---------------------------------------------------------------------------------------------------------
-typedef tuple<float, float> Pos; // x, y
-
-class DmMgr_C;
-class Net_C;
-class FinCap_C;
-
-// --------------------------------------------------------------------------------------------------------- //
-class FinCap_C{
-public:
-    FinCap_C();
-    FinCap_C(int,Net_C*,CapNet); // id, Net*, CapNet
-
-    int id=-1;
-    Net_C* net;
-    int index=-1; // the index in the cap array
-    float capLength;
-    string topPin;
-    string buttomPin;
-};
-// --------------------------------------------------------------------------------------------------------- //
-class Net_C{
-public:
-    Net_C();
-    Net_C(string,CapNet); // name, parser_CapNet_info
-    // function
-    void setCpara(Net_C*, float, map<string,float>);
-    float getTotalCpara();
-    float getTotalErrorCpara(); // get total Cpara with other nets
-    float getCpara(string); // get Cpara with the net
-
-    // variable
-    string name="";
-    int num_finCap=0;
-    float capRatio;
-    float capLength;
-    string topPin;
-    string buttomPin;
-    float total_Cpara=0.0;
-    float total_UnexpectCpara = 0.0;
-    map<string,map<string,float> > m_Cpara_detail;
-    map<string,float> m_net2netCpara;
-    vector<Net_C*> v_paraNet;
-    vector<FinCap_C*> v_finCap;
-    // placement info
-    int bus_index;
-};
 // --------------------------------------------------------------------------------------------------------- //
 class DmMgr_C{
 public:
@@ -81,6 +26,7 @@ public:
     void setCpara2Graph();
     void setDefaultPlacement_PI();
     void run();
+    void run_try_switch_cap_placement();
     void compute_parasitic_pl();
     void layout_gen();
     void gen_connect_layout(); // only gen wire of cap_pin to bus
@@ -90,6 +36,12 @@ public:
     void print_placement();
     void dump_placement(string);
     void setIndex();
+    
+    void init_cap();
+    void run_placement();
+    void run_routing();
+    void run_draw_svg();
+    void run_draw_virtuoso();
 
     float getAvg1Cap(); // avg 1 fingerCap capasitor
     float getTotalCpara(); // total Cpara of this cap Array
@@ -111,10 +63,20 @@ private:
     // member variable
     vector<Net_C*> v_net;
     map<string,Net_C*> m_net;
+    vector<Net_C*> v_net_nonCap;
+    map<string,Net_C*> m_net_nonCap;
+    vector<Pin_C*> v_pin;
+    map<string,Pin_C*> m_pin;
     int totalCapNum = 0;
+    float unit_cap = UNIT_CAP;
     // placement info
     vector<FinCap_C*> v_finCap; 
     vector<Net_C*> v_bus;
+
+    // Placer and Router
+    PRMgr_C pr;
+    //Placer_C placer;
+    //Router_C router;
     
     // layout
     Drawer_C* drawer;
@@ -122,6 +84,7 @@ private:
     // parser info
     Parser_C *pParser;
     vector<string> v_netName;
+    vector<string> v_pinName;
     map<string, int> m_finCapNum; // input signal(net) -> # of finger cap
     map<string, CapNet> m_capNet;
     map<string, CapNet> m_dummyCap;
