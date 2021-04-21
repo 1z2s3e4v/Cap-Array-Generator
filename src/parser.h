@@ -36,6 +36,18 @@ struct Cgf_File{
     // LPE
     
 };
+struct Cpara{
+    Cpara(string _cName,string _netA,string _netB,float _value){
+        cName = _cName;
+        netA = _netA;
+        netB = _netB;
+        cpara_value = _value;
+    }
+    string cName;
+    string netA;
+    string netB;
+    float cpara_value;
+};
 
 class Parser_C{
 public:
@@ -60,6 +72,7 @@ public:
     string getLayoutOutFilename(){return layout_out_fileName;}
 
     bool parser_ok = true;
+    // param
     string input_filename;
     string spice_topcell;
     string spice_filename;
@@ -71,22 +84,24 @@ public:
     bool default_spf_flag = false;
     bool cfg_file_flag = false;
     string bin_root = ".";
+    // input
     int design_bit = 0;
     int num_of_cap = 0;
     int num_of_dummy = 0;
     int num_of_pin = 0;
-    vector<string> v_nets;
+    string top_plate_netName = "TOP_ARRAY";
     vector<string> v_pins;
-    map<string, int> m_finCaps; // input signal(net) -> ratio of this net 
+    vector<string> v_capNetName;
+    vector<string> v_dmyCapName;  
     map<string, CapNet> m_capNet;
     map<string, CapNet> m_dummyCap;
-    map<string, float> m_netPara; // input signal(net) -> total parasitic cap
-    map<string, float> m_netUnexpectPara; // input signal(net) -> total unexpect parasitic cap
-    map<string, map<string,map<string,float> > > m_Cpara_detail; // net to net parasitic -> map<capName,parasitic>
-    map<string, map<string,float> > m_Cpara; // net to net parasitic
 
+    map<string, int> m_finCaps; // input signal(net) -> ratio of this net 
     Layout_cellView capUnit;
     Layout_cellView OutputLayout;
+    // spf
+    map<string, float> m_netPara; // input signal(net) -> total parasitic cap
+    vector<Cpara> v_CparaDetail; // <cpara_name> <netA> <netB> <cap_value>
 };
 
 #endif

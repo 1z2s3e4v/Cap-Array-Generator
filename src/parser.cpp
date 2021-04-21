@@ -89,24 +89,29 @@ bool Parser_C::parseInput(string fileName){
             }
             mode = "other";
         }
+        else if(head == "Top_Plate"){
+            ss >> top_plate_netName;
+            mode = "other";
+        }
         // content
         else{
-            string input_signal_name = head;
+            string cap_name = head;
             CapNet capNet;
             ss >> capNet.capRatio >> capNet.n_finCaps >> capNet.capLength >> capNet.topPin >> capNet.buttomPin;
-            m_finCaps[input_signal_name] = capNet.n_finCaps;
+            m_finCaps[cap_name] = capNet.n_finCaps;
             if(mode == "Cap"){
-                m_capNet[input_signal_name] = capNet;
-                v_pairNameCap.push_back(pair<string,int>(input_signal_name,capNet.n_finCaps));
+                m_capNet[cap_name] = capNet;
+                v_pairNameCap.push_back(pair<string,int>(cap_name,capNet.n_finCaps));
             }
             else if(mode == "Dummy"){
-                m_dummyCap[input_signal_name] = capNet;
+                v_dmyCapName.push_back(cap_name);
+                m_dummyCap[cap_name] = capNet;
             }
         }
     }
     sort(v_pairNameCap.begin(),v_pairNameCap.end(),[](pair<string,int> const& p_l, pair<string,int> const& p_r){ return p_l.second > p_r.second; });
     for(int i=0;i<v_pairNameCap.size();++i){
-        v_nets.push_back(v_pairNameCap[i].first);
+        v_capNetName.push_back(v_pairNameCap[i].first);
     }
     return true;
 }
@@ -116,18 +121,6 @@ bool Parser_C::parseSPF(string fileName){
         cout << "[error] - Please input a ligal netlist.\n";
         parser_ok = false;
         return false;
-    }
-
-    // init m_Cpara
-    for(string net : v_nets){
-        map<string,float> m_para;
-        for(string net2 : v_nets){
-            if(net != net2){
-                m_para.emplace(net2,0.0);
-            }
-        }
-        m_Cpara.emplace(net,m_para);
-        m_netUnexpectPara[net] = 0.0;
     }
     
     // parse spf
@@ -147,7 +140,7 @@ bool Parser_C::parseSPF(string fileName){
             ss >> head >> net >> s_parasitic;
             parasitic = stof(s_parasitic.substr(0,s_parasitic.size()-2))*0.000000000001;
             curNet = net;
-            if(find(v_nets.begin(),v_nets.end(),curNet) != v_nets.end()){
+            if(find(v_capNetName.begin(),v_capNetName.end(),curNet) != v_capNetName.end()){
                 m_netPara[curNet] = parasitic;
             }
         }
@@ -156,43 +149,16 @@ bool Parser_C::parseSPF(string fileName){
             string capName, nodeA, nodeB;
             float parasitic=0.0;
             ss >> capName >> nodeA >> nodeB >> parasitic;
+            // extract the net name which is before ':'
             size_t found = nodeA.rfind(":");
             if(found != string::npos)
                 nodeA = nodeA.substr(0,found);
             found = nodeB.rfind(":");
             if(found != string::npos)
                 nodeB = nodeB.substr(0,found);
-
-            // save the detail parasitic cap info
-            if(find(v_nets.begin(),v_nets.end(),nodeA) != v_nets.end()){
-                m_Cpara_detail[nodeA][nodeB][capName] = parasitic;
-                //cout << "net \'" << curNet << "\' set Cpara " << parasitic << "(" << nodeA << "," << nodeB << ")\n";
-            }
-            if(find(v_nets.begin(),v_nets.end(),nodeB) != v_nets.end()){
-                m_Cpara_detail[nodeB][nodeA][capName] = parasitic;
-                //cout << "net \'" << curNet << "\' set Cpara " << parasitic << "(" << nodeA << "," << nodeB << ")\n";
-            }
-            // net to net parasitic   // nodeA is curNode
-            if(find(v_nets.begin(),v_nets.end(),curNet) != v_nets.end()){ // nodeA is net
-                if(m_Cpara[curNet].find(nodeB) != m_Cpara[curNet].end()){
-                    m_Cpara[curNet][nodeB] += parasitic;
-                    m_Cpara[nodeB][curNet] += parasitic;
-                }
-
-                // net's unexpect parasitic
-                if(nodeA != "TOP_ARRAY" && nodeB != "TOP_ARRAY"){
-                    m_netUnexpectPara[curNet] += parasitic;
-                    //cout << "net \'" << curNet << "\' add unexpect Cpara " << parasitic << "(" << nodeA << "," << nodeB << ")\n";
-                }
-                if(nodeA != curNet && find(v_nets.begin(),v_nets.end(),nodeA) != v_nets.end() && nodeB != "TOP_ARRAY"){
-                    m_netUnexpectPara[nodeA] += parasitic;
-                    //cout << "net \'" << nodeA << "\' add unexpect Cpara " << parasitic << "(" << nodeA << "," << nodeB << ")\n";
-                }
-                if(nodeB != curNet && find(v_nets.begin(),v_nets.end(),nodeB) != v_nets.end() && nodeA != "TOP_ARRAY"){
-                    m_netUnexpectPara[nodeB] += parasitic;
-                    //cout << "net \'" << nodeB << "\' add unexpect Cpara " << parasitic << "(" << nodeA << "," << nodeB << ")\n";
-                }
-            }
+            // save the cpara
+            Cpara cpara(capName,nodeA,nodeB,parasitic);
+            v_CparaDetail.push_back(cpara);
         }
     }
     return true;
@@ -204,30 +170,20 @@ void Parser_C::print_netFinCaps(){
         cout << it->first << " -> " << it->second << "\n";
     }
     cout << "sort with # of FinCaps: ";
-    for(int i=0;i<v_nets.size();++i){
-        cout << v_nets[i] << " ";
+    for(int i=0;i<v_capNetName.size();++i){
+        cout << v_capNetName[i] << " ";
     }
     cout << "\n";
 }
 void Parser_C::print_totalCpara(){
     cout << "\033[94m[Parser]\033[0m - print net -> total parasitic.\n";
-    for(int i=0;i<v_nets.size();++i){
-        cout << v_nets[i] << "(" << m_finCaps[v_nets[i]] << "): " << m_netPara[v_nets[i]] << "\n";
+    for(int i=0;i<v_capNetName.size();++i){
+        cout << v_capNetName[i] << "(" << m_finCaps[v_capNetName[i]] << "): " << m_netPara[v_capNetName[i]] << "\n";
     }
 }
 void Parser_C::print_net2netCpara(){
     cout << "\033[94m[Parser]\033[0m - print net2net -> parasitic.\n";
-    for(int i=0;i<v_nets.size();++i){
-        string net1 = v_nets[i];
-        cout << v_nets[i] << "(" << m_finCaps[net1] << "): total=" << m_netPara[net1] << "\n";
-        for(auto it=m_Cpara[net1].begin();it!=m_Cpara[net1].end();it++){
-            string net2 = it->first;
-            if(m_Cpara[net1][net2] > 0){
-                cout << "  " << net2 << ": total=" << m_Cpara[net1][net2] << "\n";
-                for(auto it2=m_Cpara_detail[net1][net2].begin();it2!=m_Cpara_detail[net1][net2].end();it2++){
-                    cout << "    " << it2->first << ": " << it2->second << "\n";
-                }
-            }
-        }
+    for(auto cpara : v_CparaDetail){
+        cout << cpara.cName << ": (" << cpara.netA << "," << cpara.netB << ") = " << cpara.cpara_value << "\n";
     }
 }
