@@ -25,9 +25,10 @@ public:
     void build_graph();
     void setCpara(vector<Cpara>);
     void setCpara2Graph();
-    void setDefaultPlacement_PI();
+    //void setDefaultOrder_PI();
     void run();
-    void run_try_switch_cap_placement();
+    //void run_try_switch_cap_placement();
+    void init_cap();
     void compute_parasitic_pl();
     void layout_gen();
     void gen_connect_layout(); // only gen wire of cap_pin to bus
@@ -37,12 +38,6 @@ public:
     void print_placement();
     void dump_placement(string);
     void setIndex();
-    
-    void init_cap();
-    void run_placement();
-    void run_routing();
-    void run_draw_svg();
-    void run_draw_virtuoso();
 
     float getAvg1Cap(); // avg 1 fingerCap capasitor
     float getTotalCpara(); // total Cpara of this cap Array
@@ -71,20 +66,21 @@ private:
     Net_C* topNet;
     vector<Pin_C*> v_pin;
     map<string,Pin_C*> m_pin;
+    vector<FinCap_C*> v_finCap;
+    vector<FinCap_C*> v_dmyfinCap;
     int totalCapNum = 0;
     float unit_cap = UNIT_CAP;
     
     // placement info
-    vector<FinCap_C*> v_finCap;
     vector<Net_C*> v_bus;
 
     // Placer and Router
-    PRMgr_C pr;
-    //Placer_C placer;
-    //Router_C router;
+    PRMgr_C* pr;
     
     // layout
     Drawer_C* drawer;
+    void draw_svg();
+    void draw_virtuoso();
 
     // parser info
     Parser_C *pParser;

@@ -55,18 +55,21 @@ void DmMgr_C::run(){
     else if (run_mode == 2){ // Gen Layout Mode
         //print_placement();
         if(cfg_file_flag){ // gen the gds and run LPE to get spf.
-            setDefaultPlacement_PI();
-            run_try_switch_cap_placement();
+            //setDefaultOrder_PI();
+            //run_try_switch_cap_placement();
         }
         else{
             // init cap
             init_cap();
             setCpara2Graph();
 
-            run_placement();
-            run_routing();
-            run_draw_svg();
-            run_draw_virtuoso();
+            // init pr
+            pr = new PRMgr_C(v_net);
+            pr->setDmyFinCap(v_dmyfinCap);
+            // run pr
+            pr->run();
+            // draw layout
+            layout_gen();
         }
     }
     else{
@@ -96,93 +99,80 @@ void DmMgr_C::init_cap(){
         m_netUnexpectPara[net->name] = 0.0;
     }
 }
-void DmMgr_C::run_placement(){
-    setDefaultPlacement_PI();
+
+// void DmMgr_C::run_try_switch_cap_placement(){
+//     gen_connect_layout(); // only create the metal to connect to bus
+//     // 0. create log_dir
+//     time_t now = time(0);
+//     tm *ltm = localtime(&now);
+//     string pwd = "~/frank/project/";
+//     string workpath = "output/" + to_string(1900 + ltm->tm_year) + "-" + to_string(1 + ltm->tm_mon) + "-" + to_string(ltm->tm_mday) + "-" + to_string(0+ltm->tm_hour) + "-" + to_string(10+ltm->tm_min);
+//     string cmd = "mkdir -p " + workpath;
+//     system(cmd.c_str());
+//     cout << "\033[94m[DM]\033[0m - Create log dir \'" << workpath << "\'\n";
     
-}
-void DmMgr_C::run_routing(){
-
-}
-void DmMgr_C::run_draw_svg(){
-
-}
-void DmMgr_C::run_draw_virtuoso(){
-    
-}
-
-void DmMgr_C::run_try_switch_cap_placement(){
-    gen_connect_layout(); // only create the metal to connect to bus
-    // 0. create log_dir
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-    string pwd = "~/frank/project/";
-    string workpath = "output/" + to_string(1900 + ltm->tm_year) + "-" + to_string(1 + ltm->tm_mon) + "-" + to_string(ltm->tm_mday) + "-" + to_string(0+ltm->tm_hour) + "-" + to_string(10+ltm->tm_min);
-    string cmd = "mkdir -p " + workpath;
-    system(cmd.c_str());
-    cout << "\033[94m[DM]\033[0m - Create log dir \'" << workpath << "\'\n";
-    
-    float min_Mismatch = 9999.0;
-    float min_Para = 99999.0;
-    string bestm_case_dir = "";
-    string bestp_case_dir = "";
-    for(int i=0;i<100000;++i){
-        string workpath_case = workpath + "/" + to_string(i);
-        string cmd = "mkdir -p " + workpath_case;
-        system(cmd.c_str());
-        // 1. run skill to generate layout and stream out gds
-        cmd = "source skill/run.cshrc > ./runLPE/runSkill.log";
-        cout << "\033[94m[DM]\033[0m - run cmd \'" << cmd << "\'\n";
-        system(cmd.c_str());
+//     float min_Mismatch = 9999.0;
+//     float min_Para = 99999.0;
+//     string bestm_case_dir = "";
+//     string bestp_case_dir = "";
+//     for(int i=0;i<100000;++i){
+//         string workpath_case = workpath + "/" + to_string(i);
+//         string cmd = "mkdir -p " + workpath_case;
+//         system(cmd.c_str());
+//         // 1. run skill to generate layout and stream out gds
+//         cmd = "source skill/run.cshrc > ./runLPE/runSkill.log";
+//         cout << "\033[94m[DM]\033[0m - run cmd \'" << cmd << "\'\n";
+//         system(cmd.c_str());
         
-        // 2. run LPE to extract parasitic cap
-        cmd = "cd runLPE ; sh runLPE.sh; cd ..";
-        cout << "\033[94m[DM]\033[0m - run cmd \'" << cmd << "\'\n";
-        system(cmd.c_str());
+//         // 2. run LPE to extract parasitic cap
+//         cmd = "cd runLPE ; sh runLPE.sh; cd ..";
+//         cout << "\033[94m[DM]\033[0m - run cmd \'" << cmd << "\'\n";
+//         system(cmd.c_str());
         
-        // 3. parse spf file
-        spf_filename = "./runLPE/ARRAY_CMP_T1.spf";
-        if(!pParser->parseSPF(spf_filename)){
-            cout << "\033[94m[DM]\033[0m - Run Failed because \'parseSPF\'.\n";
-            return;
-        }
-        init_cap();
-        m_netPara = pParser->m_netPara;
-        v_CparaDetail = pParser->v_CparaDetail;
-        setCpara(v_CparaDetail);
-        setCpara2Graph();
+//         // 3. parse spf file
+//         spf_filename = "./runLPE/ARRAY_CMP_T1.spf";
+//         if(!pParser->parseSPF(spf_filename)){
+//             cout << "\033[94m[DM]\033[0m - Run Failed because \'parseSPF\'.\n";
+//             return;
+//         }
+//         init_cap();
+//         m_netPara = pParser->m_netPara;
+//         v_CparaDetail = pParser->v_CparaDetail;
+//         setCpara(v_CparaDetail);
+//         setCpara2Graph();
 
-        // 4. put all info to log dir
-        string log_filename = "./runLPE/*.log output/path.txt runLPE/gds_sp/ARRAY_CAP_T1.gds runLPE/ARRAY_CMP_T1.spf";
-        cmd = "cp " + log_filename + " " + workpath_case + "/";
-        cout << "\033[94m[DM]\033[0m - run cmd \'" << cmd << "\'\n";
-        system(cmd.c_str());
-        string placement_file = workpath_case + "/ARRAY_CMP_T1.placement";
-        dump_placement(placement_file);
-        string Cpara_rpt = workpath_case + "/ARRAY_CMP_T1.spf.Cpara.report";
-        dump_Cpara_report(Cpara_rpt);
+//         // 4. put all info to log dir
+//         string log_filename = "./runLPE/*.log output/path.txt runLPE/gds_sp/ARRAY_CAP_T1.gds runLPE/ARRAY_CMP_T1.spf";
+//         cmd = "cp " + log_filename + " " + workpath_case + "/";
+//         cout << "\033[94m[DM]\033[0m - run cmd \'" << cmd << "\'\n";
+//         system(cmd.c_str());
+//         string placement_file = workpath_case + "/ARRAY_CMP_T1.placement";
+//         dump_placement(placement_file);
+//         string Cpara_rpt = workpath_case + "/ARRAY_CMP_T1.spf.Cpara.report";
+//         dump_Cpara_report(Cpara_rpt);
         
-        if(min_Mismatch > getMaxMismatch()*100){
-            cout << "\033[94m[DM]\033[0m - find best_mismatch!\n";
-            min_Mismatch = getMaxMismatch()*100;
-            bestm_case_dir = workpath_case;
-            cmd = "ln -fsn " + pwd + bestm_case_dir + " " + pwd + workpath + "/best_mismatch";
-            system(cmd.c_str());
-        }
-        if(min_Para > getTotalCpara()){
-            cout << "\033[94m[DM]\033[0m - find best_cpara!\n";
-            min_Para = getTotalCpara();
-            bestp_case_dir = workpath_case;
-            cmd = "ln -fsn " + pwd + bestp_case_dir + " " + pwd + workpath + "/best_cpara";
-            system(cmd.c_str());
-        }
+//         if(min_Mismatch > getMaxMismatch()*100){
+//             cout << "\033[94m[DM]\033[0m - find best_mismatch!\n";
+//             min_Mismatch = getMaxMismatch()*100;
+//             bestm_case_dir = workpath_case;
+//             cmd = "ln -fsn " + pwd + bestm_case_dir + " " + pwd + workpath + "/best_mismatch";
+//             system(cmd.c_str());
+//         }
+//         if(min_Para > getTotalCpara()){
+//             cout << "\033[94m[DM]\033[0m - find best_cpara!\n";
+//             min_Para = getTotalCpara();
+//             bestp_case_dir = workpath_case;
+//             cmd = "ln -fsn " + pwd + bestp_case_dir + " " + pwd + workpath + "/best_cpara";
+//             system(cmd.c_str());
+//         }
 
-        random_shuffle( v_finCap.begin(), v_finCap.end() );
-        setIndex();
-        gen_connect_layout();
-    }
-    // 4. optimize the layout placement
+//         random_shuffle( v_finCap.begin(), v_finCap.end() );
+//         setIndex();
+//         gen_connect_layout();
+//     }
+//     // 4. optimize the layout placement
 
-}
+// }
 
 void DmMgr_C::setIndex(){
     for(int i=0;i<v_finCap.size();++i){
@@ -193,15 +183,46 @@ void DmMgr_C::setIndex(){
 void DmMgr_C::build_graph(){
     totalCapNum = 0;
     for(int i=0;i<v_capName.size();++i){
-        Net_C* net = new Net_C(v_capName[i],m_capNet[v_capName[i]]);
+        string netName = v_capName[i];
+        Net_C* net = new Net_C(netName,m_capNet[netName]);
+        v_net.push_back(net);
+        m_net.emplace(v_capName[i],net);
         v_CapNet.push_back(net);
         m_CapNet.emplace(v_capName[i],net);
-        totalCapNum += m_finCapNum[v_capName[i]];
+        for(int j=0;j<m_finCapNum[netName];++j){
+            FinCap_C* finCap = new FinCap_C(j,net,m_capNet[netName]);
+            net->addFinCap(finCap);
+            v_finCap.push_back(finCap);
+            totalCapNum++;
+        }
+    }
+    for(int i=0;i<v_dmyCapName.size();++i){
+        string dmyName = v_dmyCapName[i];
+        for(int j=0;j<m_finCapNum[dmyName];++j){
+            FinCap_C* finCap = new FinCap_C(j,dmyName,m_dummyCap[dmyName]);
+            v_finCap.push_back(finCap);
+            v_dmyfinCap.push_back(finCap);
+            totalCapNum++;
+        }
     }
     for(int i=0;i<v_pinName.size();++i){
         Pin_C* pin = new Pin_C(v_pinName[i]);
+        pin->_isIOPin = true;
         v_pin.push_back(pin);
         m_pin.emplace(v_pinName[i],pin);
+
+        // add pin to net
+        if(find(v_capName.begin(),v_capName.end(),v_pinName[i]) == v_capName.end()){
+            Net_C* net = new Net_C(v_pinName[i]);
+            net->IOpin = pin;
+            v_net.push_back(net);
+            m_net.emplace(v_pinName[i],net);
+            v_nonCapNet.push_back(net);
+            m_nonCapNet.emplace(v_pinName[i],net);
+        }
+        else{
+            m_net[v_pinName[i]]->IOpin = pin;
+        }
     }
 }
 void DmMgr_C::setCpara(vector<Cpara> v_CparaDetail){
@@ -255,47 +276,23 @@ void DmMgr_C::setCpara2Graph(){
         }
     }
 }
-void DmMgr_C::setDefaultPlacement_PI(){
-    //// sort net with # of finCap (more to less)
-    sort(v_CapNet.begin(),v_CapNet.end(),[](Net_C* n1, Net_C* n2){ return n1->num_finCap > n2->num_finCap; });
-    for(auto net : v_CapNet){
-        // bus
-        net->bus_index = v_bus.size();
-        v_bus.push_back(net);
-        // cap
-        for(auto cap : net->v_finCap){
-            int mid = v_finCap.size()/2;
-            v_finCap.insert(v_finCap.begin()+mid,cap);
-        }
-    }
-    for(int i=0;i<v_finCap.size();++i){
-        v_finCap[i]->index = i;
-    }
-}
-
-void DmMgr_C::gen_connect_layout(){ // only gen wire of cap_pin to bus
-    drawer = new Drawer_C(layout_out_fileName);
-    drawer->start();
-    Pos capPin_first = Pos(CAP_PIN_START_X,CAP_PIN_Y);
-    for(auto cap : v_finCap){
-        float x = get<0>(capPin_first) + cap->index*CAP_SPACING_1;
-        float y_end = BUS_START_Y - cap->net->bus_index*WIRE_WIDTH;
-        Pos path_start = Pos(x,CAP_PIN_Y);
-        Pos path_end = Pos(x,y_end-WIRE_WIDTH/2);
-        drawer->drawPath(path_start,path_end,"M2",WIRE_WIDTH);
-        Pos via_xy = Pos(x,y_end);
-        if(cap->net->bus_index%2 == 0)
-            drawer->drawVia(via_xy,"M3","M2");
-        else
-            drawer->drawVia(via_xy,"M2","M1");
-    }
-    drawer->end();
-    cout << "\033[94m[DM]\033[0m - Path file has been generated at \'" << layout_out_fileName << "\'\n";
-}
-
-void DmMgr_C::layout_gen(){
-    
-}
+// void DmMgr_C::setDefaultOrder_PI(){
+//     v_bus.clear();
+//     v_finCap.clear();
+//     //// sort net with # of finCap (more to less)
+//     sort(v_CapNet.begin(),v_CapNet.end(),[](Net_C* n1, Net_C* n2){ return n1->num_finCap > n2->num_finCap; });
+//     for(auto net : v_CapNet){
+//         // bus
+//         net->bus_index = v_bus.size();
+//         v_bus.push_back(net);
+//         // cap
+//         for(auto cap : net->v_finCap){
+//             int mid = v_finCap.size()/2;
+//             v_finCap.insert(v_finCap.begin()+mid,cap);
+//         }
+//     }
+//     setIndex();
+// }
 
 float DmMgr_C::getTotalCpara(){
     float totalCpara = 0.0;
@@ -472,4 +469,42 @@ void DmMgr_C::dump_placement(string output_file){
         fout << bus->name << "=====================================================================\n";
     }
     cout << "\033[94m[DM]\033[0m - dump placement result \'" << output_file << "\'\n";
+}
+
+void DmMgr_C::gen_connect_layout(){ // only gen wire of cap_pin to bus
+    drawer = new Drawer_C(layout_out_fileName);
+    drawer->start();
+    Pos capPin_first = Pos(CAP_PIN_START_X,CAP_PIN_Y);
+    for(auto cap : v_finCap){
+        float x = get<0>(capPin_first) + cap->index*CAP_SPACING_1;
+        float y_end = BUS_START_Y - cap->net->bus_index*WIRE_WIDTH;
+        Pos path_start = Pos(x,CAP_PIN_Y);
+        Pos path_end = Pos(x,y_end-WIRE_WIDTH/2);
+        drawer->drawPath(path_start,path_end,"M2",WIRE_WIDTH);
+        Pos via_xy = Pos(x,y_end);
+        if(cap->net->bus_index%2 == 0)
+            drawer->drawVia(via_xy,"M3","M2");
+        else
+            drawer->drawVia(via_xy,"M2","M1");
+    }
+    drawer->end();
+    cout << "\033[94m[DM]\033[0m - Path file has been generated at \'" << layout_out_fileName << "\'\n";
+}
+
+void DmMgr_C::layout_gen(){
+    draw_svg();
+    draw_virtuoso();
+}
+void DmMgr_C::draw_svg(){
+    for(Pin_C* pin : v_pin){ // IO Pin
+
+    }
+    for(Net_C* net : v_net){ 
+        for(Wire_C wire : net->v_wire){ // wire
+
+        }
+    }
+}
+void DmMgr_C::draw_virtuoso(){
+    
 }
