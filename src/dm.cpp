@@ -219,9 +219,11 @@ void DmMgr_C::build_graph(){
             m_net.emplace(v_pinName[i],net);
             v_nonCapNet.push_back(net);
             m_nonCapNet.emplace(v_pinName[i],net);
+            pin->net = net;
         }
         else{
             m_net[v_pinName[i]]->IOpin = pin;
+            pin->net = m_net[v_pinName[i]];
         }
     }
 }
@@ -471,39 +473,70 @@ void DmMgr_C::dump_placement(string output_file){
     cout << "\033[94m[DM]\033[0m - dump placement result \'" << output_file << "\'\n";
 }
 
-void DmMgr_C::gen_connect_layout(){ // only gen wire of cap_pin to bus
-    drawer = new Drawer_C(layout_out_fileName);
-    drawer->start();
-    Pos capPin_first = Pos(CAP_PIN_START_X,CAP_PIN_Y);
-    for(auto cap : v_finCap){
-        float x = get<0>(capPin_first) + cap->index*CAP_SPACING_1;
-        float y_end = BUS_START_Y - cap->net->bus_index*WIRE_WIDTH;
-        Pos path_start = Pos(x,CAP_PIN_Y);
-        Pos path_end = Pos(x,y_end-WIRE_WIDTH/2);
-        drawer->drawPath(path_start,path_end,"M2",WIRE_WIDTH);
-        Pos via_xy = Pos(x,y_end);
-        if(cap->net->bus_index%2 == 0)
-            drawer->drawVia(via_xy,"M3","M2");
-        else
-            drawer->drawVia(via_xy,"M2","M1");
-    }
-    drawer->end();
-    cout << "\033[94m[DM]\033[0m - Path file has been generated at \'" << layout_out_fileName << "\'\n";
-}
+// void DmMgr_C::gen_connect_layout(){ // only gen wire of cap_pin to bus
+//     drawer = new Drawer_C(layout_out_fileName);
+//     drawer->start();
+//     Pos capPin_first = Pos(CAP_PIN_START_X,CAP_PIN_Y);
+//     for(auto cap : v_finCap){
+//         float x = get<0>(capPin_first) + cap->index*CAP_SPACING_1;
+//         float y_end = BUS_START_Y - cap->net->bus_index*WIRE_WIDTH;
+//         Pos path_start = Pos(x,CAP_PIN_Y);
+//         Pos path_end = Pos(x,y_end-WIRE_WIDTH/2);
+//         drawer->drawPath(path_start,path_end,"M2",WIRE_WIDTH);
+//         Pos via_xy = Pos(x,y_end);
+//         if(cap->net->bus_index%2 == 0)
+//             drawer->drawVia(via_xy,"M3","M2");
+//         else
+//             drawer->drawVia(via_xy,"M2","M1");
+//     }
+//     drawer->end();
+//     cout << "\033[94m[DM]\033[0m - Path file has been generated at \'" << layout_out_fileName << "\'\n";
+// }
 
 void DmMgr_C::layout_gen(){
     draw_svg();
     draw_virtuoso();
 }
+
+int* getRandRGB(){
+    int* color = new int(3);
+    color[0] = rand()%256;
+    color[1] = rand()%256;
+    color[2] = rand()%256;
+    return color;
+}
 void DmMgr_C::draw_svg(){
-    for(Pin_C* pin : v_pin){ // IO Pin
-
+    string metal_color[7] = {"black", "blue", "yellow", "green", "purple", "gray", "orange"};
+    map<string,int*> net_rgb;
+    srand(time(NULL));
+    for(auto net : v_net){
+        net_rgb.emplace(net->name, getRandRGB());
     }
-    for(Net_C* net : v_net){ 
-        for(Wire_C wire : net->v_wire){ // wire
+    map<string,string> net_color = {{"SL1A","brown"},{"SL1B","orange"},{"SL2A","pruple"},{"SL2B","gray"},{"SL3A","blue"},{"SL3B","green"},{"VDD09A","yellow"},{"VSS09A","black"},{"TOP_ARRAY","red"}};
 
+    Drawer_C* draw_svg = new Drawer_C("svg.html");
+    draw_svg->setting(1600,1200,200,200,600); // outline_x outline_y scaling offset_x offset_y
+    draw_svg->start_svg();
+    // draw wire 
+    for(Net_C* net : v_net){ 
+        for(Wire_C wire : net->v_wire){  
+            draw_svg->drawLine(wire.netName, wire.p1, wire.p2, net_color[net->name], wire.width);
         }
     }
+    // draw cap
+    for(FinCap_C* finCap : v_finCap){
+        draw_svg->drawRect(finCap->name, finCap->getBox(), metal_color[5]);
+        draw_svg->drawRect(finCap->topPin->name, finCap->topPin->getBox(), metal_color[5]);
+        //draw_svg->drawText(finCap->topPin->name, finCap->topPin->xy, finCap->topPin->name);
+        draw_svg->drawRect(finCap->btmPin->name, finCap->btmPin->getBox(), metal_color[5]);
+        //draw_svg->drawText(finCap->btmPin->name, finCap->btmPin->xy, finCap->btmPin->name);
+    }
+    // draw IO Pin
+    for(Pin_C* pin : v_pin){ 
+        draw_svg->drawRect(pin->name, pin->getBox(), metal_color[5]);
+        draw_svg->drawText(pin->name, pin->xy, pin->name);
+    }
+    draw_svg->end_svg();
 }
 void DmMgr_C::draw_virtuoso(){
     

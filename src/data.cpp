@@ -6,6 +6,35 @@ Pos operator+(const Pos &p1, const Pos &p2){
 Pos operator-(const Pos &p1, const Pos &p2){
     return Pos(get<0>(p1)-get<0>(p2), get<1>(p1)-get<1>(p2));
 }
+string pos2str(Pos pos){
+    string s;
+    s += "(" + to_string(get<0>(pos)) + "," + to_string(get<1>(pos)) + ")";
+    return s;
+}
+// --------------------------------------------------------------------------------------------------------- //
+Wire_C::Wire_C(){}
+Wire_C::Wire_C(Pos s, Pos t){
+    p1 = s;
+    p2 = t;
+}
+Wire_C::Wire_C(Pos s, Pos t, float w){
+    p1 = s;
+    p2 = t;
+    width = w;
+}
+Wire_C::Wire_C(Pos3d s, Pos3d t){
+    p1 = Pos(get<0>(s),get<1>(s));
+    layer = get<2>(s);
+    p2 = Pos(get<0>(t),get<1>(t));
+    layer2 = get<2>(t);
+}
+Wire_C::Wire_C(Pos3d s, Pos3d t, float w){
+    p1 = Pos(get<0>(s),get<1>(s));
+    layer = get<2>(s);
+    p2 = Pos(get<0>(t),get<1>(t));
+    layer2 = get<2>(t);
+    width = w;
+}
 // --------------------------------------------------------------------------------------------------------- //
 Net_C::Net_C(){}
 Net_C::Net_C(string netName, CapNet capNet){
@@ -45,6 +74,12 @@ float Net_C::getCpara(string net2){
 }
 bool Net_C::isCapNet(){
     return _isCapNet;
+}
+void Net_C::initWire(){
+    v_wire.clear();
+}
+void Net_C::addWire(Wire_C p_wire){
+    v_wire.push_back(p_wire);
 }
 // --------------------------------------------------------------------------------------------------------- //
 FinCap_C::FinCap_C(){}
@@ -94,7 +129,7 @@ void FinCap_C::setXY(Pos pos){
     ur = ur + (pos - xy);
     xy = pos;
     topPin->setXY(xy + defaultTopPinXY);
-    btmPin->setXY(xy + defaultTopPinXY);
+    btmPin->setXY(xy + defaultBtmPinXY);
 }
 bBox FinCap_C::getBox(){
     return bBox(ll,ur);

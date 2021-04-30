@@ -14,20 +14,25 @@
 using namespace std;
 
 // parameter ---------------------------------------------------------------------------------------------------------
-#define INST_START_X 0
-#define CAP_PIN_START_X 1.050
-#define CAP_PIN_Y 0.160
-#define CAP_SPACING_1 0.21
-#define CAP_SPACING_2 0.32
-#define WIRE_WIDTH 0.11
-#define BUS_START_X 0.535
-#define BUS_START_Y -0.505
-#define BUS_END_X k 4.045
-#define BUS_END_Y -1.055
+// #define INST_START_X 0
+// #define CAP_PIN_START_X 1.050
+// #define CAP_PIN_Y 0.160
+// #define CAP_SPACING_1 0.21
+// #define CAP_SPACING_2 0.32
+// #define WIRE_WIDTH 0.11
+// #define BUS_START_X 0.535
+// #define BUS_START_Y -0.505
+// #define BUS_END_X k 4.045
+// #define BUS_END_Y -1.055
 #define UNIT_CAP 8.01e-16
 // ---------------------------------------------------------------------------------------------------------
 typedef tuple<float, float> Pos; // x, y
 typedef tuple<Pos, Pos> bBox; // ll, ur
+typedef tuple<float, float, int> Pos3d; // x, y
+
+Pos operator+(const Pos &p1, const Pos &p2);
+Pos operator-(const Pos &p1, const Pos &p2);
+string pos2str(Pos pos);
 
 class DmMgr_C;
 class Net_C;
@@ -37,15 +42,20 @@ class Wire_C;
 
 // --------------------------------------------------------------------------------------------------------- //
 class Wire_C{
+public:
     Wire_C();
     Wire_C(Pos, Pos);
+    Wire_C(Pos, Pos, float);
+    Wire_C(Pos3d, Pos3d);
+    Wire_C(Pos3d, Pos3d, float);
 
     string netName;
     char dir; // 'H' 'V' 'Z'
-    Pos start;
-    Pos end;
-    int layer; // 1 ~ 5
-    int layer2 = 0; // 1 ~ 5
+    Pos p1;
+    Pos p2;
+    float width = 0.11;
+    int layer = 1; // 1 ~ 5
+    int layer2 = 1; // 1 ~ 5
 };
 // --------------------------------------------------------------------------------------------------------- //
 class Pin_C{
@@ -55,7 +65,8 @@ public:
     bool isIOPin();
 
     string name;
-    bool _isIOPin;
+    Net_C* net = nullptr;
+    bool _isIOPin = false;
     FinCap_C* fcap;
     
     // P&R
@@ -66,7 +77,7 @@ public:
     Pos xy;
     float h=0.05;
     float w=0.05;
-    int layer; // 1 ~ 5
+    int layer = 1; // 1 ~ 5
 };
 // --------------------------------------------------------------------------------------------------------- //
 class FinCap_C{
@@ -77,13 +88,13 @@ public:
     bool isDmy();
 
     int id=-1;
-    Net_C* net;
+    Net_C* net = nullptr;
     string name;
     int index=-1; // the index in the cap array
     float capLength;
     Pin_C* topPin;
     Pin_C* btmPin;
-    bool _isDmy;
+    bool _isDmy = false;
 
     // P&R
     void setXY(Pos);
@@ -108,6 +119,8 @@ public:
     float getTotalCpara();
     float getTotalErrorCpara(); // get total Cpara with other nets
     float getCpara(string); // get Cpara with the net
+    void initWire();
+    void addWire(Wire_C);
 
     // variable
     string name="";
@@ -122,7 +135,7 @@ public:
     map<string,float> m_net2netCpara;
     vector<Net_C*> v_paraNet;
     vector<FinCap_C*> v_finCap;
-    bool _isCapNet;
+    bool _isCapNet = true;
     // placement info
     int bus_index;
     Pin_C* IOpin;
