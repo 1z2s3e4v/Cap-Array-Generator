@@ -1,0 +1,43 @@
+Total_Cpara=1.95e-14, Total_Error_Cpara=8.3e-15(42.5%),
+Mismatch=8.83% (SL3A,SL2A), avg_mismatch=2.09%
+Target Cap. Ratio: 4 : 4 : 2 : 2 : 1 : 1
+Real Cap. Ratio: 3.81 : 3.98 : 2.09 : 2.01 : 0.987 : 1.01
+---------------------------------------------------------------------------
+SL3A(4): total=5.36e-15, error_cap=2.13e-15(39.8%)
+  SL2A: total=1.66e-16, Mismatch=2.42%, error_proportion=3.1%
+  SL2B: total=1.12e-16, Mismatch=1.42%, error_proportion=2.1%
+  SL3B: total=1.32e-15, Mismatch=1.08%, error_proportion=23.6%
+  0: 5.34e-16
+  TOP_ARRAY: 3.22e-15
+SL3B(4): total=5.6e-15, error_cap=2.4e-15(42.8%)
+  SL2A: total=4.62e-16, Mismatch=1.24%, error_proportion=8.25%
+  SL3A: total=1.32e-15, Mismatch=1.08%, error_proportion=23.6%
+  0: 6.12e-16
+  TOP_ARRAY: 3.2e-15
+SL2A(2): total=2.94e-15, error_cap=1.34e-15(45.5%)
+  SL1A: total=7.46e-17, Mismatch=2.82%, error_proportion=2.54%
+  SL1B: total=5.34e-17, Mismatch=1.67%, error_proportion=1.82%
+  SL2B: total=4.32e-16, Mismatch=1.83%, error_proportion=14.7%
+  SL3A: total=1.66e-16, Mismatch=2.42%, error_proportion=3.1%
+  SL3B: total=4.62e-16, Mismatch=1.24%, error_proportion=8.25%
+  0: 1.49e-16
+  TOP_ARRAY: 1.6e-15
+SL2B(2): total=2.83e-15, error_cap=1.23e-15(43.4%)
+  SL1A: total=2.03e-16, Mismatch=1.03%, error_proportion=7.15%
+  SL1B: total=2.14e-16, Mismatch=0.166%, error_proportion=7.54%
+  SL2A: total=4.32e-16, Mismatch=1.83%, error_proportion=14.7%
+  SL3A: total=1.12e-16, Mismatch=1.42%, error_proportion=2.1%
+  0: 2.69e-16
+  TOP_ARRAY: 1.6e-15
+SL1A(1): total=1.39e-15, error_cap=5.85e-16(42.2%)
+  SL1B: total=1.66e-16, Mismatch=2.37%, error_proportion=11.7%
+  SL2A: total=7.46e-17, Mismatch=2.82%, error_proportion=2.54%
+  SL2B: total=2.03e-16, Mismatch=1.03%, error_proportion=7.15%
+  0: 1.41e-16
+  TOP_ARRAY: 8.02e-16
+SL1B(1): total=1.42e-15, error_cap=6.19e-16(43.6%)
+  SL1A: total=1.66e-16, Mismatch=2.37%, error_proportion=11.7%
+  SL2A: total=5.34e-17, Mismatch=1.67%, error_proportion=1.82%
+  SL2B: total=2.14e-16, Mismatch=0.166%, error_proportion=7.54%
+  0: 1.85e-16
+  TOP_ARRAY: 8.01e-16

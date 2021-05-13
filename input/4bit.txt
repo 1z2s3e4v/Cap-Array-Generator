@@ -1,14 +1,17 @@
 # bit <nit_num>
 bit 4
 # -----------------------------------------------------------------
-# CapUnit <Lib> <Cell> <View>
-CapUnit ADC_SAR4BIT CU1F layout
+# CapUnitLayout <Lib> <Cell> <View>
+CapUnitLayout ADC_SAR4BIT CU1F layout
 # -----------------------------------------------------------------
 # OutputLayout <Lib> <Cell> <View>
-OutputLayout ADC_SAR4BIT ARRAY_CMP_T1 layout
+OutputLayout ADC_SAR4BIT ARRAY_CMP_T1 layout_skill
 # -----------------------------------------------------------------
 # Pin <pin1> <pin2> ...
 Pin SL1A SL1B SL2A SL2B SL3A SL3B TOP_ARRAY VDD09A VSS09A
+# -----------------------------------------------------------------
+# Top_Plate <netName>
+Top_Plate TOP_ARRAY
 # -----------------------------------------------------------------
 # Cap <num_of_cap>
 Cap 6
