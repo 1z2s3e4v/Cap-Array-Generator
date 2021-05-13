@@ -14,13 +14,11 @@ string pos2str(Pos pos){
 // --------------------------------------------------------------------------------------------------------- //
 Wire_C::Wire_C(){}
 Wire_C::Wire_C(Pos s, Pos t){
-    p1 = s;
-    p2 = t;
+    setPoint(s,t);
 }
 Wire_C::Wire_C(Pos s, Pos t, float w){
-    p1 = s;
-    p2 = t;
     width = w;
+    setPoint(s,t);
 }
 Wire_C::Wire_C(Pos3d s, Pos3d t){
     p1 = Pos(get<0>(s),get<1>(s));
@@ -34,6 +32,24 @@ Wire_C::Wire_C(Pos3d s, Pos3d t, float w){
     p2 = Pos(get<0>(t),get<1>(t));
     layer2 = get<2>(t);
     width = w;
+}
+void Wire_C::setPoint(Pos s, Pos t){
+    if(get<0>(s) == get<0>(t)) dir = 'V';
+    if(get<1>(s) == get<1>(t)) dir = 'H';
+    if(dir == 'H'){
+        if(get<0>(s) > get<0>(t)) swap(s,t);
+        p1 = Pos(get<0>(s) - (float)width/2.0, get<1>(s));
+        p2 = Pos(get<0>(t) + (float)width/2.0, get<1>(t));
+    }
+    else if(dir == 'V'){
+        if(get<1>(s) > get<1>(t)) swap(s,t);
+        p1 = Pos(get<0>(s), get<1>(s) - (float)width/2.0);
+        p2 = Pos(get<0>(t), get<1>(t) + (float)width/2.0);
+    }
+    else{
+        p1 = s;
+        p2 = t;
+    }
 }
 // --------------------------------------------------------------------------------------------------------- //
 Net_C::Net_C(){}
@@ -144,6 +160,12 @@ Pin_C::Pin_C(string name, Pos pos){
     this->name = name;
     this->xy = pos;
     _isIOPin = false;
+}
+bool Pin_C::isTopPin(){
+    return (this == this->fcap->topPin);
+}
+bool Pin_C::isBtmPin(){
+    return (this == this->fcap->btmPin);
 }
 bool Pin_C::isIOPin(){
     return _isIOPin;

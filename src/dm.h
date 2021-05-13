@@ -96,6 +96,8 @@ private:
     map<string, float> m_netUnexpectPara; // input signal(net) -> total unexpect parasitic cap
     map<string, map<string,map<string,float> > > m_Cpara_detail; // net to net parasitic -> map<capName,parasitic>
     map<string, map<string,float> > m_Cpara; // net to net parasitic
+    Layout_cellView capUnitLayout;
+    Layout_cellView OutputLayout;
 };
 
 #endif

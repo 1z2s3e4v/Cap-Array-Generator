@@ -74,12 +74,12 @@ bool Parser_C::parseInput(string fileName){
             ss >> num_of_dummy;
             mode = "Dummy";
         }
-        else if(head == "CapUnit"){
+        else if(head == "CapUnitLayout"){
             ss >> capUnit.lib >> capUnit.cell >> capUnit.view;
             mode = "other";
         }
         else if(head == "OutputLayout"){
-            ss >> capUnit.lib >> capUnit.cell >> capUnit.view;
+            ss >> OutputLayout.lib >> OutputLayout.cell >> OutputLayout.view;
             mode = "other";
         }
         else if(head == "Pin"){

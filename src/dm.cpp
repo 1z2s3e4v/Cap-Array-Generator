@@ -12,6 +12,8 @@ DmMgr_C::DmMgr_C(Parser_C *pParser, clock_t start){
     m_capNet = pParser->m_capNet;
     m_dummyCap = pParser->m_dummyCap;
     top_plate_netName = pParser->top_plate_netName;
+    capUnitLayout = pParser->capUnit;
+    OutputLayout = pParser->OutputLayout;
     build_graph();
     if(pParser->isComputeParasiticMode()){
         cout << "\033[94m[DM]\033[0m - Compute Parasitic Mode.\n";
@@ -506,21 +508,30 @@ int* getRandRGB(){
     return color;
 }
 void DmMgr_C::draw_svg(){
+    string output_fileName = "svg.html";
     string metal_color[7] = {"black", "blue", "yellow", "green", "purple", "gray", "orange"};
     map<string,int*> net_rgb;
     srand(time(NULL));
     for(auto net : v_net){
         net_rgb.emplace(net->name, getRandRGB());
     }
-    map<string,string> net_color = {{"SL1A","brown"},{"SL1B","orange"},{"SL2A","pruple"},{"SL2B","gray"},{"SL3A","blue"},{"SL3B","green"},{"VDD09A","yellow"},{"VSS09A","black"},{"TOP_ARRAY","red"}};
+    map<string,string> net_color = {{"SL1A","brown"},{"SL1B","orange"},{"SL2A","purple"},{"SL2B","gray"},{"SL3A","blue"},{"SL3B","green"},{"VDD09A","yellow"},{"VSS09A","darkgoldenrod"},{"TOP_ARRAY","saddlebrown"}};
 
-    Drawer_C* draw_svg = new Drawer_C("svg.html");
+    system("mkdir -p output");
+    Drawer_C* draw_svg = new Drawer_C(output_fileName);
     draw_svg->setting(1600,1200,200,200,600); // outline_x outline_y scaling offset_x offset_y
     draw_svg->start_svg();
     // draw wire 
+    Net_C* net = m_net["VSS09A"];
+    for(Wire_C wire : net->v_wire){  
+        //draw_svg->drawLine(wire.netName, wire.p1, wire.p2, net_color[net->name], wire.width, 0.3);
+        draw_svg->drawLine(wire.netName, wire.p1, wire.p2, metal_color[wire.layer], wire.width, 0.3);
+    }
     for(Net_C* net : v_net){ 
+        if(net->name == "VSS09A") continue;
         for(Wire_C wire : net->v_wire){  
-            draw_svg->drawLine(wire.netName, wire.p1, wire.p2, net_color[net->name], wire.width);
+            //draw_svg->drawLine(wire.netName, wire.p1, wire.p2, net_color[net->name], wire.width, 0.8);
+            draw_svg->drawLine(wire.netName, wire.p1, wire.p2, metal_color[wire.layer], wire.width, 0.8);
         }
     }
     // draw cap
@@ -529,7 +540,8 @@ void DmMgr_C::draw_svg(){
         draw_svg->drawRect(finCap->topPin->name, finCap->topPin->getBox(), metal_color[5]);
         //draw_svg->drawText(finCap->topPin->name, finCap->topPin->xy, finCap->topPin->name);
         draw_svg->drawRect(finCap->btmPin->name, finCap->btmPin->getBox(), metal_color[5]);
-        //draw_svg->drawText(finCap->btmPin->name, finCap->btmPin->xy, finCap->btmPin->name);
+        if(m_capNet.find(finCap->btmPin->name) != m_capNet.end())
+            draw_svg->drawText(finCap->btmPin->name, finCap->btmPin->xy, finCap->btmPin->name);
     }
     // draw IO Pin
     for(Pin_C* pin : v_pin){ 
@@ -537,7 +549,31 @@ void DmMgr_C::draw_svg(){
         draw_svg->drawText(pin->name, pin->xy, pin->name);
     }
     draw_svg->end_svg();
+    cout << "\033[94m[DM]\033[0m - output placement result (svg) \'" << output_fileName << "\'\n";
 }
 void DmMgr_C::draw_virtuoso(){
-    
+    string output_fileName = "output/layout.txt";
+    system("mkdir -p output");
+    Drawer_C* drawer = new Drawer_C(output_fileName);
+    drawer->start();
+    drawer->set_output_cellview(OutputLayout.lib, OutputLayout.cell, OutputLayout.view);
+    // draw cap
+    for(FinCap_C* finCap : v_finCap){
+        string isntName = "I";
+        isntName += "_" + finCap->name + "_" + to_string(finCap->id);
+        drawer->drawInst(finCap->xy, isntName);
+    }
+    // draw wire 
+    for(Net_C* net : v_net){
+        for(Wire_C wire : net->v_wire){  
+            drawer->drawPath(wire.p1, wire.p2, wire.layer, wire.width, net->name);
+        }
+    }
+
+    // draw IO Pin
+    for(Pin_C* pin : v_pin){ 
+        drawer->drawPin(pin->xy, pin->layer, pin->name);
+    }
+    drawer->end();
+    cout << "\033[94m[DM]\033[0m - output placement result (virtuoso) \'" << output_fileName << "\'\n";
 }

@@ -35,6 +35,7 @@ public:
     void addNode(Node_C*);
     void addEdge(Edge_C*);
     bool isNodeExist(Pos3d);
+    float getBusY();
     
     Net_C* net = nullptr;
     string name;
@@ -76,9 +77,13 @@ public:
     Edge_C();
     Edge_C(Node_C* s,Node_C* t);
     Edge_C(Node_C* s,Node_C* t, float w);
-    Edge_C(Graph_C*);
+    Edge_C(Node_C*);
     void addNode(Node_C*);
     void setGraph(Graph_C*);
+    void setWire();
+    void shiftYto(float); // TODO: if node isPin, create a new steiner point
+    void shiftXto(float); // 
+    void setLayer(int);
 
     Graph_C* graph = nullptr;
     vector<Node_C*> v_node;
@@ -96,11 +101,14 @@ public:
     void addPin(Pin_C*);
     void run();
 
+    void sort_node_with_x(vector<Node_C*>&);
+
     vector<Net_C*> v_net;
     vector<Net_C*> v_CapNet;
     vector<FinCap_C*> v_finCap;
     vector<FinCap_C*> v_dmyFinCap;
     map<string, vector<Pin_C*> > m_pin;
+    map<Pin_C*,Node_C*> m_p2n;
     vector<Pin_C*> v_ioPin;
 
     // placement
@@ -109,15 +117,29 @@ public:
     void place_finCap();
     void place_ioPin();
 
+    vector<Node_C*> v_capTopNode;
+    vector<Node_C*> v_capBtmNode;
+
     // routing
     void run_routing(); // net->v_wire
     void build_graph(); 
     void build_mst(); // mark-lin_paper_2017
     void build_tree(); // my
+    void set_wire();
 
-    map<string,Graph_C*> m_graph;
+    void build_2d_connection(); // for printing the 2d connection
+    void layer_assignment();
 
-    map<string,float> bus_y;
+    void addBus(Edge_C*);
+    void addVWire(Edge_C*);
+    void addOtherWire(Edge_C*);
+
+    map<string,Graph_C*> m_graph2D; // connectivity
+    map<string,Graph_C*> m_graph3D; // final layout
+
+    vector<Edge_C*> v_bus;
+    vector<Edge_C*> v_vWire;
+    vector<Edge_C*> v_otherWire;
 
 };
 #endif

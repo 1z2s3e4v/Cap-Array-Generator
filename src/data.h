@@ -48,14 +48,15 @@ public:
     Wire_C(Pos, Pos, float);
     Wire_C(Pos3d, Pos3d);
     Wire_C(Pos3d, Pos3d, float);
+    void setPoint(Pos, Pos); // reset p1 and p2
 
     string netName;
-    char dir; // 'H' 'V' 'Z'
+    char dir = ' '; // 'H' 'V' 'Z'
     Pos p1;
     Pos p2;
     float width = 0.11;
-    int layer = 1; // 1 ~ 5
-    int layer2 = 1; // 1 ~ 5
+    int layer = 0; // 1 ~ 5
+    int layer2 = 0; // 1 ~ 5
 };
 // --------------------------------------------------------------------------------------------------------- //
 class Pin_C{
@@ -63,6 +64,8 @@ public:
     Pin_C();
     Pin_C(string);
     bool isIOPin();
+    bool isTopPin();
+    bool isBtmPin();
 
     string name;
     Net_C* net = nullptr;

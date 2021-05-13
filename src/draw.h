@@ -27,15 +27,18 @@ public:
     void drawRect(string name, bBox, string color);
     void drawLine(string name, Pos, Pos, string color,float width);
     void drawLine(string name, Pos, Pos, int* color,float width);
+    void drawLine(string name, Pos, Pos, string color,float width,float opacity);
+    void drawLine(string name, Pos, Pos, int* color,float width,float opacity);
     void drawText(string name, Pos, string);
 
     // virtuoso
     void start();
     void end();
+    void set_output_cellview(string,string,string);
     void drawInst(Pos, string name);
-    void drawPath(Pos, Pos, string layer,float width);
-    void drawVia(Pos, string layer1, string layer2);
-    void drawPin(Pos, string name, string later);
+    void drawPath(Pos, Pos, int layer,float width, string netName);
+    void drawVia(Pos, int layer1, int layer2, string netName);
+    void drawPin(Pos, int layer, string name);
 private:
     string fileName;
     ofstream fout;
