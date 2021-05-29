@@ -1,6 +1,123 @@
 #include "PR.h"
+#include "data.h"
+bool le(float a, float b){
+    int n_a = a*1000;
+    int n_b = b*1000;
+    return (n_a - n_b) < 0;
+}
+bool ge(float a, float b){
+    int n_a = a*1000;
+    int n_b = b*1000;
+    return (n_a - n_b) > 0;
+}
+bool eq(float a, float b){
+    int n_a = a*1000;
+    int n_b = b*1000;
+    return abs(n_a - n_b) < 5;
+}
 bool cmNode_x(const Node_C* n1, const Node_C* n2){
-    return get<0>(n1->xy) < get<1>(n2->xy);
+    return get<0>(n1->xy) < get<0>(n2->xy);
+}
+// ---------------------------------------------------------------------------------------------------------
+Cpara_C::Cpara_C(){}
+Cpara_C::Cpara_C(Edge_C* edge, Edge_C* edge2){
+    this->edge = edge;
+    this->edge2 = edge2;
+    cap = calculate_parasitic();
+}
+int Cpara_C::getCouplingType(){
+    if(edge->wire.dir == 'H' && edge2->wire.dir == 'H' && get<1>(edge->wire.p1)!=get<1>(edge2->wire.p1)){ // H
+        return 1;
+    }
+    else if(edge->wire.dir == 'V' && edge2->wire.dir == 'V' && get<0>(edge->wire.p1)!=get<0>(edge2->wire.p1)){ // V
+        return 2;
+    }
+    else{ // overlap
+        return 3;
+    }
+}
+float Cpara_C::calculate_parasitic(){
+    float cap = -1;
+    int coupling_type = getCouplingType();
+    bBox b1 = edge->wire.getBox();
+    bBox b2 = edge2->wire.getBox();
+    float spacing = 0;
+    float parallel = 0;
+    if(coupling_type == 1){// H
+        if(get<1>(edge->wire.p1) < get<1>(edge2->wire.p1)){ 
+            swap(b1,b2); // edge is upper, edge2 is lower
+        }
+        spacing = get<1>(get<0>(b1)) - get<1>(get<1>(b2));
+        parallel = max(get<0>(edge->wire.p1),get<0>(edge2->wire.p1)) - min(get<0>(edge->wire.p2),get<0>(edge2->wire.p2));
+        
+        // Each routing-style and corresponding parasitic-cap
+        if(parallel < 0) { // not parallel
+            cap = -1;
+        }
+        else if(eq(spacing,(float)0.06)){ // spacing 0.06
+            // TODO
+        }
+        else if(eq(spacing,(float)0.11)){ // spacing 0.11
+            if(edge->wire.layer==1 && edge2->wire.layer==1){ // M1 M1
+                cap = 5.8e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(edge->wire.layer==1 && edge2->wire.layer==3){ // M1 M3
+                
+            }
+        }
+        else if(eq(spacing,(float)0.22)){ // spacing 0.22
+            if(edge->wire.layer==1 && edge2->wire.layer==1){ // M1 M1
+                cap = 3.5e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.05e-17;
+                }
+            }
+            else if(edge->wire.layer==1 && edge2->wire.layer==3){ // M1 M3
+                
+            }
+            else{
+                
+            }
+        }
+        else if(eq(spacing,(float)0.23)){ // spacing 0.23
+            // TODO
+        }
+        else if(eq(spacing,(float)0.33)){ // spacing 0.33
+            // TODO
+        }
+        else{
+            cap = 0;
+        }
+
+    }
+    else if(coupling_type == 2){ // V
+        
+    }
+    else if(coupling_type == 3){ // overlap
+
+    }
+    if(cap >= 0){
+        cout << "[Cpara_C] - Success. Calculate the parasitic successfully.\n";
+        cout << "  Edge1: \"" << edge->graph->name << "\"(M" << edge->wire.layer << "): p1=" << pos2str(edge->wire.p1) << ", p2=" << pos2str(edge->wire.p2) << "\n";
+        cout << "  Edge2: \"" << edge2->graph->name << "\"(M" << edge2->wire.layer << "): p1=" << pos2str(edge2->wire.p1) << ", p2=" << pos2str(edge2->wire.p2) << "\n";
+        cout << "  Spacing=" << spacing << ", Parallel=" << parallel << ", Capacitance=" << cap << "\n";
+        return cap;
+    }
+    else{
+        cout << "[Cpara_C] - Warning. Cannot calculate the parasitic.\n";
+        cout << "  Edge1: \"" << edge->graph->name << "\"(M" << edge->wire.layer << "): p1=" << pos2str(edge->wire.p1) << ", p2=" << pos2str(edge->wire.p2) << "\n";
+        cout << "  Edge2: \"" << edge2->graph->name << "\"(M" << edge2->wire.layer << "): p1=" << pos2str(edge2->wire.p1) << ", p2=" << pos2str(edge2->wire.p2) << "\n";
+        return 0.0;
+    }
+}
+Edge_C* Cpara_C::getCouplingEdge(string netName){
+    if(netName == edge->graph->name){
+        return edge2;
+    }
+    else return edge;
 }
 // ---------------------------------------------------------------------------------------------------------
 Graph_C::Graph_C(){}
@@ -37,6 +154,14 @@ bool Graph_C::isNodeExist(Pos3d pos){
 }
 float Graph_C::getBusY(){
     return get<1>(ioPinNode->getXY());
+}
+void Graph_C::addCpara(Cpara_C * Cpara){
+    v_Cpara.push_back(Cpara);
+    totalCap += Cpara->cap;
+
+    // set net Cpara map
+    string couplingNetName = Cpara->getCouplingEdge(name)->graph->name;
+    net->m_net2netCpara[couplingNetName] += Cpara->cap;
 }
 // ---------------------------------------------------------------------------------------------------------
 Node_C::Node_C(){
@@ -245,8 +370,21 @@ void PRMgr_C::place_ioPin(){
 }
 // --------------------------- routing --------------------------- // 
 void PRMgr_C::run_routing(){
+    // 0. build the graph and connectivity
     build_graph();
-    build_tree(); // add steiner point
+    // 1. create steiner point on bus
+    // 2. connect as 2d
+    build_2d_connection();
+    // 3. layer assignment
+    layer_assignment();
+    // 4. calculate the parasitic
+    calculate_cap();
+    // 5. coupling route (Considering Cpara-matching)
+    // 5-1. shift wire
+    wire_shifting();
+    // 5-2. layer reassignent
+    vlayer_reAssignment();
+
     set_wire(); // set edges back to net->v_wire
 }
 void PRMgr_C::build_graph(){
@@ -372,15 +510,68 @@ void PRMgr_C::layer_assignment(){
             edge->setLayer(vLayer[0]); // Metal2
     }
 }
-void PRMgr_C::build_tree(){
-    // 1. create steiner point on bus
-    // 2. connect as 2d
-    build_2d_connection();
-    // 3. layer assignment
-    layer_assignment();
-    // 4. connect as 3d
+void PRMgr_C::calculate_cap(){
+    for(auto it : m_graph2D){
+        Graph_C* graph = it.second;
+        if(!graph->net->isCapNet()) continue;
+        // init cap
+        graph->v_Cpara.clear();
+        // unit_cap
+        graph->totalUnitCap = graph->net->num_finCap*UNIT_CAP;
+        graph->totalCap += graph->totalUnitCap;
+    }
+    // parasitic_cap
+    for(int i=0;i<v_bus.size();++i){ // bus coupling
+        Edge_C* edge = v_bus[i];
+        if(!edge->graph->net->isCapNet()) continue;
+        map<int,Edge_C*> couplingEdge;
+        for(int j=i+1;j<v_bus.size();++j){
+            if(edge->graph->name == v_bus[j]->graph->name) continue;
+            if(couplingEdge.find(v_bus[j]->wire.layer) == couplingEdge.end()){
+                couplingEdge.emplace(v_bus[j]->wire.layer,v_bus[j]);
+            }
+        }
+        for(auto it : couplingEdge){
+            Cpara_C* Cpara = new Cpara_C(edge,it.second);
+            edge->graph->addCpara(Cpara);
+            it.second->graph->addCpara(Cpara);
+        }
+    }
+    for(int i=0;i<v_vWire.size();++i){ // virtical wire coupling
+        Edge_C* edge = v_vWire[i];
+        if(!edge->graph->net->isCapNet()) continue;
+        map<int,Edge_C*> couplingEdge;
+        for(int j=i+1;j<v_vWire.size();++j){
+            if(edge->graph->name == v_vWire[j]->graph->name) continue;
+            if(couplingEdge.find(v_vWire[j]->wire.layer) == couplingEdge.end()){
+                couplingEdge.emplace(v_vWire[j]->wire.layer,v_vWire[j]);
+            }
+        }
+        for(auto it : couplingEdge){
+            Cpara_C* Cpara = new Cpara_C(edge,it.second);
+            edge->graph->addCpara(Cpara);
+            it.second->graph->addCpara(Cpara);
+        }
+    }
+}
+void PRMgr_C::wire_shifting(){
+    /*int hLayer[3] = {1, 5, 3};
+    int vLayer[2] = {2, 4};
+    int count_vWire = 0;
+    for(Edge_C* vWire : v_vWire){ // set the layer of vWires
+        if(vWire->graph->name.substr(0,3) == "TOP" || vWire->graph->name.substr(0,3) == "VDD" || vWire->graph->name.substr(0,3) == "VSS"){
+            vWire->setLayer(vLayer[0]); // Metal2
+        }
+        else{
+            vWire->setLayer(vLayer[count_vWire%2]);
+            count_vWire++;
+        }
+    }*/
+}
+void PRMgr_C::vlayer_reAssignment(){
 
 }
+
 void PRMgr_C::set_wire(){
     for(auto it : m_graph2D){
         it.second->setWires2Net();

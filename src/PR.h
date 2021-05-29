@@ -14,17 +14,31 @@
 const float CAP_START_X = 0.0;
 const float CAP_START_Y = 0.0;
 const float BUS_START_X = 0.0;
-const float BUS_START_Y = -0.5;
+const float BUS_START_Y = -0.225;
 const float WIRE_WIDTH = 0.11;
 const float WIRE_MIN_SPACING = 0.06;
 
 const float CAP_SPACING_1 = 0.21;
 const float CAP_SPACING_2 = 0.32;
 
+class Cpara_C;
 class PRMgr_C;
 class Graph_C;
 class Node_C;
 class Edge_C;
+// ---------------------------------------------------------------------------------------------------------
+class Cpara_C{
+public:
+    Cpara_C();
+    Cpara_C(Edge_C*,Edge_C*);
+    float calculate_parasitic();
+    Edge_C* getCouplingEdge(string);
+    int getCouplingType();
+
+    Edge_C* edge; // self
+    Edge_C* edge2; // coupling object 
+    float cap = 0.0;
+};
 // ---------------------------------------------------------------------------------------------------------
 class Graph_C{
 public:
@@ -37,6 +51,13 @@ public:
     bool isNodeExist(Pos3d);
     float getBusY();
     
+    // parasitic
+    void addCpara(Cpara_C*);
+    float totalUnitCap = 0.0;
+    vector<Cpara_C*> v_Cpara;
+    float totalCap = 0.0;
+
+    // variable
     Net_C* net = nullptr;
     string name;
     Node_C* ioPinNode = nullptr;
@@ -123,12 +144,20 @@ public:
     // routing
     void run_routing(); // net->v_wire
     void build_graph(); 
-    void build_mst(); // mark-lin_paper_2017
-    void build_tree(); // my
+    //void build_mst(); // mark-lin_paper_2017
     void set_wire();
 
-    void build_2d_connection(); // for printing the 2d connection
+    // 1. create steiner point on bus
+    // 2. connect as 2d
+    void build_2d_connection(); 
+    // 3. layer assignment
     void layer_assignment();
+    // 4. calculate the cap (unit_cap + parasitic_cap)
+    void calculate_cap();
+    // 5. coupling route (Considering Cpara-matching)
+    void wire_shifting();
+    void vlayer_reAssignment();
+    // 6. end
 
     void addBus(Edge_C*);
     void addVWire(Edge_C*);
@@ -137,9 +166,10 @@ public:
     map<string,Graph_C*> m_graph2D; // connectivity
     map<string,Graph_C*> m_graph3D; // final layout
 
-    vector<Edge_C*> v_bus;
-    vector<Edge_C*> v_vWire;
+    vector<Edge_C*> v_bus; // all net 
+    vector<Edge_C*> v_vWire; // cap nat
     vector<Edge_C*> v_otherWire;
+
 
 };
 #endif

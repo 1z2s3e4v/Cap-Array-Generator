@@ -44,7 +44,7 @@ void Drawer_C::start_svg(){
     fout << "<svg height=\"" <<outline_y  << "\" width=\"" << outline_x  << "\">\n";
 }
 void Drawer_C::end_svg(){
-    fout  << "</svg>\n";
+    fout << "</svg>\n";
     fout.close();
 }
 void Drawer_C::setting(int p_outline_x,int p_outline_y,int p_scaling,int p_offset_x,int p_offset_y){

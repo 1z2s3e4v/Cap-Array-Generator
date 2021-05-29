@@ -51,6 +51,23 @@ void Wire_C::setPoint(Pos s, Pos t){
         p2 = t;
     }
 }
+bBox Wire_C::getBox(){
+    Pos ll = p1;
+    Pos ur = p2;
+    if(dir == 'H'){
+        ll = Pos(get<0>(ll),get<1>(ll)-width/2.0);
+        ur = Pos(get<0>(ur),get<1>(ur)+width/2.0);
+    }
+    else if(dir == 'V'){
+        ll = Pos(get<0>(ll)-width/2.0,get<1>(ll));
+        ur = Pos(get<0>(ur)+width/2.0,get<1>(ur));
+    }
+    else{
+        ll = Pos(get<0>(ll)-width/2.0,get<1>(ll)-width/2.0);
+        ur = Pos(get<0>(ur)+width/2.0,get<1>(ur)+width/2.0);
+    }
+    return bBox(ll,ur);
+}
 // --------------------------------------------------------------------------------------------------------- //
 Net_C::Net_C(){}
 Net_C::Net_C(string netName, CapNet capNet){

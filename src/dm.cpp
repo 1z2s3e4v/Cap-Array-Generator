@@ -519,7 +519,10 @@ void DmMgr_C::draw_svg(){
 
     system("mkdir -p output");
     Drawer_C* draw_svg = new Drawer_C(output_fileName);
-    draw_svg->setting(1600,1200,200,200,600); // outline_x outline_y scaling offset_x offset_y
+    if(pParser->input_filename == "input/4bit.txt")
+        draw_svg->setting(1600,1200,200,200,600); // outline_x outline_y scaling offset_x offset_y
+    else
+        draw_svg->setting(5000,5000,200,200,600); // outline_x outline_y scaling offset_x offset_y
     draw_svg->start_svg();
     // draw wire 
     Net_C* net = m_net["VSS09A"];

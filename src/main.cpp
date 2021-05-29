@@ -31,9 +31,7 @@ int main(int argc, char** argv){
     // usage
     if(!pParamHdl->isCmdValid()){
         cout << "cmd Error.\n";
-        cout << "usage: ./gen_capArray -simpleInput <input.txt>\n";
-        cout << "or:    ./gen_capArray -sp <netlist.sp> -topcell <cell name>\n";
-        cout << "or:    ./gen_capArray -spf <parasitic.spf>\n";
+        pParamHdl->printHelp();
         return 0;
     }
     else if(pParamHdl->isHelpMode())

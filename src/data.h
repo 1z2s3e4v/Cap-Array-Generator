@@ -1,7 +1,6 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include "data.h"
 #include "parser.h"
 #include <string>
 #include <sstream>
@@ -49,6 +48,7 @@ public:
     Wire_C(Pos3d, Pos3d);
     Wire_C(Pos3d, Pos3d, float);
     void setPoint(Pos, Pos); // reset p1 and p2
+    bBox getBox();
 
     string netName;
     char dir = ' '; // 'H' 'V' 'Z'
