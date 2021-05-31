@@ -11,9 +11,12 @@ bool ge(float a, float b){
     return (n_a - n_b) > 0;
 }
 bool eq(float a, float b){
-    int n_a = a*1000;
-    int n_b = b*1000;
+    int n_a = round(a*1000.0);
+    int n_b = round(b*1000.0);
     return abs(n_a - n_b) < 5;
+}
+float rouding(float f){
+    return (double)round(f / .001) * 0.001;
 }
 bool cmNode_x(const Node_C* n1, const Node_C* n2){
     return get<0>(n1->xy) < get<0>(n2->xy);
@@ -47,69 +50,266 @@ float Cpara_C::calculate_parasitic(){
         if(get<1>(edge->wire.p1) < get<1>(edge2->wire.p1)){ 
             swap(b1,b2); // edge is upper, edge2 is lower
         }
-        spacing = get<1>(get<0>(b1)) - get<1>(get<1>(b2));
-        parallel = max(get<0>(edge->wire.p1),get<0>(edge2->wire.p1)) - min(get<0>(edge->wire.p2),get<0>(edge2->wire.p2));
+        spacing = rouding(get<1>(get<0>(b1)) - get<1>(get<1>(b2)));
+        parallel = rouding(min(get<0>(edge->wire.p2),get<0>(edge2->wire.p2)) - max(get<0>(edge->wire.p1),get<0>(edge2->wire.p1)));
         
         // Each routing-style and corresponding parasitic-cap
         if(parallel < 0) { // not parallel
             cap = -1;
         }
-        else if(eq(spacing,(float)0.06)){ // spacing 0.06
+        else if(eq(spacing,0.0)){ // spacing 0
             // TODO
+
         }
-        else if(eq(spacing,(float)0.11)){ // spacing 0.11
-            if(edge->wire.layer==1 && edge2->wire.layer==1){ // M1 M1
+        else if(eq(spacing,0.06)){ // spacing 0.06
+            // TODO
+            if(isLayer(1,1)){ // M1 M1
+                cap = 6.2e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(1,3)){ // M1 M3
+                cap = 3.0e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(3,3)){ // M3 M3
+                cap = 5.5e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(3,5)){ // M3 M5
+                cap = 2.8e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(5,5)){ // M5 M5
+                cap = 5.5e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(1,5)){ // M1 M5
+                cap = 1.5e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else{
+
+            }
+        }
+        else if(eq(spacing,0.11)){ // spacing 0.11
+            if(isLayer(1,1)){ // M1 M1
                 cap = 5.8e-17 * parallel;
                 if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
                     cap += 0.1e-17;
                 }
             }
-            else if(edge->wire.layer==1 && edge2->wire.layer==3){ // M1 M3
+            else if(isLayer(1,3)){ // M1 M3
+                // TODO
+                cap = 2.5e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(3,3)){ // M3 M3
+                // TODO
                 
             }
+            else if(isLayer(3,5)){ // M3 M5
+                // TODO
+                
+            }
+            else if(isLayer(5,5)){ // M5 M5
+                // TODO
+                
+            }
+            else if(isLayer(1,5)){ // M1 M5
+                // TODO
+                
+            }
+            else{
+
+            }
         }
-        else if(eq(spacing,(float)0.22)){ // spacing 0.22
-            if(edge->wire.layer==1 && edge2->wire.layer==1){ // M1 M1
+        else if(eq(spacing,0.22)){ // spacing 0.22
+            if(isLayer(1,1)){ // M1 M1
                 cap = 3.5e-17 * parallel;
                 if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
                     cap += 0.05e-17;
                 }
             }
-            else if(edge->wire.layer==1 && edge2->wire.layer==3){ // M1 M3
-                
+            else if(isLayer(1,3)){ // M1 M3
+                // TODO
+                cap = 1.5e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.05e-17;
+                }
             }
             else{
-                
+
             }
         }
-        else if(eq(spacing,(float)0.23)){ // spacing 0.23
+        else if(eq(spacing,0.23)){ // spacing 0.23
+            // TODO
+            if(isLayer(1,1)){ // M1 M1
+                cap = 3.2e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(1,3)){ // M1 M3
+                cap = 1.2e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(3,3)){ // M3 M3
+                cap = 2.8e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(3,5)){ // M3 M5
+                cap = 1.0e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(5,5)){ // M5 M5
+                cap = 2.8e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(1,5)){ // M1 M5
+                cap = 0.8e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.05e-17;
+                }
+            }
+            else{
+
+            }
+        }
+        else if(eq(spacing,0.33)){ // spacing 0.33
             // TODO
         }
-        else if(eq(spacing,(float)0.33)){ // spacing 0.33
-            // TODO
-        }
-        else{
+        else if(spacing > 0.52){
             cap = 0;
         }
 
     }
     else if(coupling_type == 2){ // V
+        if(get<0>(edge->wire.p1) > get<0>(edge2->wire.p1)){ 
+            swap(b1,b2); // edge is upper, edge2 is lower
+        }
+        spacing = rouding(get<0>(get<0>(b2)) - get<0>(get<1>(b1)));
+        parallel = rouding(min(get<1>(edge->wire.p2),get<1>(edge2->wire.p2)) - max(get<1>(edge->wire.p1),get<1>(edge2->wire.p1)));
         
+        // Each routing-style and corresponding parasitic-cap
+        if(parallel < 0) { // not parallel
+            cap = -1;
+        }
+        else if(eq(spacing,0.1)){ // spacing 0.1
+            if(isLayer(2,2)){ // M2 M2
+                cap = 5.0e-17 * parallel;
+                if(get<1>(edge->wire.p2) != get<1>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(2,4)){ // M2 M4
+                cap = 1.5e-17 * parallel;
+                if(get<1>(edge->wire.p2) != get<1>(edge2->wire.p2)){
+                    cap += 0.05e-17;
+                }
+            }
+            else if(isLayer(4,4)){ // M4 M4
+                // TODO
+                cap = 4.2e-17 * parallel;
+                if(get<1>(edge->wire.p2) != get<1>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(4,6)){ // M4 M6
+                
+            }
+            else if(isLayer(6,6)){ // M6 M6
+                
+            }
+            else{
+
+            }
+        }
+        else if(eq(spacing,0.31)){ // spacing 0.31
+            // TODO
+            if(isLayer(2,2)){ // M2 M2
+                cap = 2.0e-17 * parallel;
+            }
+            else if(isLayer(2,4)){ // M2 M4
+                cap = 0.5e-17 * parallel;
+            }
+            else if(isLayer(4,4)){ // M4 M4
+                cap = 1.5e-17 * parallel;
+            }
+            else if(isLayer(4,6)){ // M4 M4
+                cap = 0.5e-17 * parallel;
+            }
+            else if(isLayer(6,6)){ // M6 M6
+                cap = 1.5e-17 * parallel;
+            }
+            else if(isLayer(2,6)){ // M6 M6
+                cap = 0 * parallel;
+            }
+        }
+        else if(eq(spacing,0.52)){ // spacing 0.52
+            // TODO
+            if(isLayer(2,2)){ // M2 M2
+                cap = 1.0e-17 * parallel;
+            }
+            else if(isLayer(4,4)){ // M4 M4
+                cap = 0.8e-17 * parallel;
+            }
+            else if(isLayer(6,6)){ // M6 M6
+                cap = 0.8e-17 * parallel;
+            }
+            else{
+
+            }
+        }
+        else if(spacing > 0.52){
+            // TODO
+            cap = 0;
+        }
+        else{
+            
+        }
     }
     else if(coupling_type == 3){ // overlap
 
     }
     if(cap >= 0){
+        /*
         cout << "[Cpara_C] - Success. Calculate the parasitic successfully.\n";
         cout << "  Edge1: \"" << edge->graph->name << "\"(M" << edge->wire.layer << "): p1=" << pos2str(edge->wire.p1) << ", p2=" << pos2str(edge->wire.p2) << "\n";
         cout << "  Edge2: \"" << edge2->graph->name << "\"(M" << edge2->wire.layer << "): p1=" << pos2str(edge2->wire.p1) << ", p2=" << pos2str(edge2->wire.p2) << "\n";
         cout << "  Spacing=" << spacing << ", Parallel=" << parallel << ", Capacitance=" << cap << "\n";
+        */
         return cap;
     }
-    else{
+    else if(parallel >= 0){
         cout << "[Cpara_C] - Warning. Cannot calculate the parasitic.\n";
         cout << "  Edge1: \"" << edge->graph->name << "\"(M" << edge->wire.layer << "): p1=" << pos2str(edge->wire.p1) << ", p2=" << pos2str(edge->wire.p2) << "\n";
         cout << "  Edge2: \"" << edge2->graph->name << "\"(M" << edge2->wire.layer << "): p1=" << pos2str(edge2->wire.p1) << ", p2=" << pos2str(edge2->wire.p2) << "\n";
+        cout << "  Spacing=" << spacing << ", Parallel=" << parallel << "\n";
+        return 0.0;
+    }
+    else{
         return 0.0;
     }
 }
@@ -118,6 +318,9 @@ Edge_C* Cpara_C::getCouplingEdge(string netName){
         return edge2;
     }
     else return edge;
+}
+bool Cpara_C::isLayer(int layer1,int layer2){
+    return ((edge->wire.layer==layer1 && edge2->wire.layer==layer2) || (edge->wire.layer==layer2 && edge2->wire.layer==layer1));
 }
 // ---------------------------------------------------------------------------------------------------------
 Graph_C::Graph_C(){}
@@ -379,6 +582,7 @@ void PRMgr_C::run_routing(){
     layer_assignment();
     // 4. calculate the parasitic
     calculate_cap();
+    print_cap_info();
     // 5. coupling route (Considering Cpara-matching)
     // 5-1. shift wire
     wire_shifting();
@@ -407,6 +611,9 @@ void PRMgr_C::build_graph(){
             }
         }
         m_graph2D.emplace(net->name, graph_2d);
+        if(net->isCapNet()){
+            v_capGraph.push_back(graph_2d);
+        }
         
         // Create edge for print the connectivity
         //graph_2d->setConnectivity();
@@ -509,6 +716,7 @@ void PRMgr_C::layer_assignment(){
         else if(edge->wire.dir == 'V')
             edge->setLayer(vLayer[0]); // Metal2
     }
+    cout << "\033[94m[PR]\033[0m - Setting layout with lowest Cpara.\n";
 }
 void PRMgr_C::calculate_cap(){
     for(auto it : m_graph2D){
@@ -553,6 +761,26 @@ void PRMgr_C::calculate_cap(){
             it.second->graph->addCpara(Cpara);
         }
     }
+}
+void PRMgr_C::print_cap_info(){
+    Graph_C* unitCapGraph = getSmallestCap();
+    float unitCap = unitCapGraph->totalCap / (float)unitCapGraph->net->capRatio;
+
+    float max_mismatch = -1;
+    float avg_mismatch= 0;
+
+    cout << setprecision(3);
+    cout << "\033[94m[PR]\033[0m - Cap Info:\n";
+    for(Graph_C* graph : v_capGraph){
+        cout << "  " << graph->net->name << "(" << graph->net->capRatio << "): ratio=" << graph->totalCap/unitCap << ", cap=" <<  graph->totalCap << "\n";
+        float mismatch = abs(graph->totalCap - unitCap*graph->net->capRatio) / (unitCap*graph->net->capRatio);
+        if(mismatch > max_mismatch){
+            max_mismatch = mismatch;
+        }
+        avg_mismatch += mismatch;
+    }
+    avg_mismatch /= v_capGraph.size();
+    cout << "\033[94m[PR]\033[0m - mismatch = " << max_mismatch*100 << "% (avg=" << avg_mismatch*100 << "%)\n";
 }
 void PRMgr_C::wire_shifting(){
     /*int hLayer[3] = {1, 5, 3};
@@ -603,6 +831,23 @@ void PRMgr_C::addOtherWire(Edge_C* edge){
 }
 void PRMgr_C::sort_node_with_x(vector<Node_C*>& v_n){
     sort(v_n.begin(),v_n.end(),cmNode_x);
+}
+Graph_C* PRMgr_C::getSmallestCap(){ // the cap of the smallest ratio
+    Graph_C* g;
+    int r = 99999;
+    for(Net_C* net : v_CapNet){
+        if(net->capRatio < r){
+            r = net->capRatio;
+            g = m_graph2D[net->name];
+        }
+        else if(net->capRatio == r){
+            if(m_graph2D[net->name]->totalCap < g->totalCap){
+                r = net->capRatio;
+                g = m_graph2D[net->name];
+            }
+        }
+    }
+    return g;
 }
 // --------------------------- output --------------------------- // 
 void PRMgr_C::print_info(){

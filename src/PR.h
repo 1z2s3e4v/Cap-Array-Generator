@@ -34,6 +34,7 @@ public:
     float calculate_parasitic();
     Edge_C* getCouplingEdge(string);
     int getCouplingType();
+    bool isLayer(int,int);
 
     Edge_C* edge; // self
     Edge_C* edge2; // coupling object 
@@ -159,17 +160,20 @@ public:
     void vlayer_reAssignment();
     // 6. end
 
+    void print_cap_info();
+    vector<Graph_C*> getCapGraphList();
+    Graph_C* getSmallestCap();
+
     void addBus(Edge_C*);
     void addVWire(Edge_C*);
     void addOtherWire(Edge_C*);
 
     map<string,Graph_C*> m_graph2D; // connectivity
     map<string,Graph_C*> m_graph3D; // final layout
+    vector<Graph_C*> v_capGraph; // sort with cap ratio (1,1,2,2,4,4)
 
     vector<Edge_C*> v_bus; // all net 
     vector<Edge_C*> v_vWire; // cap nat
     vector<Edge_C*> v_otherWire;
-
-
 };
 #endif
