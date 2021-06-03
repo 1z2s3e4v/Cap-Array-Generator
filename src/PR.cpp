@@ -287,10 +287,13 @@ float Cpara_C::calculate_parasitic(){
                 }
             }
             else if(isLayer(4,6)){ // M4 M6
-                
+                cap = 0.5e-17 * parallel;
             }
             else if(isLayer(6,6)){ // M6 M6
-                
+                cap = 1.5e-17 * parallel;
+            }
+            else if(isLayer(2,6)){ // M2 M6
+                cap = 0 * parallel;
             }
             else{
 
@@ -307,13 +310,13 @@ float Cpara_C::calculate_parasitic(){
             else if(isLayer(4,4)){ // M4 M4
                 cap = 1.5e-17 * parallel;
             }
-            else if(isLayer(4,6)){ // M4 M4
+            else if(isLayer(4,6)){ // M4 M6
                 cap = 0.5e-17 * parallel;
             }
             else if(isLayer(6,6)){ // M6 M6
                 cap = 1.5e-17 * parallel;
             }
-            else if(isLayer(2,6)){ // M6 M6
+            else if(isLayer(2,6)){ // M2 M6
                 cap = 0 * parallel;
             }
         }
@@ -739,8 +742,8 @@ void PRMgr_C::build_2d_connection(){
     }
 }
 void PRMgr_C::layer_assignment(){
-    int hLayer[3] = {1, 5, 3};
-    int vLayer[2] = {2, 4};
+    int hLayer[3] = {3, 5, 1};
+    int vLayer[3] = {6, 4, 2};
     int count_bus = 0;
     for(Edge_C* bus : v_bus){ // set the layer of bus
         if(bus->graph->name.substr(0,3) == "TOP" || bus->graph->name.substr(0,3) == "VDD" || bus->graph->name.substr(0,3) == "VSS"){
