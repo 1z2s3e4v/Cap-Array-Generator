@@ -742,15 +742,15 @@ void PRMgr_C::build_2d_connection(){
     }
 }
 void PRMgr_C::layer_assignment(){
-    int hLayer[3] = {3, 5, 1};
-    int vLayer[3] = {6, 4, 2};
+    int hLayer[3] = {1, 3, 5};
+    int vLayer[3] = {2, 4, 6};
     int count_bus = 0;
     for(Edge_C* bus : v_bus){ // set the layer of bus
         if(bus->graph->name.substr(0,3) == "TOP" || bus->graph->name.substr(0,3) == "VDD" || bus->graph->name.substr(0,3) == "VSS"){
-            bus->setLayer(hLayer[2]); // Metal1
+            bus->setLayer(hLayer[0]); // Metal1
         }
         else{
-            bus->setLayer(hLayer[count_bus%2]);
+            bus->setLayer(hLayer[count_bus%2 +1]);
             count_bus++;
         }
     }
@@ -760,15 +760,15 @@ void PRMgr_C::layer_assignment(){
             vWire->setLayer(vLayer[0]); // Metal2
         }
         else{
-            vWire->setLayer(vLayer[count_vWire%2]);
+            vWire->setLayer(vLayer[count_vWire%2 +1]);
             count_vWire++;
         }
     }
     for(Edge_C* edge : v_otherWire){ // set the layer of rest wires
         if(edge->wire.dir == 'H')
-            edge->setLayer(hLayer[0]); // Metal3
+            edge->setLayer(hLayer[1]); // Metal3
         else if(edge->wire.dir == 'V')
-            edge->setLayer(vLayer[2]); // Metal2
+            edge->setLayer(vLayer[0]); // Metal2
     }
     cout << "\033[94m[PR]\033[0m - Setting layout with lowest Cpara.\n";
 }
