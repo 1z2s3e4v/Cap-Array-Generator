@@ -21,6 +21,9 @@ float rouding(float f){
 bool cmNode_x(const Node_C* n1, const Node_C* n2){
     return get<0>(n1->xy) < get<0>(n2->xy);
 }
+bool cmpGraph_ratio(const Graph_C* g1, const Graph_C* g2){
+    return g1->net->capRatio > g2->net->capRatio;
+}
 // ---------------------------------------------------------------------------------------------------------
 Cpara_C::Cpara_C(){}
 Cpara_C::Cpara_C(Edge_C* edge, Edge_C* edge2){
@@ -118,20 +121,28 @@ float Cpara_C::calculate_parasitic(){
                 }
             }
             else if(isLayer(3,3)){ // M3 M3
-                // TODO
-                
+                cap = 4.3e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
             }
             else if(isLayer(3,5)){ // M3 M5
-                // TODO
-                
+                cap = 2.1e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
             }
             else if(isLayer(5,5)){ // M5 M5
-                // TODO
-                
+                cap = 4.2e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
             }
             else if(isLayer(1,5)){ // M1 M5
-                // TODO
-                
+                cap = 1.0e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
             }
             else{
 
@@ -199,6 +210,45 @@ float Cpara_C::calculate_parasitic(){
         }
         else if(eq(spacing,0.33)){ // spacing 0.33
             // TODO
+            if(isLayer(1,1)){ // M1 M1
+                cap = 3.1e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(1,3)){ // M1 M3
+                cap = 1.15e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(3,3)){ // M3 M3
+                cap = 2.7e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(3,5)){ // M3 M5
+                cap = 0.95e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(5,5)){ // M5 M5
+                cap = 2.7e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.1e-17;
+                }
+            }
+            else if(isLayer(1,5)){ // M1 M5
+                cap = 0.75e-17 * parallel;
+                if(get<0>(edge->wire.p2) != get<0>(edge2->wire.p2)){
+                    cap += 0.05e-17;
+                }
+            }
+            else{
+
+            }
         }
         else if(spacing > 0.52){
             cap = 0;
@@ -619,6 +669,7 @@ void PRMgr_C::build_graph(){
         //graph_2d->setConnectivity();
         //graph_2d->setWires2Net();
     }
+    //sort(v_capGraph.begin(),v_capGraph.end(),cmpGraph_ratio);
 }
 void PRMgr_C::build_2d_connection(){
     v_bus.clear();

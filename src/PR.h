@@ -16,7 +16,7 @@ const float CAP_START_Y = 0.0;
 const float BUS_START_X = 0.0;
 const float BUS_START_Y = -0.225;
 const float WIRE_WIDTH = 0.11;
-const float WIRE_MIN_SPACING = 0.06;
+const float WIRE_MIN_SPACING = 0.11; // 0.06
 
 const float CAP_SPACING_1 = 0.21;
 const float CAP_SPACING_2 = 0.32;
@@ -170,7 +170,7 @@ public:
 
     map<string,Graph_C*> m_graph2D; // connectivity
     map<string,Graph_C*> m_graph3D; // final layout
-    vector<Graph_C*> v_capGraph; // sort with cap ratio (1,1,2,2,4,4)
+    vector<Graph_C*> v_capGraph; // sort with cap ratio (4,4,2,2,1,1)
 
     vector<Edge_C*> v_bus; // all net 
     vector<Edge_C*> v_vWire; // cap nat
