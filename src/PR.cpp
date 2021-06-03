@@ -747,7 +747,7 @@ void PRMgr_C::layer_assignment(){
     int count_bus = 0;
     for(Edge_C* bus : v_bus){ // set the layer of bus
         if(bus->graph->name.substr(0,3) == "TOP" || bus->graph->name.substr(0,3) == "VDD" || bus->graph->name.substr(0,3) == "VSS"){
-            bus->setLayer(hLayer[0]); // Metal1
+            bus->setLayer(hLayer[2]); // Metal1
         }
         else{
             bus->setLayer(hLayer[count_bus%2]);
@@ -766,9 +766,9 @@ void PRMgr_C::layer_assignment(){
     }
     for(Edge_C* edge : v_otherWire){ // set the layer of rest wires
         if(edge->wire.dir == 'H')
-            edge->setLayer(hLayer[2]); // Metal4
+            edge->setLayer(hLayer[0]); // Metal3
         else if(edge->wire.dir == 'V')
-            edge->setLayer(vLayer[0]); // Metal2
+            edge->setLayer(vLayer[2]); // Metal2
     }
     cout << "\033[94m[PR]\033[0m - Setting layout with lowest Cpara.\n";
 }
