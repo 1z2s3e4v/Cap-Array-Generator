@@ -47,6 +47,7 @@ public:
     Graph_C(Net_C*);
     void setConnectivity(); // for printing the connectivity
     void setWires2Net();
+    void setVias2Net();
     void addNode(Node_C*);
     void addEdge(Edge_C*);
     bool isNodeExist(Pos3d);
@@ -92,6 +93,8 @@ public:
     vector<Edge_C*> v_edge;
     bool _isPin = false;
     bool _isIOPin = false;
+    bool _isOnBus = false;
+    Edge_C* bus;
 };
 // ---------------------------------------------------------------------------------------------------------
 class Edge_C{
@@ -106,12 +109,14 @@ public:
     void shiftYto(float); // TODO: if node isPin, create a new steiner point
     void shiftXto(float); // 
     void setLayer(int);
+    bool isBus();
 
     Graph_C* graph = nullptr;
     vector<Node_C*> v_node;
     Node_C* src = nullptr;
     Node_C* tgt = nullptr;
     Wire_C wire;
+    bool _isBus = false;
 };
 // ---------------------------------------------------------------------------------------------------------
 class PRMgr_C{
@@ -147,6 +152,7 @@ public:
     void build_graph(); 
     //void build_mst(); // mark-lin_paper_2017
     void set_wire();
+    void set_via();
 
     // 1. create steiner point on bus
     // 2. connect as 2d

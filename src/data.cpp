@@ -12,6 +12,13 @@ string pos2str(Pos pos){
     return s;
 }
 // --------------------------------------------------------------------------------------------------------- //
+Via_C::Via_C(){}
+Via_C::Via_C(int layer1, int layer2, Pos xy){
+    this->layer1 = layer1;
+    this->layer2 = layer2;
+    this->xy = xy;
+}
+// --------------------------------------------------------------------------------------------------------- //
 Wire_C::Wire_C(){}
 Wire_C::Wire_C(Pos s, Pos t){
     setPoint(s,t);
@@ -111,8 +118,14 @@ bool Net_C::isCapNet(){
 void Net_C::initWire(){
     v_wire.clear();
 }
+void Net_C::initVia(){
+    v_via.clear();
+}
 void Net_C::addWire(Wire_C p_wire){
     v_wire.push_back(p_wire);
+}
+void Net_C::addVia(Via_C p_via){
+    v_via.push_back(p_via);
 }
 // --------------------------------------------------------------------------------------------------------- //
 FinCap_C::FinCap_C(){}

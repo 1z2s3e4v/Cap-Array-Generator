@@ -571,6 +571,9 @@ void DmMgr_C::draw_virtuoso(){
         for(Wire_C wire : net->v_wire){  
             drawer->drawPath(wire.p1, wire.p2, wire.layer, wire.width, net->name);
         }
+        for(Via_C via : net->v_via){  
+            drawer->drawVia(via.xy, via.layer2, via.layer1, net->name);
+        }
     }
 
     // draw IO Pin

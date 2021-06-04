@@ -405,6 +405,33 @@ void Graph_C::setWires2Net(){
         net->addWire(edge->wire);
     }
 }
+void Graph_C::setVias2Net(){
+    net->initVia();
+    for(Node_C* node : v_node){
+        int layer1 = 9, layer2 = 0;
+        if(node->layer < layer1) layer1 = node->layer;
+        if(node->layer > layer2) layer2 = node->layer;
+        for(Edge_C* edge : node->v_edge){
+            if(edge->wire.layer < layer1) layer1 = edge->wire.layer;
+            if(edge->wire.layer > layer2) layer2 = edge->wire.layer;
+        }
+
+        if(layer1 != layer2){
+            for(int i=layer1;i<layer2;++i){
+                Via_C via = Via_C(i,i+1,node->getXY());
+                net->addVia(via);
+                /*cout << "Node: " << name << "(";
+                if(node->isPin()) cout << "isPin)";
+                else if(node->isIOPin()) cout << "isIOPin)";
+                else cout << "isSteinerPoint)";
+                cout << " xy=" << pos2str(node->getXY()) << " --> via(M" << via.layer2 << "_M" << via.layer1 << "), xy=" << pos2str(via.xy) << "\n";
+                for(Edge_C* edge : node->v_edge){
+                    cout << "  Edge(M" << edge->wire.layer << "): " << pos2str(edge->wire.p1) << "->" << pos2str(edge->wire.p2) << "\n";
+                }*/
+            }
+        }
+    }
+}
 bool Graph_C::isNodeExist(Pos3d pos){
 
 }
@@ -424,29 +451,36 @@ Node_C::Node_C(){
     pin = nullptr;
     _isPin = false;
     _isIOPin = false;
+    _isOnBus = false;
 }
 Node_C::Node_C(Pos3d p_pos){
     pin = nullptr;
     _isPin = false;
     _isIOPin = false;
+    _isOnBus = false;
     setPos(p_pos);
 }
 Node_C::Node_C(Pos p_pos, int layer){
     pin = nullptr;
     _isPin = false;
     _isIOPin = false;
+    _isOnBus = false;
     setPos(p_pos,layer);
 }
 Node_C::Node_C(Pin_C* p_pin){
     pin = p_pin;
     _isPin = true;
+    _isOnBus = false;
     if(pin->isIOPin()){
         _isIOPin = true;
+        _isOnBus = true;
     }
     setPos(pin->xy,pin->layer);
 }
 void Node_C::addEdge(Edge_C* p_edge){
     v_edge.push_back(p_edge);
+    if(p_edge->isBus()) bus = p_edge;
+    _isOnBus = true; 
 }
 void Node_C::setGraph(Graph_C* p_graph){
     graph = p_graph;
@@ -475,6 +509,8 @@ Edge_C::Edge_C(Node_C* s, Node_C* t){
     src = s;
     tgt = t;
     wire = Wire_C(src->getXY(),tgt->getXY());
+    s->addEdge(this);
+    t->addEdge(this);
 }
 Edge_C::Edge_C(Node_C* s, Node_C* t, float w){
     v_node.push_back(s);
@@ -482,12 +518,16 @@ Edge_C::Edge_C(Node_C* s, Node_C* t, float w){
     src = s;
     tgt = t;
     wire = Wire_C(src->getXY(),tgt->getXY(), w);
+    s->addEdge(this);
+    t->addEdge(this);
 }
 Edge_C::Edge_C(Node_C* ioPin){
     v_node.push_back(ioPin);
     src = ioPin;
     tgt = ioPin;
     wire = Wire_C(src->getXY(),tgt->getXY());
+    _isBus = true;
+    ioPin->addEdge(this);
 }
 void Edge_C::addNode(Node_C* p_node){
     v_node.push_back(p_node);
@@ -513,6 +553,9 @@ void Edge_C::setGraph(Graph_C* p_graph){
 }
 void Edge_C::setLayer(int layer){
     wire.layer = layer;
+}
+bool Edge_C::isBus(){
+    return _isBus;
 }
 // ---------------------------------------------------------------------------------------------------------
 PRMgr_C::PRMgr_C(){}
@@ -643,6 +686,7 @@ void PRMgr_C::run_routing(){
     vlayer_reAssignment();
 
     set_wire(); // set edges back to net->v_wire
+    set_via(); // set edges back to net->v_via
 }
 void PRMgr_C::build_graph(){
     v_capTopNode.clear();
@@ -726,7 +770,9 @@ void PRMgr_C::build_2d_connection(){
                 if(!connect_neibor){
                     steiner_point = new Node_C(Pos(get<0>(node->xy),m_graph2D[netName]->getBusY()),node->layer);
                     steiner_point->setGraph(graph);
+                    graph->addNode(steiner_point);
                     graph->bus->addNode(steiner_point);
+                    steiner_point->addEdge(graph->bus);
                 }
                 Edge_C* edge = new Edge_C(node,steiner_point);
                 graph->addEdge(edge);
@@ -857,6 +903,11 @@ void PRMgr_C::vlayer_reAssignment(){
 void PRMgr_C::set_wire(){
     for(auto it : m_graph2D){
         it.second->setWires2Net();
+    }
+}
+void PRMgr_C::set_via(){
+    for(auto it : m_graph2D){
+        it.second->setVias2Net();
     }
 }
 

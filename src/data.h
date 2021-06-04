@@ -38,7 +38,18 @@ class Net_C;
 class FinCap_C;
 class Pin_C;
 class Wire_C;
+class Via_C;
 
+// --------------------------------------------------------------------------------------------------------- //
+class Via_C{
+public:
+    Via_C();
+    Via_C(int,int,Pos);
+
+    Pos xy;
+    int layer1;
+    int layer2;
+};
 // --------------------------------------------------------------------------------------------------------- //
 class Wire_C{
 public:
@@ -123,7 +134,9 @@ public:
     float getTotalErrorCpara(); // get total Cpara with other nets
     float getCpara(string); // get Cpara with the net
     void initWire();
+    void initVia();
     void addWire(Wire_C);
+    void addVia(Via_C);
 
     // variable
     string name="";
@@ -143,6 +156,7 @@ public:
     int bus_index;
     Pin_C* IOpin;
     vector<Wire_C> v_wire;
+    vector<Via_C> v_via;
 };
 // --------------------------------------------------------------------------------------------------------- //
 #endif
