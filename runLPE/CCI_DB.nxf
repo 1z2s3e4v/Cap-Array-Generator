@@ -1,8 +1,8 @@
 # SVDB: Net Cross Reference (nxf) (File format 1)
 # SVDB: Layout Primary ARRAY_CMP_T1
 # SVDB: Rules -0 DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o 
-# SVDB: GDSII -0 /user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/gds/ARRAY_CMP_T1_PI_test_matching.gds Sat Apr 10 19:41:50 2021
-# SVDB: SNL -0 /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp 
+# SVDB: GDSII -0 /user/t28/t28u25/frank/project/runLPE/gds/ARRAY_CAP_T1.gds Sat Jun  5 16:21:15 2021
+# SVDB: SNL -0 /raidj/user/t28/t28u25/frank/project/runLPE/spice/ARRAY_CMP.sp 
 # SVDB: 
 # SVDB: 
 # SVDB: 
@@ -11,10 +11,10 @@
 % ARRAY_CMP_T1 9 ARRAY_CMP_T1 9
 0 VDD09A 0 VDD09A
 0 VSS09A 0 VSS09A
-0 SL3B 0 SL3B
 0 SL3A 0 SL3A
+0 SL3B 0 SL3B
+0 SL2A 0 SL2A
 0 SL2B 0 SL2B
+0 SL1A 0 SL1A
 0 SL1B 0 SL1B
 0 TOP_ARRAY 0 TOP_ARRAY
-0 SL2A 0 SL2A
-0 SL1A 0 SL1A

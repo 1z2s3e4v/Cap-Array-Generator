@@ -1,25 +1,25 @@
 ----------------------------------------------------------------------------------------------
 CPU#   | STAGE SUMMARY                                            |END TIME        |HOST NAME
 ----------------------------------------------------------------------------------------------
-CPU_01 |*Layers              Elp=00:00:00 Cpu=00:00:00 Mem=202.6  |Apr 10 19:52:01 |JCAD03
-CPU_01 |*Models              Elp=00:00:00 Cpu=00:00:00 Mem=164    |Apr 10 19:52:02 |JCAD03
-CPU_01 |*HN                  Elp=00:00:00 Cpu=00:00:00 Mem=193.9  |Apr 10 19:52:02 |JCAD03
-CPU_01 |*ADPTranslate        Elp=00:00:00 Cpu=00:00:00 Mem=200.6  |Apr 10 19:52:02 |JCAD03
-CPU_01 |*XrefHN              Elp=00:00:00 Cpu=00:00:00 Mem=212.9  |Apr 10 19:52:02 |JCAD03
-CPU_01 |*ADPSort             Elp=00:00:00 Cpu=00:00:00 Mem=180.7  |Apr 10 19:52:02 |JCAD03
-CPU_01 |*Cells               Elp=00:00:00 Cpu=00:00:00 Mem=189.4  |Apr 10 19:52:03 |JCAD03
-CPU_01 |*Translate           Elp=00:00:00 Cpu=00:00:00 Mem=187.9  |Apr 10 19:52:03 |JCAD03
-CPU_01 |*xTract              Elp=00:00:00 Cpu=00:00:00 Mem=180.4  |Apr 10 19:52:03 |JCAD03
-CPU_01 |*xTract              Elp=00:00:01 Cpu=00:00:01 Mem=520.7  |Apr 10 19:52:05 |JCAD03
-CPU_01 |*xTractPP            Elp=00:00:00 Cpu=00:00:00 Mem=173.6  |Apr 10 19:52:05 |JCAD03
-CPU_01 |*ReportViolations    Elp=00:00:00 Cpu=00:00:00 Mem=0      |Apr 10 19:52:05 |JCAD03
-CPU_01 |*Netlist             Elp=00:00:01 Cpu=00:00:00 Mem=205.2  |Apr 10 19:52:06 |JCAD03
+CPU_01 |*Layers              Elp=00:00:01 Cpu=00:00:00 Mem=202.6  |Jun  5 16:31:19 |JCAD03
+CPU_01 |*Models              Elp=00:00:00 Cpu=00:00:00 Mem=164    |Jun  5 16:31:19 |JCAD03
+CPU_01 |*HN                  Elp=00:00:00 Cpu=00:00:00 Mem=193.9  |Jun  5 16:31:19 |JCAD03
+CPU_01 |*ADPTranslate        Elp=00:00:01 Cpu=00:00:00 Mem=200.6  |Jun  5 16:31:20 |JCAD03
+CPU_01 |*XrefHN              Elp=00:00:00 Cpu=00:00:00 Mem=212.9  |Jun  5 16:31:20 |JCAD03
+CPU_01 |*ADPSort             Elp=00:00:00 Cpu=00:00:00 Mem=180.7  |Jun  5 16:31:21 |JCAD03
+CPU_01 |*Cells               Elp=00:00:00 Cpu=00:00:00 Mem=189.4  |Jun  5 16:31:22 |JCAD03
+CPU_01 |*Translate           Elp=00:00:01 Cpu=00:00:00 Mem=187.9  |Jun  5 16:31:23 |JCAD03
+CPU_01 |*xTract              Elp=00:00:00 Cpu=00:00:00 Mem=180.4  |Jun  5 16:31:23 |JCAD03
+CPU_01 |*xTract              Elp=00:00:01 Cpu=00:00:01 Mem=520.7  |Jun  5 16:31:24 |JCAD03
+CPU_01 |*xTractPP            Elp=00:00:00 Cpu=00:00:00 Mem=173.6  |Jun  5 16:31:24 |JCAD03
+CPU_01 |*ReportViolations    Elp=00:00:00 Cpu=00:00:00 Mem=0      |Jun  5 16:31:25 |JCAD03
+CPU_01 |*Netlist             Elp=00:00:00 Cpu=00:00:00 Mem=205.2  |Jun  5 16:31:25 |JCAD03
 ----------------------------------------------------------------------------------------------
-Start Time: Sat Apr 10 19:52:01 2021
-End Time: Sat Apr 10 19:52:06 2021
+Start Time: Sat Jun  5 16:31:17 2021
+End Time: Sat Jun  5 16:31:25 2021
 ----------------------------------------------------------------------------------------------
-Overall:         Elp=00:00:05  Cpu=00:00:02
-PreXtraction:    Elp=00:00:02  Cpu=00:00:00
-Xtraction:       Elp=00:00:02  Cpu=00:00:01
+Overall:         Elp=00:00:08  Cpu=00:00:02
+PreXtraction:    Elp=00:00:06  Cpu=00:00:00
+Xtraction:       Elp=00:00:01  Cpu=00:00:01
 PostXtraction:   Elp=00:00:01  Cpu=00:00:00
 ----------------------------------------------------------------------------------------------

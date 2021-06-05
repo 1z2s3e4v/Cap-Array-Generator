@@ -1,5 +1,5 @@
 # Automagically generated file: Please do not edit!
-lvs_LvsOutFile RUNDIR /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE
+lvs_LvsOutFile RUNDIR /raidj/user/t28/t28u25/frank/project/runLPE
 lvs_LvsfVersion 4
 lvs_LvsInputSummary {0 0 0}
 lvs_LvsComparisonSummary {3 1 0 0}
@@ -64,6 +64,6 @@ lvs_GroundName VSSM
 lvs_GroundName VSSPST
 lvs_GroundName VSSUB
 lvs_LvsOutFile LVS_REPORT ./LVS/lvs.rep
-lvs_LvsOutFile SOURCE_NETLIST /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp
+lvs_LvsOutFile SOURCE_NETLIST /raidj/user/t28/t28u25/frank/project/runLPE/spice/ARRAY_CMP.sp
 lvs_LvsOutFile RULES_FILE DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
-lvs_LvsRunTimes 1618055502 1618055502
+lvs_LvsRunTimes 1622881868 1622881868

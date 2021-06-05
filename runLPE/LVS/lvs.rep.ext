@@ -10,9 +10,9 @@
 
 
 REPORT FILE NAME:         ./LVS/lvs.rep.ext
-LAYOUT NAME:              /user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/gds/ARRAY_CMP_T1_PI_test_matching.gds ('ARRAY_CMP_T1')
-CREATION TIME:            Sat Apr 10 19:51:36 2021
-CURRENT DIRECTORY:        /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE
+LAYOUT NAME:              /user/t28/t28u25/frank/project/runLPE/gds/ARRAY_CAP_T1.gds ('ARRAY_CMP_T1')
+CREATION TIME:            Sat Jun  5 16:31:02 2021
+CURRENT DIRECTORY:        /raidj/user/t28/t28u25/frank/project/runLPE
 USER NAME:                t28u25
 CALIBRE VERSION:          v2018.2_24.18    Fri Jun 1 14:24:04 PDT 2018
 

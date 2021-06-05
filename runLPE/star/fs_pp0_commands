@@ -1,5 +1,5 @@
 LAYER_FILE layers
-TCAD_FILE_NAME /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/cln28hpc+_1p09m+ut-alrdl_6x2z_typical.nxtgrd
+TCAD_FILE_NAME /raidj/user/t28/t28u25/frank/project/runLPE/cln28hpc+_1p09m+ut-alrdl_6x2z_typical.nxtgrd
 MULTITABLE
 
 CFG HP_1D2VIO_NMOS ngate_siopg ngate_siopd

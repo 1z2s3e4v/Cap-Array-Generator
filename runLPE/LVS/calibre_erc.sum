@@ -3,14 +3,14 @@
 ==================================================================================
 === CALIBRE::ERC-H SUMMARY REPORT
 ===
-Execution Date/Time:          Sat Apr 10 19:51:34 2021
+Execution Date/Time:          Sat Jun  5 16:31:01 2021
 Calibre Version:              v2018.2_24.18    Fri Jun 1 14:24:04 PDT 2018
 Rule File Pathname:           DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 Rule File Title:              
 Layout System:                GDSII
-Layout Path(s):               /user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/gds/ARRAY_CMP_T1_PI_test_matching.gds
+Layout Path(s):               /user/t28/t28u25/frank/project/runLPE/gds/ARRAY_CAP_T1.gds
 Layout Primary Cell:          ARRAY_CMP_T1
-Current Directory:            /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE
+Current Directory:            /raidj/user/t28/t28u25/frank/project/runLPE
 User Name:                    t28u25
 Maximum Results/ERC Check:    1000
 Maximum ERC Result Vertices:  4096
@@ -1070,23 +1070,23 @@ LAYER EDRAM_DECAP ... TOTAL Original Geometry Count = 0  (0)
 LAYER RFDMY6T ....... TOTAL Original Geometry Count = 0  (0)
 LAYER RFDMY5T ....... TOTAL Original Geometry Count = 0  (0)
 LAYER DUM1 .......... TOTAL Original Geometry Count = 0  (0)
-LAYER M1i ........... TOTAL Original Geometry Count = 25 (25)
+LAYER M1i ........... TOTAL Original Geometry Count = 14 (14)
 LAYER RMDMY1 ........ TOTAL Original Geometry Count = 0  (0)
 LAYER DUM2 .......... TOTAL Original Geometry Count = 0  (0)
-LAYER M2i ........... TOTAL Original Geometry Count = 66 (66)
+LAYER M2i ........... TOTAL Original Geometry Count = 24 (24)
 LAYER RMDMY2 ........ TOTAL Original Geometry Count = 0  (0)
 LAYER DUM3 .......... TOTAL Original Geometry Count = 0  (0)
-LAYER M3i ........... TOTAL Original Geometry Count = 90 (90)
+LAYER M3i ........... TOTAL Original Geometry Count = 94 (94)
 LAYER INDDMYi ....... TOTAL Original Geometry Count = 0  (0)
 LAYER RMDMY3 ........ TOTAL Original Geometry Count = 0  (0)
 LAYER DUM4 .......... TOTAL Original Geometry Count = 0  (0)
-LAYER M4i ........... TOTAL Original Geometry Count = 65 (212)
+LAYER M4i ........... TOTAL Original Geometry Count = 74 (221)
 LAYER RMDMY4 ........ TOTAL Original Geometry Count = 0  (0)
 LAYER DUM5 .......... TOTAL Original Geometry Count = 0  (0)
-LAYER M5i ........... TOTAL Original Geometry Count = 24 (213)
+LAYER M5i ........... TOTAL Original Geometry Count = 38 (227)
 LAYER RMDMY5 ........ TOTAL Original Geometry Count = 0  (0)
 LAYER DUM6 .......... TOTAL Original Geometry Count = 0  (0)
-LAYER M6i ........... TOTAL Original Geometry Count = 7  (154)
+LAYER M6i ........... TOTAL Original Geometry Count = 22 (169)
 LAYER RMDMY6 ........ TOTAL Original Geometry Count = 0  (0)
 LAYER DUM7 .......... TOTAL Original Geometry Count = 0  (0)
 LAYER M7i ........... TOTAL Original Geometry Count = 0  (0)
@@ -1120,18 +1120,18 @@ LAYER MOMDMY4 ....... TOTAL Original Geometry Count = 1  (22)
 LAYER MOMDMY5 ....... TOTAL Original Geometry Count = 1  (22)
 LAYER MOMDMY2 ....... TOTAL Original Geometry Count = 0  (0)
 LAYER VIA1i_VIRT .... TOTAL Original Geometry Count = 0  (0)
-LAYER VIA1i ......... TOTAL Original Geometry Count = 18 (18)
+LAYER VIA1i ......... TOTAL Original Geometry Count = 11 (11)
 LAYER MOMDMY7 ....... TOTAL Original Geometry Count = 0  (0)
 LAYER CBD ........... TOTAL Original Geometry Count = 0  (0)
 LAYER RVi ........... TOTAL Original Geometry Count = 0  (0)
 LAYER CB ............ TOTAL Original Geometry Count = 0  (0)
 LAYER MOMDMY3 ....... TOTAL Original Geometry Count = 0  (0)
 LAYER TCDDMY ........ TOTAL Original Geometry Count = 0  (0)
-LAYER VIA2i ......... TOTAL Original Geometry Count = 31 (31)
+LAYER VIA2i ......... TOTAL Original Geometry Count = 12 (12)
 LAYER MOMDMY6 ....... TOTAL Original Geometry Count = 1  (22)
-LAYER VIA5i ......... TOTAL Original Geometry Count = 2  (44)
-LAYER VIA3i ......... TOTAL Original Geometry Count = 36 (36)
-LAYER VIA4i ......... TOTAL Original Geometry Count = 13 (55)
+LAYER VIA5i ......... TOTAL Original Geometry Count = 12 (54)
+LAYER VIA3i ......... TOTAL Original Geometry Count = 46 (46)
+LAYER VIA4i ......... TOTAL Original Geometry Count = 18 (60)
 LAYER DMY_DINSA ..... TOTAL Original Geometry Count = 0  (0)
 LAYER VIA6i ......... TOTAL Original Geometry Count = 0  (0)
 LAYER MOMDMY1 ....... TOTAL Original Geometry Count = 0  (0)
@@ -1199,6 +1199,6 @@ RULECHECK ppvdd49 ......................... TOTAL Result Count = 0 (0)
 ---
 TOTAL CPU Time:                              3
 TOTAL REAL Time:                             6
-TOTAL Original Layer Geometries:             384 (1098)
+TOTAL Original Layer Geometries:             372 (1086)
 TOTAL ERC RuleChecks Executed:               35
 TOTAL ERC RuleCheck Results Generated:       2 (23)

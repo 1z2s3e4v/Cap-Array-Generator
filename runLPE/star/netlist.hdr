@@ -7,7 +7,7 @@ GLOBAL_TEMPERATURE 25
 BUS_DELIMITER []
 ESCAPE_SEPARATOR YES
 SUBCKT YES
-$TCAD_GRD_FILE /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/cln28hpc+_1p09m+ut-alrdl_6x2z_typical.nxtgrd
+$TCAD_GRD_FILE /raidj/user/t28/t28u25/frank/project/runLPE/cln28hpc+_1p09m+ut-alrdl_6x2z_typical.nxtgrd
 $  TCAD_TIME_STAMP Thu Jun 25 12:48:01 2015
 $  TCADGRD_VERSION 80
 $HALF_NODE_SCALE_FACTOR 0.9

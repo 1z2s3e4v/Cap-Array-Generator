@@ -1,169 +1,163 @@
 ARRAY_CMP_T1 10000
 IND_STD_CHECK_MU_A28_DM.AP
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 RV is needed for connection of AP and M9 in spiral_std_mu_a28_dm inductor.
 IND_STD_CHECK_MU_A28_DM.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 INTERACT spiral_std_mu_a28_dm inductor is forbidden.
 IND_CT_CHECK_MU_A28_DM.AP
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 RV is needed for connection of AP and M9 in spiral_sym_mu_a28_dm inductor.
 IND_CT_CHECK_MU_A28_DM.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 INTERACT sym_mu_a28_ind_dm inductor is forbidden.
 IND_STD_CHECK_MU_Z.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 is needed for connection of M9 and M8 in spiral_std_mu_z/spiral_std_mu_z_dm inductor.
 IND_STD_CHECK_MU_Z.VIA7
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA7 INTERACT spiral_std_mu_z/spiral_std_mu_z_dm inductor is forbidden.
 IND_SYM_CHECK_MU_Z.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 is needed for connection of M9 and M8 in spiral_sym_mu_z/spiral_sym_mu_z_dm inductor.
 IND_SYM_CHECK_MU_Z.VIA7
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA7 INTERACT spiral_sym_mu_z/spiral_sym_mu_z_dm inductor is forbidden.
 IND_CT_CHECK_MU_Z_A.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 is needed for connection of M9 and M8 in spiral_sym_ct_mu_z_a/spiral_sym_ct_mu_z_a28_dm inductor.
 IND_CT_CHECK_MU_Z_A.RV
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 RV is needed for connection of AP and M9 in spiral_sym_ct_mu_z_a/spiral_sym_ct_mu_z_a28_dm inductor.
 IND_CT_CHECK_MU_Z_A.VIA7
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA7 INTERACT spiral_sym_ct_mu_z_a/spiral_sym_ct_mu_z_a28_dm inductor is forbidden.
 IND_CT_CHECK_MU_A28_A28_DM.RV
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 RV is needed for connection of AP and M9 in spiral_sym_ct_mu_a28_a28_dm inductor.
 IND_CT_CHECK_MU_A28_A28.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 INTERACT spiral_sym_ct_mu_a28_a28_dm inductor is forbidden.
 IND_SYM_CHECK.RV
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 RV is needed for connection of AP and M9 in spiral_sym inductor.
 IND_SYM_CHECK.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 INTERACT spiral_sym inductor is forbidden.
 IND_SYM_CT_LC_CHECK.RV
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 RV is needed for connection of AP and M9 in spiral_sym_ct_lc inductor.
 IND_SYM_CT_LC_CHECK.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 is needed for connection of M9 and M8 in spiral_sym_ct_lc inductor.
 IND_SYM_CT_LC_CHECK.VIA7
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA7 is needed for connection of M8 and M7 in spiral_sym_ct_lc inductor.
 IND_SYM_CT_LC_CHECK.VIA6
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA6 is needed for connection of M7 and M6 in spiral_sym_ct_lc inductor.
 IND_SYM_CT_LC_CHECK.VIA5
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA5 INTERACT spiral_sym_ct_lc inductor is forbidden.
 IND_SYM_CT_RL_CHECK.RV
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 RV is needed for connection of AP and M9 in spiral_sym_ct_rl inductor.
 IND_SYM_CT_RL_CHECK.VIA7
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA7 is needed for connection of M8 and M7 in spiral_sym_ct_rl inductor.
 IND_SYM_CT_RL_CHECK.VIA6
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA6 is needed for connection of M7 and M6 in spiral_sym_ct_rl inductor.
 IND_SYM_CT_RL_CHECK.VIA8
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA8 is needed for connection of M9 and M8 in spiral_sym_ct_rl inductor.
 IND_SYM_CT_RL_CHECK.VIA5
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 VIA5 INTERACT spiral_sym_ct_rl inductor is forbidden.
 mnpg
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 MOS connected to both power and ground
 mppg
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 MOS connected to both power and ground
 mnpgldd
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 MOS connected to both power and ground
 mppgldd
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 MOS connected to both power and ground
 mnpgldd_hv
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 MOS connected to both power and ground
 mppgldd_hv
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 MOS connected to both power and ground
 floating.nxwell_float
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 nxwell_float is not connected to POWER
 floating.psub
-2 2 2 Apr 10 19:51:41 2021                                                      
+2 2 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 psub is not connected to GROUND
-p 1 22
--1400 -16750
-49600 -16750
-49600 26350
-48650 26350
-48650 0
-45950 0
-45950 26200
-48650 26200
-48650 26350
-45450 26350
-45450 0
-4950 0
-4950 26200
-45450 26200
-45450 26350
-4450 26350
-4450 0
+p 1 16
+-600 -13850
+47600 -13850
+47600 26250
+47550 26250
+47550 0
+40650 0
+40650 26200
+47550 26200
+47550 26250
+40150 26250
+40150 0
 -350 0
 -350 26200
-4450 26200
-4450 26350
--1400 26350
+40150 26200
+40150 26250
+-600 26250
 p 2 4
 -350 0
 2350 0
 2350 26200
 -350 26200
 npvss49
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 ntap connected to GROUND
 ppvdd49
-0 0 2 Apr 10 19:51:41 2021                                                      
+0 0 2 Jun  5 16:31:07 2021                                                      
 Rule File Pathname: DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
 ptap connected to POWER

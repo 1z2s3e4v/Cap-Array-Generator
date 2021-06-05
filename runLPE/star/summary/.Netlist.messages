@@ -16,8 +16,8 @@ Completed 100%  Time=00:00:00  RemainingTime=00:00:00  Mem=205.219
 Xout2CircuitOutput::endBucket. Mem= 205.219
 InstanceSection Time=00:00:00
   
-Netlist       Elp=00:00:01 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=205.2 
+Netlist       Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=205.2 
 xTractor      Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.0    Mem=205.2 
   
-Done          Elp=00:00:01 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=205.2 
+Done          Elp=00:00:00 Cpu=00:00:00 Usr=0.0    Sys=0.1    Mem=205.2 
 

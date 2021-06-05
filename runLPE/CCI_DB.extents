@@ -1,13 +1,13 @@
 # SVDB: Cell Extents (File format 1)
 # SVDB: Layout Primary ARRAY_CMP_T1
 # SVDB: Rules -0 DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o 
-# SVDB: GDSII -0 /user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/gds/ARRAY_CMP_T1_PI_test_matching.gds Sat Apr 10 19:41:50 2021
-# SVDB: SNL -0 /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp 
+# SVDB: GDSII -0 /user/t28/t28u25/frank/project/runLPE/gds/ARRAY_CAP_T1.gds Sat Jun  5 16:21:15 2021
+# SVDB: SNL -0 /raidj/user/t28/t28u25/frank/project/runLPE/spice/ARRAY_CMP.sp 
 # SVDB: 
 # SVDB: 
 # SVDB: 
 # SVDB: 
 # SVDB: End of header.
-ARRAY_CMP_T1 -1350 -16700 49550 26300
+ARRAY_CMP_T1 -550 -13800 47550 26200
 ICV_2 -350 0 8650 26200
 CU1F -350 0 2350 26200

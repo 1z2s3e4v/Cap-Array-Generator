@@ -1,6 +1,6 @@
-select_nets -456 7 1 6 -888 
+select_nets -456 10 7 9 -888 
 r_nets -123 0 -888 
-cc_nets -456 6 -888 
-cg_nets -456 6 -888 
+cc_nets -456 9 -888 
+cg_nets -456 9 -888 
 ll_nets -123 0 -888 
 lm_nets -123 0 -888 

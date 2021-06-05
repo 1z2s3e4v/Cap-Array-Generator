@@ -13,10 +13,10 @@
 
 REPORT FILE NAME:         ./LVS/lvs.rep
 LAYOUT NAME:              ./LVS/svdb/ARRAY_CMP_T1.sp ('ARRAY_CMP_T1')
-SOURCE NAME:              /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp ('ARRAY_CMP_T1')
+SOURCE NAME:              /raidj/user/t28/t28u25/frank/project/runLPE/spice/ARRAY_CMP.sp ('ARRAY_CMP_T1')
 RULE FILE:                DFM_LVS_RC_CALIBRE_N28HP_1p9m_ALRDL_CCI.v1.0_3o
-CREATION TIME:            Sat Apr 10 19:51:42 2021
-CURRENT DIRECTORY:        /raidj/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE
+CREATION TIME:            Sat Jun  5 16:31:08 2021
+CURRENT DIRECTORY:        /raidj/user/t28/t28u25/frank/project/runLPE
 USER NAME:                t28u25
 CALIBRE VERSION:          v2018.2_24.18    Fri Jun 1 14:24:04 PDT 2018
 
@@ -816,7 +816,7 @@ o Statistics:
 
 o Initial Correspondence Points:
 
-   Ports:        VDD09A VSS09A SL3B SL3A SL2B SL1B TOP_ARRAY SL2A SL1A
+   Ports:        VDD09A VSS09A SL3A SL3B SL2A SL2B SL1A SL1B TOP_ARRAY
 
 
 o Ambiguity Resolution Points:
@@ -831,20 +831,20 @@ o Ambiguity Resolution Points:
                                    Instances
                                    ---------
 
-       X5/X1/X1/X0(2.000,0.210)  cfmom_2t                        XI12/xC0  cfmom_2t(CP)
-       X5/X1/X0/X0(1.790,0.210)  cfmom_2t                        XI9/xC0  cfmom_2t(CP)
-       X1/X0(4.630,0.210)  cfmom_2t                              XI40/xC0  cfmom_2t(CP)
-       X2/X0/X0(0.000,0.210)  cfmom_2t                           XI38/xC0  cfmom_2t(CP)
-       X5/X0/X0/X0(1.370,0.210)  cfmom_2t                        XI14/xC0  cfmom_2t(CP)
-       X5/X0/X1/X0(1.580,0.210)  cfmom_2t                        XI10/xC0  cfmom_2t(CP)
-       X7/X0/X0/X0(3.050,0.210)  cfmom_2t                        XI5/xC0  cfmom_2t(CP)
-       X4/X1/X0/X0(0.950,0.210)  cfmom_2t                        XI13/xC0  cfmom_2t(CP)
-       X4/X1/X1/X0(1.160,0.210)  cfmom_2t                        XI11/xC0  cfmom_2t(CP)
-       X7/X1/X0/X0(3.470,0.210)  cfmom_2t                        XI4/xC0  cfmom_2t(CP)
-       X0/X0(4.310,0.210)  cfmom_2t                              XI37/xC0  cfmom_2t(CP)
-       X3/X0/X0(3.890,0.210)  cfmom_2t                           XI35/xC0  cfmom_2t(CP)
-       X3/X1/X0(4.100,0.210)  cfmom_2t                           XI34/xC0  cfmom_2t(CP)
-       X4/X0/X0/X0(0.530,0.210)  cfmom_2t                        XI0/xC0  cfmom_2t(CP)
+       X6/X0/X0/X0(1.680,0.210)  cfmom_2t                        XI9/xC0  cfmom_2t(CP)
+       X6/X0/X1/X0(1.890,0.210)  cfmom_2t                        XI12/xC0  cfmom_2t(CP)
+       X1/X0(4.520,0.210)  cfmom_2t                              XI40/xC0  cfmom_2t(CP)
+       X3/X0/X0(4.100,0.210)  cfmom_2t                           XI38/xC0  cfmom_2t(CP)
+       X2/X0/X0(3.360,0.210)  cfmom_2t                           XI13/xC0  cfmom_2t(CP)
+       X2/X1/X0(3.570,0.210)  cfmom_2t                           XI11/xC0  cfmom_2t(CP)
+       X5/X0/X0/X0(0.840,0.210)  cfmom_2t                        XI4/xC0  cfmom_2t(CP)
+       X5/X1/X0/X0(1.260,0.210)  cfmom_2t                        XI14/xC0  cfmom_2t(CP)
+       X5/X1/X1/X0(1.470,0.210)  cfmom_2t                        XI10/xC0  cfmom_2t(CP)
+       X7/X1/X0/X0(2.940,0.210)  cfmom_2t                        XI5/xC0  cfmom_2t(CP)
+       X0/X0(3.780,0.210)  cfmom_2t                              XI37/xC0  cfmom_2t(CP)
+       X4/X0/X0/X0(0.000,0.210)  cfmom_2t                        XI35/xC0  cfmom_2t(CP)
+       X4/X0/X1/X0(0.210,0.210)  cfmom_2t                        XI34/xC0  cfmom_2t(CP)
+       X4/X1/X0/X0(0.420,0.210)  cfmom_2t                        XI0/xC0  cfmom_2t(CP)
 
 
 

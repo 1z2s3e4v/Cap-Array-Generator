@@ -905,12 +905,12 @@ VARIABLE  MINGRID_RECT1_01_UNIT    (( MINGRID_RECT1 + MINGRID_RECT1 * 0.01 ) * 1
 //FLATTEN CELL TOP_CELL_DM TOP_CELL_DODDPO  // fill in topcell name of dummy patterns.   
     
 LAYOUT PRIMARY "ARRAY_CMP_T1"
-LAYOUT PATH "/user/t28/t28u25/etron/ADC_SAR4BIT/runLPE/gds/ARRAY_CMP_T1_PI_test_matching.gds"
+LAYOUT PATH "/user/t28/t28u25/frank/project/runLPE/gds/ARRAY_CAP_T1.gds"
 LAYOUT SYSTEM GDSII
 //LAYOUT SYSTEM SPICE
 
 SOURCE PRIMARY "ARRAY_CMP_T1"
-SOURCE PATH "/raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp"
+SOURCE PATH "/raidj/user/t28/t28u25/frank/project/runLPE/spice/ARRAY_CMP.sp"
 SOURCE SYSTEM SPICE
 
 DRC RESULTS DATABASE "./DRC/calibre_drc.db" ASCII // ASCII or GDSII

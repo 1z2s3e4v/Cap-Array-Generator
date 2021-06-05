@@ -4,7 +4,7 @@
 LOG_FILE="./log.runLPE"
 GDS_FILE=$1
 SPF_FILE=""
-SPICE_FILE="/raidj/user/t28/t28u25/etron/ADC_SAR4BIT/spice/ARRAY_CMP.sp"
+SPICE_FILE="/raidj/user/t28/t28u25/frank/project/runLPE/spice/ARRAY_CMP.sp"
 if [ $# -eq 2 ]; then
 	SPICE_FILE=$2
 fi
@@ -61,9 +61,10 @@ fi
 calibre -query ./LVS/svdb/ < query_cmd
 StarXtract -clean star_cmd
 
-# Change pin name of ARRAY_CMP_T1 in spf file
+# Correct pin name of ARRAY_CMP_T1 in spf file
 sed -i "s/\.SUBCKT ARRAY_CMP_T1.*/.SUBCKT ARRAY_CMP_T1 SL1A SL1B SL2A SL2B SL3A SL3B TOP_ARRAY VDD09A VSS09A/g" ARRAY_CMP_T1.spf
 # Copy spf file to spf/Named
+mkdir -p spf
 cp ARRAY_CMP_T1.spf $SPF_FILE
 cp $SPF_FILE ~/frank/project/input/spf/
 echo "$SPF_FILE generated."
