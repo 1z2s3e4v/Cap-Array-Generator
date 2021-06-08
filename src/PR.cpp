@@ -912,6 +912,7 @@ void PRMgr_C::print_cap_info(){
 
     float max_mismatch = -1;
     float avg_mismatch= 0;
+    float total_cap = 0.0;
 
     cout << setprecision(3);
     cout << "\033[94m[PR]\033[0m - Cap Info:\n";
@@ -922,8 +923,10 @@ void PRMgr_C::print_cap_info(){
             max_mismatch = mismatch;
         }
         avg_mismatch += mismatch;
+        total_cap += graph->totalCap;
     }
     avg_mismatch /= v_capGraph.size();
+    cout << "\033[94m[PR]\033[0m - total_cap = " << total_cap << "\n";
     cout << "\033[94m[PR]\033[0m - mismatch = " << max_mismatch*100 << "% (avg=" << avg_mismatch*100 << "%)\n";
 }
 void PRMgr_C::wire_shifting(){
