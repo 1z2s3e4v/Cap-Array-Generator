@@ -30,8 +30,10 @@ class Edge_C;
 class Cpara_C{
 public:
     Cpara_C();
-    Cpara_C(Edge_C*,Edge_C*);
+    Cpara_C(Edge_C*); // coupling of edge and substrate
+    Cpara_C(Edge_C*,Edge_C*); // coupling of two edge
     float calculate_parasitic();
+    float calculate_parasitic_substrate();
     Edge_C* getCouplingEdge(string);
     int getCouplingType();
     bool isLayer(int,int);
@@ -39,6 +41,7 @@ public:
     Edge_C* edge; // self
     Edge_C* edge2; // coupling object 
     float cap = 0.0;
+    bool withSubstrate = false;
 };
 // ---------------------------------------------------------------------------------------------------------
 class Graph_C{
@@ -55,8 +58,10 @@ public:
     
     // parasitic
     void addCpara(Cpara_C*);
+    void addSubstateCpara(Cpara_C*);
     float totalUnitCap = 0.0;
     vector<Cpara_C*> v_Cpara;
+    vector<Cpara_C*> v_substateCpara;
     float totalCap = 0.0;
 
     // variable

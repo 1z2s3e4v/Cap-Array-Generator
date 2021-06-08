@@ -26,6 +26,12 @@ bool cmpGraph_ratio(const Graph_C* g1, const Graph_C* g2){
 }
 // ---------------------------------------------------------------------------------------------------------
 Cpara_C::Cpara_C(){}
+Cpara_C::Cpara_C(Edge_C* edge){
+    this->edge = edge;
+    this->edge2 = nullptr;
+    withSubstrate = true;
+    cap = calculate_parasitic_substrate();
+}
 Cpara_C::Cpara_C(Edge_C* edge, Edge_C* edge2){
     this->edge = edge;
     this->edge2 = edge2;
@@ -41,6 +47,33 @@ int Cpara_C::getCouplingType(){
     else{ // overlap
         return 3;
     }
+}
+float Cpara_C::calculate_parasitic_substrate(){
+    float cap = -1;
+    if(edge->wire.layer == 1){
+        cap = cap = 11.3e-17 * edge->wire.length;
+    }
+    else if(edge->wire.layer == 2){
+        cap = cap = 9.1e-17 * edge->wire.length;
+    }
+    else if(edge->wire.layer == 3){
+        cap = cap = 4.4e-17 * edge->wire.length;
+    }
+    else if(edge->wire.layer == 4){
+        cap = cap = 3.9e-17 * edge->wire.length;
+    }
+    else if(edge->wire.layer == 5){
+        cap = cap = 3.4e-17 * edge->wire.length;
+    }
+    else if(edge->wire.layer == 6){
+        cap = cap = 2.0e-17 * edge->wire.length;
+    }
+    else {
+        cap = 0;
+        cout << "[Cpara_C] - Warning. Cannot calculate the parasitic(with substrate).\n";
+        cout << "  Edge: \"" << edge->graph->name << "\"(M" << edge->wire.layer << "): p1=" << pos2str(edge->wire.p1) << ", p2=" << pos2str(edge->wire.p2) << "\n";
+    }
+    return cap;
 }
 float Cpara_C::calculate_parasitic(){
     float cap = -1;
@@ -446,6 +479,13 @@ void Graph_C::addCpara(Cpara_C * Cpara){
     string couplingNetName = Cpara->getCouplingEdge(name)->graph->name;
     net->m_net2netCpara[couplingNetName] += Cpara->cap;
 }
+void Graph_C::addSubstateCpara(Cpara_C * Cpara){
+    v_substateCpara.push_back(Cpara);
+    totalCap += Cpara->cap;
+
+    // set net Cpara map
+    net->m_net2netCpara["0"] += Cpara->cap;
+}
 // ---------------------------------------------------------------------------------------------------------
 Node_C::Node_C(){
     pin = nullptr;
@@ -827,6 +867,8 @@ void PRMgr_C::calculate_cap(){
         // unit_cap
         graph->totalUnitCap = graph->net->num_finCap*UNIT_CAP;
         graph->totalCap += graph->totalUnitCap;
+        // set net Cpara map
+        graph->net->m_net2netCpara["TOP_ARRAY"] = graph->totalUnitCap;
     }
     // parasitic_cap
     for(int i=0;i<v_bus.size();++i){ // bus coupling
@@ -844,6 +886,8 @@ void PRMgr_C::calculate_cap(){
             edge->graph->addCpara(Cpara);
             it.second->graph->addCpara(Cpara);
         }
+        Cpara_C* substateCpara = new Cpara_C(edge);
+        edge->graph->addSubstateCpara(substateCpara);
     }
     for(int i=0;i<v_vWire.size();++i){ // virtical wire coupling
         Edge_C* edge = v_vWire[i];

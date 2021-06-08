@@ -66,6 +66,7 @@ public:
     Pos p1;
     Pos p2;
     float width = 0.11;
+    float length = 0.0;
     int layer = 0; // 1 ~ 5
     int layer2 = 0; // 1 ~ 5
 };

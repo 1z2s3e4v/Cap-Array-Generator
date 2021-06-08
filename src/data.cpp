@@ -47,11 +47,13 @@ void Wire_C::setPoint(Pos s, Pos t){
         if(get<0>(s) > get<0>(t)) swap(s,t);
         p1 = Pos(get<0>(s) - (float)width/2.0, get<1>(s));
         p2 = Pos(get<0>(t) + (float)width/2.0, get<1>(t));
+        length = get<0>(p2) - get<0>(p1);
     }
     else if(dir == 'V'){
         if(get<1>(s) > get<1>(t)) swap(s,t);
         p1 = Pos(get<0>(s), get<1>(s) - (float)width/2.0);
         p2 = Pos(get<0>(t), get<1>(t) + (float)width/2.0);
+        length = get<1>(p2) - get<1>(p1);
     }
     else{
         p1 = s;
