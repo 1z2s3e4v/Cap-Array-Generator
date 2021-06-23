@@ -89,6 +89,7 @@ public:
     void setPos(Pos3d);
     Pos getXY();
     Pos3d getXYZ();
+    void pick();
 
     Pin_C* pin = nullptr;
     Pos xy;
@@ -100,11 +101,13 @@ public:
     bool _isIOPin = false;
     bool _isOnBus = false;
     Edge_C* bus;
+    bool picked = false;
 };
 // ---------------------------------------------------------------------------------------------------------
 class Edge_C{
 public:
     Edge_C();
+    Edge_C(Edge_C*);
     Edge_C(Node_C* s,Node_C* t);
     Edge_C(Node_C* s,Node_C* t, float w);
     Edge_C(Node_C*);
@@ -115,6 +118,7 @@ public:
     void shiftXto(float); // 
     void setLayer(int);
     bool isBus();
+    void pick();
 
     Graph_C* graph = nullptr;
     vector<Node_C*> v_node;
@@ -122,6 +126,10 @@ public:
     Node_C* tgt = nullptr;
     Wire_C wire;
     bool _isBus = false;
+    bool picked = false;
+
+    // for bus additional layer
+    vector<Edge_C*> v_additionalLayer;
 };
 // ---------------------------------------------------------------------------------------------------------
 class PRMgr_C{
@@ -154,6 +162,7 @@ public:
 
     // routing
     void run_routing(); // net->v_wire
+    void run_routing_network_flow(); // net->v_wire
     void build_graph(); 
     //void build_mst(); // mark-lin_paper_2017
     void set_wire();
@@ -171,12 +180,20 @@ public:
     void vlayer_reAssignment();
     // 6. end
 
+    // 1. create steiner point on bus
+    // 2. connect all edge (all layer)
+    void build_all_connection(); 
+    // 3. route with network-flow and cost function
+    void route_with_network_flow();
+    // 4. end
+
     void print_cap_info();
     vector<Graph_C*> getCapGraphList();
     Graph_C* getSmallestCap();
 
     void addBus(Edge_C*);
     void addVWire(Edge_C*);
+    void addVWire_new(Edge_C*);
     void addOtherWire(Edge_C*);
 
     map<string,Graph_C*> m_graph2D; // connectivity
@@ -186,5 +203,7 @@ public:
     vector<Edge_C*> v_bus; // all net 
     vector<Edge_C*> v_vWire; // cap nat
     vector<Edge_C*> v_otherWire;
+
+    vector<vector<Edge_C*> > v_vWire_all;
 };
 #endif

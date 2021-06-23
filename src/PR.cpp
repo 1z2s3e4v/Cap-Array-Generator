@@ -436,6 +436,11 @@ void Graph_C::setWires2Net(){
     net->initWire();
     for(Edge_C* edge : v_edge){
         net->addWire(edge->wire);
+        if(edge->isBus()){
+            for(Edge_C* edge_additional : edge->v_additionalLayer){
+                net->addWire(edge_additional->wire);
+            }
+        }
     }
 }
 void Graph_C::setVias2Net(){
@@ -511,6 +516,7 @@ Node_C::Node_C(Pin_C* p_pin){
     pin = p_pin;
     _isPin = true;
     _isOnBus = false;
+    picked = true;
     if(pin->isIOPin()){
         _isIOPin = true;
         _isOnBus = true;
@@ -519,8 +525,10 @@ Node_C::Node_C(Pin_C* p_pin){
 }
 void Node_C::addEdge(Edge_C* p_edge){
     v_edge.push_back(p_edge);
-    if(p_edge->isBus()) bus = p_edge;
-    _isOnBus = true; 
+    if(p_edge->isBus()){
+        bus = p_edge;
+        _isOnBus = true; 
+    }
 }
 void Node_C::setGraph(Graph_C* p_graph){
     graph = p_graph;
@@ -543,6 +551,18 @@ Pos3d Node_C::getXYZ(){
 }
 // ---------------------------------------------------------------------------------------------------------
 Edge_C::Edge_C(){}
+Edge_C::Edge_C(Edge_C* edge){
+    this->src = edge->src;
+    this->tgt = edge->tgt;
+    src->addEdge(this);
+    tgt->addEdge(this);
+    this->wire = Wire_C(src->getXY(),tgt->getXY());
+    this->graph = edge->graph;
+    this->v_node = edge->v_node;
+
+    picked = false;
+    _isBus = edge->_isBus;
+}
 Edge_C::Edge_C(Node_C* s, Node_C* t){
     v_node.push_back(s);
     v_node.push_back(t);
@@ -568,6 +588,7 @@ Edge_C::Edge_C(Node_C* ioPin){
     wire = Wire_C(src->getXY(),tgt->getXY());
     _isBus = true;
     ioPin->addEdge(this);
+    picked = true;
 }
 void Edge_C::addNode(Node_C* p_node){
     v_node.push_back(p_node);
@@ -728,6 +749,21 @@ void PRMgr_C::run_routing(){
     set_wire(); // set edges back to net->v_wire
     set_via(); // set edges back to net->v_via
 }
+void PRMgr_C::run_routing_network_flow(){
+    // 0. build the graph and connectivity
+    build_graph();
+    // 1. create steiner point on bus
+    // 2. connect all edge (all layer)
+    build_all_connection();
+    // 3. route with network-flow and cost function
+    route_with_network_flow();
+    // 4. calculate the parasitic
+    calculate_cap();
+    print_cap_info();
+
+    set_wire(); // set edges back to net->v_wire
+    set_via(); // set edges back to net->v_via
+}
 void PRMgr_C::build_graph(){
     v_capTopNode.clear();
     v_capBtmNode.clear();
@@ -826,6 +862,105 @@ void PRMgr_C::build_2d_connection(){
             }
         }
     }
+}
+void PRMgr_C::build_all_connection(){
+    v_bus.clear();
+    v_vWire.clear();
+    v_vWire_all.clear();
+    v_otherWire.clear();
+    
+    int count_cap_bus = 0;
+    for(auto it : m_graph2D){
+        string netName = it.first;
+        Graph_C* graph = it.second;
+        graph->bus = new Edge_C(graph->ioPinNode);
+        graph->addEdge(graph->bus);
+        graph->bus->setGraph(graph);
+        addBus(graph->bus);
+        sort_node_with_x(graph->v_node);
+        for(int i=0;i<graph->v_node.size();++i){
+            Node_C* node = graph->v_node[i];
+            if(node->isPin() && !node->isIOPin()){
+                int fcap_id = node->pin->fcap->id;
+                if(fcap_id < v_finCap.size()-1){
+                    // connect to neibor (this <--> right)
+                    if(node->pin->isBtmPin() && v_finCap[fcap_id+1]->btmPin->name == node->pin->name){
+                        // btmPin
+                        Node_C* node2 = m_p2n[v_finCap[fcap_id+1]->btmPin];
+                        Edge_C* edge = new Edge_C(node,node2);
+                        edge->setLayer(3);
+                        graph->addEdge(edge);
+                        edge->setGraph(graph);
+                        addOtherWire(edge);
+                        edge->picked = true;
+                    }
+                    else if(node->pin->isTopPin() && v_finCap[fcap_id+1]->topPin->name == node->pin->name){
+                        // topPin
+                        Node_C* node2 = m_p2n[v_finCap[fcap_id+1]->topPin];
+                        Edge_C* edge = new Edge_C(node,node2);
+                        edge->setLayer(3);
+                        graph->addEdge(edge);
+                        edge->setGraph(graph);
+                        addOtherWire(edge);
+                        edge->picked = true;
+                    }
+                }
+
+                if(graph->getBusY() != get<1>(node->getXY())){ 
+                    Node_C* steiner_point = new Node_C(Pos(get<0>(node->xy),graph->getBusY()),node->layer);
+                    steiner_point->setGraph(graph);
+                    graph->addNode(steiner_point);
+                    graph->bus->addNode(steiner_point);
+                    steiner_point->addEdge(graph->bus);
+
+                    Edge_C* edge1 = new Edge_C(node,steiner_point); // M2
+                    edge1->setLayer(2); 
+                    graph->addEdge(edge1);
+                    edge1->setGraph(graph);
+                    Edge_C* edge2 = new Edge_C(node,steiner_point); // M4
+                    edge2->setLayer(4);
+                    graph->addEdge(edge2);
+                    edge2->setGraph(graph);
+                    Edge_C* edge3 = new Edge_C(node,steiner_point); // M6
+                    edge3->setLayer(6);
+                    graph->addEdge(edge3);
+                    edge3->setGraph(graph);
+
+                    if(graph->net->isCapNet()){
+                        addVWire_new(edge1); // virtical wire
+                        addVWire_new(edge2); // virtical wire
+                        addVWire_new(edge3); // virtical wire
+                    }
+                    else{
+                        addOtherWire(edge1); // virtical wire
+                    }
+                }
+                else{
+                    node->addEdge(graph->bus);
+                }
+            }
+        }
+        if(graph->net->isCapNet()){
+            graph->bus->setLayer(count_cap_bus%2 * 2 + 3); // M3 / M5
+            Edge_C* edge1 = new Edge_C(graph->bus);
+            edge1->setLayer(1);
+            Edge_C* edge2 = new Edge_C(graph->bus);
+            edge2->setLayer(3);
+            Edge_C* edge3 = new Edge_C(graph->bus);
+            edge3->setLayer(5);
+            graph->bus->v_additionalLayer.push_back(edge1);
+            graph->bus->v_additionalLayer.push_back(edge2);
+            graph->bus->v_additionalLayer.push_back(edge3);
+            count_cap_bus++;
+        }
+        else{
+            graph->bus->setLayer(1);
+        }
+    }
+}
+void PRMgr_C::route_with_network_flow(){
+    // for each net source from cap pin end to bus, pick the edges
+
 }
 void PRMgr_C::layer_assignment(){
     int hLayer[3] = {1, 3, 5};
@@ -977,6 +1112,22 @@ void PRMgr_C::addVWire(Edge_C* edge){
         }
     }
     v_vWire.insert(v_vWire.begin()+insert_id, edge);
+}
+void PRMgr_C::addVWire_new(Edge_C* edge){
+    int insert_id = v_vWire_all.size();
+    for(int i=0;i<v_vWire_all.size();++i){
+        if(get<0>(edge->src->getXY()) == get<0>(v_vWire_all[i][0]->src->getXY())){
+            v_vWire_all[i].push_back(edge);
+            return;
+        }
+        else if(get<0>(v_vWire_all[i][0]->src->getXY()) > get<0>(edge->src->getXY())){
+            insert_id = i;
+            break;
+        }
+    }
+    vector<Edge_C*> v_tmp;
+    v_tmp.push_back(edge);
+    v_vWire_all.insert(v_vWire_all.begin()+insert_id, v_tmp);
 }
 void PRMgr_C::addOtherWire(Edge_C* edge){
     v_otherWire.push_back(edge);
