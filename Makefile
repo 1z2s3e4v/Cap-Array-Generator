@@ -15,19 +15,29 @@ bin/$(EXECUTABLE): $(OBJECTS)
 
 c1:
 	bin/gen_capArray -genlayout -input input/4bit.txt
-c2:
-	bin/gen_capArray -genlayout -input input/4bit.txt -out output/path.txt -spf input/ARRAY_CMP_T1_PI.spf
-c3:
-	bin/gen_capArray -genlayout -input input/4bit.txt -out output/path.txt -cfg_file input/cfg.txt
-csp:
-	bin/gen_capArray -genlayout -sp input/ARRAY_CMP.sp -out output/path
 c4:
-	bin/gen_capArray -genparaRpt -spf input/ARRAY_CMP_T1_FI.spf -input input/4bit.txt
+	bin/gen_capArray -genlayout -input input/4bit.txt
 c5:
-	bin/gen_capArray -genparaRpt -spf input/ARRAY_CMP_T1_NI.spf -input input/4bit.txt
+	bin/gen_capArray -genlayout -input input/5bit.txt
 c6:
-	bin/gen_capArray -genparaRpt -spf input/ARRAY_CMP_T1_PI.spf -input input/4bit.txt
+	bin/gen_capArray -genlayout -input input/6bit.txt
 c7:
+	bin/gen_capArray -genlayout -input input/7bit.txt
+c8:
+	bin/gen_capArray -genlayout -input input/8bit.txt
+#c2:
+#	bin/gen_capArray -genlayout -input input/4bit.txt -out output/path.txt -spf input/ARRAY_CMP_T1_PI.spf
+#c3:
+#	bin/gen_capArray -genlayout -input input/4bit.txt -out output/path.txt -cfg_file input/cfg.txt
+#csp:
+#	bin/gen_capArray -genlayout -sp input/ARRAY_CMP.sp -out output/path
+#c4:
+#	bin/gen_capArray -genparaRpt -spf input/ARRAY_CMP_T1_FI.spf -input input/4bit.txt
+#c5:
+#	bin/gen_capArray -genparaRpt -spf input/ARRAY_CMP_T1_NI.spf -input input/4bit.txt
+#c6:
+#	bin/gen_capArray -genparaRpt -spf input/ARRAY_CMP_T1_PI.spf -input input/4bit.txt
+crpt:
 	bin/gen_capArray -genparaRpt -spf input/spf/ARRAY_CMP_T1_PI_test_matching.spf -input input/4bit.txt
 
 c:
