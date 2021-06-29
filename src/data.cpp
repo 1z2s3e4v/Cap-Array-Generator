@@ -152,7 +152,7 @@ FinCap_C::FinCap_C(int id, Net_C* net,CapNet capNet){
 }
 FinCap_C::FinCap_C(int id,string dmyName,CapNet capNet){
     this->id = id;
-    this->net = net;
+    //this->net = net;
     this->index = -1;
     this->name = dmyName;
     _isDmy = true;

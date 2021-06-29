@@ -119,6 +119,7 @@ public:
     void setLayer(int);
     bool isBus();
     void pick();
+    void setName(string);
 
     Graph_C* graph = nullptr;
     vector<Node_C*> v_node;
@@ -127,6 +128,7 @@ public:
     Wire_C wire;
     bool _isBus = false;
     bool picked = false;
+    string name;
 
     // for bus additional layer
     vector<Edge_C*> v_additionalLayer;
@@ -162,7 +164,7 @@ public:
 
     // routing
     void run_routing(); // net->v_wire
-    void run_routing_network_flow(); // net->v_wire
+    void run_routing_ILP(); // net->v_wire
     void build_graph(); 
     //void build_mst(); // mark-lin_paper_2017
     void set_wire();
@@ -170,7 +172,7 @@ public:
 
     // 1. create steiner point on bus
     // 2. connect as 2d
-    void build_2d_connection(); 
+    void build_2d_connection(bool only_nonCapNet); 
     // 3. layer assignment
     void layer_assignment();
     // 4. calculate the cap (unit_cap + parasitic_cap)
@@ -184,7 +186,7 @@ public:
     // 2. connect all edge (all layer)
     void build_all_connection(); 
     // 3. route with network-flow and cost function
-    void route_with_network_flow();
+    void ILP_pick_edge();
     // 4. end
 
     void print_cap_info();
@@ -205,5 +207,9 @@ public:
     vector<Edge_C*> v_otherWire;
 
     vector<vector<Edge_C*> > v_vWire_all;
+    map<string,Edge_C*> ILP_candidate_edge;
+
+    float alpha = 0.3; // cost_ratio of Cpara
+    float beta = 0.7; // cost_ratio of ratio_mismatch
 };
 #endif
