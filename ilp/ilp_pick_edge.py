@@ -163,120 +163,97 @@ while i < len(lines):
 
 	i = i+1
 
+config['alpha'] = 0.51
+config['beta'] = 0.49
 print("config :")
 print(config)
 
 ## ilp
-#try:
-# Create a new model
-m = gp.Model()
+try:
+	# Create a new model
+	m = gp.Model()
 
-# Create variables
-#net_EdgeVar = {} # { netName : {edgeName:edgeVar} }
-edgeVar = {} # { edgeName : edgeVar }
-netCrealVar = {} # { netName : CparaVar }
-sepEVar = {} # {edgeName : { edgeName : [sepEdgeVars] } }
-coupleVar_dict = {} # {edgeName : { edgeName : [couplaVars] } }
-coupleVar_list = [] # [couplaVar]
-net_coupleVar = {} # {netName : [coupleVar]}
-for (netName, net) in nets.items():
-	net_coupleVar[netName] = []
-	#net_EdgeVar[net.name] = {}
-	for edgeName,edge in net.Edges.items():
-		sepEVar[edgeName] = {}
-		coupleVar_dict[edgeName] = {}
-		# edgeVar
-		e_gp = m.addVar(vtype=GRB.BINARY, name=edgeName)
-		edgeVar[edgeName] = e_gp
-		#net_EdgeVar[net.name][edgeName] = e
-		# netCreal
-		nCreal_gp = m.addVar(vtype=GRB.CONTINUOUS, name=netName)
-		netCrealVar[netName] = nCreal_gp
-		# netCouple
-		for coupleE,couple in edge.couplingEdges.items():
-			c_gp = m.addVar(vtype=GRB.CONTINUOUS, name=edgeName + "__" + couple.coupEdgeName)
-			coupleVar_list.append(c_gp)
-			coupleVar_dict[edgeName][couple.coupEdgeName] = c_gp
-			net_coupleVar[netName].append(c_gp)
-for couple in couple_list:
-	sepEVar[couple.baseEdgeName][couple.coupEdgeName] = []
-	for sepE in couple.sepEdges:
-		sepEVar[couple.baseEdgeName][couple.coupEdgeName].append(edgeVar[sepE])
-	
+	# Create variables
+	edgeVar = {} # { edgeName : edgeVar }
+	netCrealVar = {} # { netName : CparaVar }
+	sepEVar = {} # {edgeName : { edgeName : [sepEdgeVars] } }
+	coupleVar_dict = {} # {edgeName : { edgeName : [couplaVars] } }
+	coupleVar_list = [] # [couplaVar]
+	net_coupleVar = {} # {netName : [coupleVar]}
+	netMismatchVar = [] # [mismatchVar]
+	for (netName, net) in nets.items():
+		net_coupleVar[netName] = []
+		m_gp = m.addVar(vtype=GRB.CONTINUOUS, name=netName+"_mismatch")
+		netMismatchVar.append(m_gp)
+		for edgeName,edge in net.Edges.items():
+			sepEVar[edgeName] = {}
+			coupleVar_dict[edgeName] = {}
+			# edgeVar
+			e_gp = m.addVar(vtype=GRB.BINARY, name=edgeName)
+			edgeVar[edgeName] = e_gp
+			# netCreal
+			nCreal_gp = m.addVar(vtype=GRB.CONTINUOUS, name=netName+"_Cpara")
+			netCrealVar[netName] = nCreal_gp
+			# netCouple
+			for coupleE,couple in edge.couplingEdges.items():
+				c_gp = m.addVar(vtype=GRB.CONTINUOUS, name="coup_" + edgeName + "__" + couple.coupEdgeName)
+				coupleVar_list.append(c_gp)
+				coupleVar_dict[edgeName][couple.coupEdgeName] = c_gp
+				net_coupleVar[netName].append(c_gp)
+	for couple in couple_list:
+		sepEVar[couple.baseEdgeName][couple.coupEdgeName] = []
+		for sepE in couple.sepEdges:
+			sepEVar[couple.baseEdgeName][couple.coupEdgeName].append(edgeVar[sepE])
+		
 
 
-# Integrate new variables
-m.update()
+	# Integrate new variables
+	m.update()
 
-# set the summary of variable
-expr_netCpara = [] # { net : [expr_c]}
-for (netName, net) in nets.items():
-	expr_netCpara.append(
-		gp.quicksum(
+	# set the summary of variable
+	baseNet_idx = 0
+	countNet = 0
+	expr_netCpara = [] # [expr_Cpara]
+	for (netName, net) in nets.items():
+		if netName == config['baseNet']:
+			baseNet_idx = countNet
+		expr_netCpara.append(gp.quicksum(
 			coupleVar_dict[couple.baseEdgeName][couple.coupEdgeName] * couple.Cpara + edgeVar[couple.baseEdgeName] * edges[couple.baseEdgeName].coup0Cpara# gp.and_(sepEVar[edgeName][coupleE])
-		# gp.and_(sepEVar[couple.baseEdgeName][couple.coupEdgeName], edgeVar[couple.baseEdgeName], edgeVar[couple.coupEdgeName])
-		for couple in net_couple_list[netName])
-	)
-		#for (coupleE,couple) in edge.couplingEdges.items():
-			#andList = sepEVar[edgeName][coupleE] + [edgeVar[edgeName], edgeVar[coupleE]]
-# Set objective
-m.setObjective(
-	# config['alpha'] * gp.quicksum( # total Cpara
-	# 	edgeVar[_couple.baseEdgeName] * edgeVar[_couple.coupEdgeName] * float(_couple.Cpara) + edgeVar[_couple.baseEdgeName] * edges[_couple.baseEdgeName].coup0Cpara  # * all(edgeVar[_sepE] == 0  for _sepE in _couple.sepEdges)
-	# for _couple in couple_list)
-	gp.quicksum( # total Cpara
-		expr_netCpara[i]
-	for i in range(len(expr_netCpara)))
-	# + config['beta'] * (
-	# 	gp.quicksum( # mismatch of net
-	# 		gp.abs_(gp.quicksum( # total Cpara of net
-	# 			edgeVar[_couple.baseEdgeName] * edgeVar[_couple.coupEdgeName] * float(_couple.Cpara) + edgeVar[_couple.baseEdgeName] * edges[_couple.baseEdgeName].coup0Cpara  # * all(edgeVar[_sepE] == 0  for _sepE in _couple.sepEdges)
-	# 		for _edgeName,_edge in _net.Edges.items() for (_coupleE,_couple) in _edge.couplingEdges.items())
-	# 		- gp.quicksum( # total Cpara of baseNet
-	# 			edgeVar[_couple.baseEdgeName] * edgeVar[_couple.coupEdgeName] * float(_couple.Cpara) + edgeVar[_couple.baseEdgeName] * edges[_couple.baseEdgeName].coup0Cpara  # * all(edgeVar[_sepE] == 0  for _sepE in _couple.sepEdges)
-	# 		for _edgeName,_edge in nets[config['baseNet']].Edges.items() for (_coupleE,_couple) in _edge.couplingEdges.items()))
-	# 	for (_netName,_net) in nets.items())
-	# )
-	, GRB.MINIMIZE) # min: a*SUM(Cpara) + b*SUM(Ratio_Mismatch)
+		for couple in net_couple_list[netName]))
+		countNet = countNet+1
+	expr_netMismatch = [] # [expr_mismatch]
+	for i in range(len(expr_netCpara)):
+		expr_netMismatch.append(expr_netCpara[baseNet_idx] - expr_netCpara[i])
 
-# Add constraint: connectivity
-count_constr = 0
-for (netName, net) in nets.items():
-	for group in net.edgeGroup:
-		constrName = "c" + str(count_constr)
-		m.addConstr(gp.quicksum(edgeVar[edgeName] for edgeName in group) >= 1, constrName) # var1 + var2 + var3 + ... >= 1
-		count_constr = count_constr+1
-# Add constraint: to check the Cpara is exist for each couple
-	for (edgeName,edge) in net.Edges.items():
-	 	for (coupleE,couple) in edge.couplingEdges.items():
-	 		m.addConstr(coupleVar_dict[edgeName][coupleE] == gp.and_(sepEVar[edgeName][coupleE], edgeVar[edgeName], edgeVar[coupleE]))
-'''for i in range(len(coupleList_withVar)):
-	couple = coupleList_withVar[i]
-	couple_var = coupleVar[i]
-	# if sum(sepEVar[couple.baseEdgeName][couple.coupEdgeName]) == 0
-	m.addConstr(
-		couple_var == edgeVar[couple.baseEdgeName] * edgeVar[couple.coupEdgeName] * float(couple.Cpara) + edgeVar[couple.baseEdgeName] * edges[couple.baseEdgeName].coup0Cpara 
-	if qp.quicksum(sepEVar[couple.baseEdgeName][couple.coupEdgeName])==0 , constrName)
-	count_constr = count_constr+1
-	# else
-	m.addConstr(
-		couple_var == 0 
-	if qp.quicksum(sepEVar[couple.baseEdgeName][couple.coupEdgeName])>0, constrName)
-	count_constr = count_constr+1
-	
-	# Add constraint: to compute the Cpara for each net
-'''
-# lLP optimization
-m.optimize()
+	# Set objective
+	m.setObjective(
+		config['alpha'] * gp.quicksum(expr_netCpara) # total Cpara
+		+ config['beta'] * gp.quicksum(expr_netMismatch) # total mismatch (expr_netMismatch | netMismatchVar)
+		, GRB.MINIMIZE) # min: a*SUM(Cpara) + b*SUM(Ratio_Mismatch)
 
-print(bcolors.OKBLUE, "[ILP] finsih -- Obj:", m.objVal, bcolors.ENDC)
-file_out = open(sys.argv[1] + ".out", 'w')
-file_out.write("[ILP] finsih -- Obj:{}\n".format(m.objVal))
-for v in m.getVars():
-	#print(v.varName, v.x)
-	file_out.write("{} {}\n".format(v.varName,v.x))
+	# Add constraint: connectivity
+	count_constr = 0
+	for (netName, net) in nets.items():
+		for group in net.edgeGroup:
+			constrName = "c" + str(count_constr)
+			m.addConstr(gp.quicksum(edgeVar[edgeName] for edgeName in group) >= 1, constrName) # var1 + var2 + var3 + ... >= 1
+			count_constr = count_constr+1
+	# Add constraint: to check the Cpara is exist for each couple
+		for (edgeName,edge) in net.Edges.items():
+			for (coupleE,couple) in edge.couplingEdges.items():
+				m.addConstr(coupleVar_dict[edgeName][coupleE] == gp.and_(sepEVar[edgeName][coupleE], edgeVar[edgeName], edgeVar[coupleE]))
+	# lLP optimization
+	m.optimize()
 
-#except gp.GurobiError as e:
-#	print('[Error reported] - ' + str(e.errno) + ': ' + str(e))
-#except AttributeError:
-	#print('Encountered an attribute error')
+	print(bcolors.OKBLUE, "[ILP] finsih -- Obj:", m.objVal, bcolors.ENDC)
+	file_out = open(sys.argv[1] + ".out", 'w')
+	file_out.write("[ILP] finsih -- Obj:{}\n".format(m.objVal))
+	for v in m.getVars():
+		#print(v.varName, v.x)
+		if v.varName[0] == 'E':
+			file_out.write("{} {}\n".format(v.varName,v.x))
+
+except gp.GurobiError as e:
+	print('[Error reported] - ' + str(e.errno) + ': ' + str(e))
+except AttributeError:
+	print('Encountered an attribute error')
